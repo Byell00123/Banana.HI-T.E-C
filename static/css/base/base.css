@@ -1,0 +1,190 @@
+/* Estilos para telas menores que 600px */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Reduz o tamanho da fonte para telas menores */
+    }
+}
+
+/* Estilos para telas maiores que 1200px */
+@media (min-width: 1200px) {
+    body {
+        font-size: 18px; /* Aumenta o tamanho da fonte para telas maiores */
+    }
+}
+
+img {
+    max-width: 100%; /* Garante que as imagens não ultrapassem o tamanho do contêiner pai */
+}
+
+/* Define as configurações padrão para o documento HTML */
+body {
+    margin: 0px; /* Remove as margens padrão do corpo */
+    font-family: Arial, sans-serif; /* Define a fonte padrão */
+    font-size: 16px; /* Tamanho de fonte base */
+    /* background-color: blue; */
+}
+
+/* Estilo para a barra de menu */
+.navbar {
+    background-color: #000; /* Define a cor de fundo da barra de menu */
+    width: 100%; /* Define a largura da barra de menu para ocupar quase a largura da janela */
+    padding: 10px 20px; /* Adiciona um preenchimento interno de 20px aos itens dentro da navbar */
+    padding: 0.3rem 0.0rem; /* Adiciona um preenchimento interno(entre a box do menu e a box dos
+     itens(hyperlinks) do menu) de 0.3rem(vertical) e 0.0rem(horizontal) */
+    margin: 0px; /* Remove as margens padrão da navbar */
+}
+
+/* Estilo para a lista não ordenada dentro da barra de menu */
+.navbar-list {
+    list-style-type: none; /* Remove os marcadores padrão da lista */
+    margin: 0; /* Remove as margens padrão da lista */
+    padding: 0; /* Remove os preenchimentos padrão da lista */
+    display: flex; /* Define o elemento como um flex container */
+    justify-content: flex-start; /* Alinha os itens no início do eixo principal (horizontal) */
+}
+
+.navbar .navbar-list #menu{
+    padding-left: 0.6rem;
+}
+
+/* Estilo para cada item da lista dentro da barra de menu */
+.navbar-list li {
+    margin: 0px; /* Remove as margens padrão da lista */
+    display: inline-block; /* Exibe os itens da lista em linha */
+}
+
+/**/
+.navbar-list .gambiarra {
+    flex-grow: 1;
+}
+
+/* Estilo para os links dentro dos itens da lista */
+.carrinho,.usuario{
+    margin-right: 0; /* Remove as margens padrão das duas lista */
+    margin-left: auto; /* Permite que as margens esquerdas das duas listas sejam redimensionaveis */
+}
+
+/* Estilo para o itena de usuario dentro da lista(navbar) */
+.navbar .navbar-list .usuario a{
+    margin: 0px 4rem 0px 0px;  /* Retirando a margem(espço entre as extremidades da tela e da box
+     dos itens(hyperlinks) do menu) mas adicionando um espaço de 4rem para o lado direito */
+    display: inline-block; /* Exibe os itens da lista em linha */
+}
+
+/* Estilo para os links dentro dos itens da lista */
+.navbar-list li a {
+    display: inline-block; /* Exibe os links em linha */
+    padding: 20px; /* Adiciona um preenchimento interno de 20px aos links */
+    text-decoration: none; /* Remove a decoração de sublinhado dos links */
+    color: white; /* Define a cor do texto dos links como branco */
+}
+
+/* Estilo para os links quando o mouse passa por cima */
+.navbar-list li a:hover {
+    background-color: #120052; /* Altera a cor de fundo dos links quando o mouse passa por cima */
+    border-radius: 10px;  /* Adiciona uma borda arredondada ao campo de seleção */
+}
+
+/* Estilo para o botão de pesquisa */
+.navbar-list li.pesquisa button[type="submit"] {
+    padding: 10px 20px; /* Adiciona preenchimento interno ao botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Adiciona uma borda arredondada ao botão */
+    background-color: #4CAF50; /* Define a cor de fundo do botão */
+    color: white; /* Define a cor do texto do botão como branco */
+    cursor: pointer; /* Altera o cursor para uma mão quando passa por cima do botão */
+}
+
+/* Estilo para o item de menu de pesquisa */
+.navbar-list li.pesquisa {
+    display: inline-block; /* Exibe o item de pesquisa em linha */
+    vertical-align: middle; /* Alinha verticalmente o item de pesquisa */
+}
+
+/* Estilo para o formulário de pesquisa dentro do item de menu de pesquisa */
+.navbar-list li.pesquisa form {
+    display: inline-block; /* Exibe o formulário em linha */
+    margin: 0; /* Remove as margens padrão do formulário */
+    padding: 0; /* Remove os preenchimentos padrão do formulário */
+}
+
+/* Estilo para o botão de pesquisa quando o mouse passa por cima */
+.navbar-list li.pesquisa button[type="submit"]:hover {
+    background-color: rgb(218,165,32); /* Altera a cor de fundo do botão quando o mouse passa por cima */
+}
+
+/* Estilo para o campo de entrada de pesquisa */
+.navbar-list li.pesquisa input[type="text"] {
+    padding: 10px; /* Adiciona um preenchimento interno de 10px ao campo de entrada */
+    margin: 10px; /* Adiciona uma margem de 10px ao redor do campo de entrada */
+    margin-left: 0px; /* Redimensiona a margem esquerda da parte externa do campo de entrada para 0px(anteriormente 10px)*/
+    border: none; /* Remove a borda do campo de entrada */
+    border-radius: 5px; /* Adiciona uma borda arredondada ao campo de entrada */
+}
+
+.conteudo .gambiarra{
+    flex-grow: 1;
+}
+
+/* Estilo para o conteúdo da página */
+.conteudo {
+    /*padding-top: 0.051em; 
+    /*padding-left: 20px; /* Adiciona um preenchimento à esquerda de 20px ao conteúdo */
+    background-color: grey;
+    /*margin: 0.051em 2em 0.0em 2em; */
+    /* margin: 0.051em auto 0.0em auto; */
+    
+    
+}
+
+.titulos{
+    color: rgb(60, 255, 0);
+}
+
+.banner_cupon{
+    margin: 0rem 0rem 0rem 0rem ;
+    
+}
+.banner_cupon{
+    margin: 0rem;
+    
+}
+
+
+div .list{
+    background-color: red;
+    list-style-type: none; /* Remove os marcadores padrão da lista */
+    margin: 0; /* Remove as margens padrão da lista */
+    padding: 0; /* Remove os preenchimentos padrão da lista */
+    display: flex; /* Define o elemento como um flex container */
+    justify-content: flex-start; /* Alinha os itens no início do eixo principal (horizontal) */
+    border: solid;
+    border-radius: 30px;
+}
+
+div .list a{
+    margin: 0px 10px 0px 0px;
+}
+
+div .list .itens{
+    margin: 10px; /* Define as margens padrão da lista para 10px*/
+    padding: 15px 1px;
+    display: inline-block; /* Exibe os itens da lista em linha */
+    border: solid;
+    text-align: center;
+    border-radius: 30px;
+    background-color: lightblue;
+}
+
+div .list .itens img{
+    width: 70%; /* ---------------  Depois tirar pois as imagnes devem ter o tamanho correto desde o inicio ------------*/
+    border-radius: 10px;
+}
+div .list .itens:hover{
+    background-color: goldenrod;
+    color: lightgreen;
+}
+
+/* div .list a div:hover{
+    font-size: 10px;
+} */
