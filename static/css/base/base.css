@@ -188,3 +188,8 @@ div .list .itens:hover{
 /* div .list a div:hover{
     font-size: 10px;
 } */
+
+iframe {
+    width: 100%; /* Define a largura do iframe como 100% do contêiner pai */
+    height: 68px; /* Define a altura do iframe como 500 pixels */
+}
