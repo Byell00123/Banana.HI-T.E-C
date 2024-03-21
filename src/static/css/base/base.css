@@ -1,27 +1,63 @@
-/* Estilos para telas menores que 600px */
-@media (max-width: 600px) {
+/* Estilos para dispositivos com largura máxima de 480 pixels (como smartphones) */
+@media (max-width: 480px){
     body {
-        font-size: 14px; /* Reduz o tamanho da fonte para telas menores */
+        font-size: 10px; /* Reduz o tamanho da fonte para telas menores que 480px */
     }
 }
 
-/* Estilos para telas maiores que 1200px */
-@media (min-width: 1200px) {
+/* Estilos para telas entre 481px e 600px */
+@media (min-width: 481px) and (max-width: 600px) {
     body {
-        font-size: 18px; /* Aumenta o tamanho da fonte para telas maiores */
+        font-size: 12px; /* Reduz o tamanho da fonte para telas entre 481px e 600px */
     }
 }
 
+/* Estilos para telas entre 601px e 800px */
+@media (min-width: 601px) and (max-width: 800px) {
+    body {
+        font-size: 14px; /* Reduz o tamanho da fonte para telas entre 600px e 800px */
+    }
+}
+
+/* Estilos para telas entre 801px e 1000px */
+@media (min-width: 801px) and (max-width: 1000px) {
+    body {
+        font-size: 16px; /* Reduz o tamanho da fonte para telas entre 801px e 1000px */
+    }
+}
+
+/* Estilos para telas entre 1001px e 1200px */
+@media (min-width: 1001px) and (max-width: 1200px) {
+    body {
+        font-size: 18px; /* Reduz o tamanho da fonte para telas entre 1001px e 1200px */
+    }
+}
+
+/* Estilos para telas entre 1201px e 1440px */
+@media (min-width: 1201px) and (max-width: 1440px){
+    body {
+        font-size: 22px; /* Reduz o tamanho da fonte para telas entre 1201px e 1440px */
+    }
+}
+
+/* Estilos para telas maiores que 1441px */
+@media (min-width: 1201px) {
+    body {
+        font-size: 25px; /* Aumenta o tamanho da fonte para telas maiores */
+    }
+}
+
+/* Estilo para imagens */
 img {
     max-width: 100%; /* Garante que as imagens não ultrapassem o tamanho do contêiner pai */
+    height: auto; /* Garante que a altura das imagens seja ajustada automaticamente */
 }
+
 
 /* Define as configurações padrão para o documento HTML */
 body {
     margin: 0px; /* Remove as margens padrão do corpo */
     font-family: Arial, sans-serif; /* Define a fonte padrão */
-    font-size: 16px; /* Tamanho de fonte base */
-    /* background-color: blue; */
 }
 
 /* Estilo para a barra de menu */
@@ -141,11 +177,20 @@ body {
     color: rgb(60, 255, 0);
 }
 
-.banner_cupon{
+.banner {
+    min-width: 30%;
+    max-width: 100%; /* Garante que o contêiner se ajuste ao tamanho da tela */
+    margin: 0 auto; /* Centraliza o contêiner na página */
+    padding: 0px; /* retira um espaçamento interno horizontal e vertical */
+}
+
+/*.banner,*/.teste{
+    background-image: url("/static/img/banners/banner-promocional.png");
     margin: 0rem 0rem 0rem 0rem ;
     
 }
-.banner_cupon{
+
+/*.banner*/.cupon{
     margin: 0rem;
     
 }
