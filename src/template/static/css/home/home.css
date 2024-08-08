@@ -1,72 +1,78 @@
-@import url(../base/base.css);
+@import url(../base/base.css); /* Importa estilos base */
 
-.titulos{
-    color: rgb(60, 255, 0);
+/* Estilo para os títulos */
+.titulos {
+    color: rgb(60, 255, 0); /* Define a cor do texto dos títulos como verde neon */
+}
+
+/* Estilo para o banner */
+.banner {
+    min-width: 30%; /* Define a largura mínima do banner como 30% do contêiner pai */
+    margin: 0 auto; /* Centraliza o banner horizontalmente */
+    padding: 0px; /* Remove o preenchimento interno do banner */
 }
 
 .banner {
-    min-width: 30%;
-    margin: 0 auto; /* Centraliza o contêiner na página */
-    padding: 0px; /* retira um espaçamento interno horizontal e vertical */
+    margin: 10px 0px; /* Adiciona uma margem de 10px em cima e embaixo */
 }
 
-.banner{
-    margin: 10px 0px;
-}
-
-div .list{
-    background-color: red;
+/* Estilo para a lista dentro de um div */
+div .list {
+    background-color: red; /* Define a cor de fundo da lista como vermelho */
     list-style-type: none; /* Remove os marcadores padrão da lista */
     margin: 0; /* Remove as margens padrão da lista */
     padding: 0; /* Remove os preenchimentos padrão da lista */
     display: flex; /* Define o elemento como um flex container */
     justify-content: flex-start; /* Alinha os itens no início do eixo principal (horizontal) */
-    border: solid;
-    border-radius: 30px;
-    overflow: auto;
+    border: solid; /* Adiciona uma borda sólida */
+    border-radius: 30px; /* Adiciona bordas arredondadas */
+    overflow: auto; /* Adiciona uma barra de rolagem se o conteúdo exceder o tamanho do contêiner */
 }
 
-div .list .list-itens{
-    display: grid;
-    margin: 0px 10px 0px 0px;
-    text-decoration: none;
+/* Estilo para os itens da lista */
+div .list .list-itens {
+    display: grid; /* Define o elemento como um grid container */
+    margin: 0px 10px 0px 0px; /* Adiciona uma margem de 10px à direita */
+    text-decoration: none; /* Remove a decoração de sublinhado */
 }
 
-div .list .list-itens .itens{
-    width: 300px;
-    height: 300px;
-    margin: 10px; /* Define as margens padrão da lista para 10px*/
-    padding-top: 8px;
-    display: inline-block; /* Exibe os itens da lista em linha */
-    border: solid;
-    text-align: center;
-    border-radius: 30px;
-    background-color: lightblue;
+/* Estilo para cada item da lista */
+div .list .list-itens .itens {
+    width: 300px; /* Define a largura dos itens como 300px */
+    height: 300px; /* Define a altura dos itens como 300px */
+    margin: 10px; /* Adiciona uma margem de 10px ao redor dos itens */
+    padding-top: 8px; /* Adiciona um preenchimento interno de 8px no topo */
+    display: inline-block; /* Exibe os itens em linha */
+    border: solid; /* Adiciona uma borda sólida */
+    text-align: center; /* Centraliza o texto dos itens */
+    border-radius: 30px; /* Adiciona bordas arredondadas */
+    background-color: lightblue; /* Define a cor de fundo dos itens como azul claro */
 }
 
-
-div .list .list-itens .itens:hover{
-    background-color: goldenrod;
-    color: lightgreen;
+/* Estilo para os itens da lista quando o mouse passa por cima */
+div .list .list-itens .itens:hover {
+    background-color: goldenrod; /* Altera a cor de fundo para goldenrod quando o mouse passa por cima */
+    color: lightgreen; /* Altera a cor do texto para verde claro quando o mouse passa por cima */
 }
 
-div .list .list-itens .itens .iten-img{
-    margin: 0;
-    padding: 0;
-    border-radius: 10px;
+/* Estilo para as imagens dentro dos itens da lista */
+div .list .list-itens .itens .iten-img {
+    margin: 0; /* Remove as margens padrão */
+    padding: 0; /* Remove os preenchimentos padrão */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
 }
 
+/* Estilo para os textos dentro dos itens da lista */
 div .list .list-itens .itens .iten-txt {
-    margin: 0px 0px 0px 15px;
-    font-size: 16px;
-    text-align: left;
+    margin: 0px 0px 0px 15px; /* Adiciona uma margem de 15px à esquerda */
+    font-size: 16px; /* Define o tamanho da fonte como 16px */
+    text-align: left; /* Alinha o texto à esquerda */
     overflow: hidden; /* Oculta o texto que excede o contêiner */
     display: -webkit-box; /* Define o contêiner flexível de layout em bloco específico do WebKit */
     -webkit-box-orient: vertical; /* Define a orientação do contêiner flexível para ser vertical */
-    -webkit-line-clamp: 4; /* Limita a exibição a 5 linhas de texto */
+    -webkit-line-clamp: 4; /* Limita a exibição a 4 linhas de texto */
     /* Comentário explicativo:
-        O uso de `-webkit-line-clamp` é específico para navegadores baseados em WebKit, como Chrome e Safari.
+       O uso de `-webkit-line-clamp` é específico para navegadores baseados em WebKit, como Chrome e Safari.
        Não há uma propriedade `line-clamp` padrão no CSS, portanto, usamos o prefixo `-webkit` para compatibilidade. */
     white-space: normal; /* Permite que o texto quebre em várias linhas */
 }
-

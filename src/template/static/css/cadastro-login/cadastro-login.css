@@ -1,95 +1,83 @@
-@import url(../base/base.css);
+@import url(../base/base.css); /* Importa estilos base */
 
-.conteudo .formulario{
-    width: 80vh;
-    margin: 30px auto;
-    background-color: #0a0a23;
-    border: solid;
-    padding: 20px;
-    border-radius: 10px;
+/* Estilo para o contêiner do formulário */
+.conteudo .formulario {
+    width: 80vh; /* Define a largura do formulário */
+    margin: 30px auto; /* Adiciona uma margem de 30px em cima e embaixo e centraliza horizontalmente */
+    background-color: #0a0a23; /* Define a cor de fundo como um tom escuro */
+    border: solid; /* Adiciona uma borda sólida */
+    padding: 20px; /* Adiciona um preenchimento interno de 20px */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
 }
 
-.conteudo .formulario .login-form{
-    padding: 0 20px;
-    background-color: #0a0a23;
-    border-color: #fff;
-    border: solid;
-    border-radius: 10px;
+/* Estilo comum para formulários de login, cadastro e decisão */
+.conteudo .formulario .login-form,
+.conteudo .formulario .cadastro-form, .conteudo .formulario .decisao-form {
+    padding: 0 20px; /* Adiciona preenchimento interno apenas nas laterais */
+    background-color: #0a0a23; /* Define a cor de fundo como um tom escuro */
+    border-color: #fff; /* Define a cor da borda como branco */
+    border: solid; /* Adiciona uma borda sólida */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
 }
 
-.conteudo .formulario .cadastro-form{
-    padding: 0 20px;
-    background-color: #0a0a23;
-    border-color: #fff;
-    border: solid;
-    border-radius: 10px;
+/* Estilo comum para os grupos de formulários de login, cadastro e decisão */
+.conteudo .formulario .login-form .form-group,
+.conteudo .formulario .cadastro-form .form-group, .conteudo .formulario .decisao-form .form-group {
+    margin-bottom: 15px; /* Adiciona uma margem inferior de 15px */
 }
 
-.conteudo .formulario .login-form .form-group {
-    margin-bottom: 15px;
+/* Estilo comum para links auxiliares */
+.conteudo .formulario .login-form .form-group .links-auxiliares .link-auxiliar,
+.conteudo .formulario .cadastro-form .form-group .links-auxiliares .link-auxiliar,
+.conteudo .formulario .decisao-form .form-group .links-auxiliares .link-auxiliar {
+    padding: 4px; /* Adiciona um preenchimento interno de 4px */
+    text-decoration: none; /* Remove a decoração de sublinhado */
+    border: 2px solid #ff00ff; /* Adiciona uma borda rosa neon */
+    box-shadow: 0 0 10px #ff007f; /* Adiciona uma sombra magenta neon */
+    background-color: #8a2be2; /* Define a cor de fundo como roxo */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+    color: #ffffff; /* Define a cor do texto como branco */
 }
 
-.conteudo .formulario .cadastro-form .form-group {
-    margin-bottom: 15px;
+/* Estilo comum para links auxiliares quando o mouse passa por cima */
+.conteudo .formulario .login-form .form-group .links-auxiliares .link-auxiliar:hover,
+.conteudo .formulario .cadastro-form .form-group .links-auxiliares .link-auxiliar:hover,
+.conteudo .formulario .decisao-form .form-group .links-auxiliares .link-auxiliar:hover {
+    background-color: #ff00ff; /* Altera a cor de fundo para rosa neon quando o mouse passa por cima */
+    box-shadow: 0 0 15px #ff007f; /* Adiciona uma sombra magenta neon mais intensa */
 }
 
-.conteudo .formulario .login-form .form-group .links-auxiliares .link-auxiliar {
-    padding: 4px;
-    text-decoration: none;
-    border: 2px solid #ff00ff; /* Borda Rosa Neon */
-    box-shadow: 0 0 10px #ff007f; /* Sombra Magenta Neon */
-    background-color: #8a2be2;
-    border-radius: 10px;
-    text-align: center;
-    color: #ffffff;
-}
-
-.conteudo .formulario .cadastro-form .form-group .links-auxiliares .link-auxiliar {
-    padding: 4px;
-    text-decoration: none;
-    border: 2px solid #ff00ff; /* Borda Rosa Neon */
-    box-shadow: 0 0 10px #ff007f; /* Sombra Magenta Neon */
-    background-color: #8a2be2;
-    border-radius: 10px;
-    text-align: center;
-    color: #ffffff;
-}
-
-.conteudo .formulario .login-form .form-group .links-auxiliares .link-auxiliar:hover{
-    background-color: #ff00ff; /* Hover Rosa Neon */
-    box-shadow: 0 0 15px #ff007f; /* Sombra Magenta Neon */
-}
-
-.conteudo .formulario .cadastro-form .form-group .links-auxiliares .link-auxiliar:hover{
-    background-color: #ff00ff; /* Hover Rosa Neon */
-    box-shadow: 0 0 15px #ff007f; /* Sombra Magenta Neon */
-}
-
+/* Estilo para os textos de informação */
 .texto-informacao {
-    display: block;
-    margin-bottom: 5px;
+    display: block; /* Exibe como bloco */
+    margin-bottom: 5px; /* Adiciona uma margem inferior de 5px */
 }
 
+/* Estilo para campos de entrada */
 #nome, #nascimento, #cpf, #username, #telefone, #email, #password1, #password2, #password {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    padding: 10px; /* Adiciona um preenchimento interno de 10px */
+    border: 1px solid #ccc; /* Define uma borda cinza clara */
+    border-radius: 3px; /* Adiciona bordas arredondadas */
     box-sizing: border-box; /* Inclui padding e borda na largura total */
     width: 100%; /* Ocupa toda a largura disponível do .form-group */
 }
 
+/* Estilo para o botão do formulário */
 .botao-form {
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #0016b3;
-    color: #fff;
-    border: 1px solid #007bff;
-    border-radius: 3px;
-    cursor: pointer;
-    box-shadow: 0 0 10px #00bfff; /* Sombra Azul Neon */
-
+    width: 40vh;
+    margin: 16px; /* Adiciona uma margem de 16px */
+    padding: 10px 20px; /* Adiciona um preenchimento interno de 10px em cima e embaixo e 20px nas laterais */
+    background-color: #0016b3; /* Define a cor de fundo como azul escuro */
+    color: #fff; /* Define a cor do texto como branco */
+    border: 1px solid #007bff; /* Define a cor da borda como azul */
+    border-radius: 3px; /* Adiciona bordas arredondadas */
+    cursor: pointer; /* Altera o cursor para uma mão quando passa por cima do botão */
+    box-shadow: 0 0 10px #00bfff; /* Adiciona uma sombra azul neon */
+    font-size: large;
 }
 
+/* Estilo para o botão do formulário quando o mouse passa por cima */
 .botao-form:hover {
-    background-color: #007bff;
+    background-color: #007bff; /* Altera a cor de fundo para azul quando o mouse passa por cima */
 }

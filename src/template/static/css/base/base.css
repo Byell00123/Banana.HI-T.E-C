@@ -62,31 +62,27 @@ img {
 
 
 /* Define as configurações padrão para o documento HTML */
-
-*{
-    box-sizing: border-box;
+* {
+    box-sizing: border-box; /* Faz com que padding e border sejam incluídos na largura e altura totais dos elementos */
 }
 
 body {
-    display: flex;/* Usa um modelo de layout flexível para o corpo */
+    display: flex; /* Usa um modelo de layout flexível para o corpo */
     flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
     min-height: 100vh; /* Garante que o corpo ocupe pelo menos toda a altura da janela de visualização */
-    margin: 0px; /* Remove as margens padrão do corpo */
-    padding: 0px;
+    margin: 0; /* Remove as margens padrão do corpo */
+    padding: 0; /* Remove os preenchimentos padrão do corpo */
     font-family: Arial, sans-serif; /* Define a fonte padrão */
-    background-color: #1a1a1a; /* Fundo escuro */
-    color: #ffffff; /* Texto branco */
+    background-color: #1a1a1a; /* Define a cor de fundo do corpo como um tom escuro */
+    color: #ffffff; /* Define a cor do texto como branco */
 }
-
-
 
 /* Estilo para a barra de menu */
 .navbar {
-    margin: 0px; /* Remove as margens padrão da navbar */
-    background-color: #000; /* Define a cor de fundo da barra de menu */
-    padding: 0.3rem 0.0rem; /* Adiciona um preenchimento interno(entre a box do menu e a box dos
-     itens(hyperlinks) do menu) de 0.3rem(vertical) e 0.0rem(horizontal) */
-    border-bottom: 2px solid #00ffff;
+    margin: 0; /* Remove as margens padrão da navbar */
+    background-color: #000; /* Define a cor de fundo da barra de menu como preto */
+    padding: 0.3rem 0; /* Adiciona um preenchimento interno vertical de 0.3rem e nenhum horizontal */
+    border-bottom: 2px solid #00ffff; /* Adiciona uma borda inferior de 2px com cor ciano */
 }
 
 /* Estilo para a lista não ordenada dentro da barra de menu */
@@ -98,41 +94,34 @@ body {
     justify-content: flex-start; /* Alinha os itens no início do eixo principal (horizontal) */
 }
 
-.navbar .navbar-list #menu{
-    padding-left: 0.6rem;
+.navbar .navbar-list #menu {
+    padding-left: 0.6rem; /* Adiciona um preenchimento à esquerda de 0.6rem */
 }
 
 /* Estilo para cada item da lista dentro da barra de menu */
 .navbar-list li {
-    margin: 0px; /* Remove as margens padrão da lista */
+    margin: 0; /* Remove as margens padrão dos itens da lista */
     display: inline-block; /* Exibe os itens da lista em linha */
 }
 
-/**/
-.navbar-list .gambiarra {
-    flex-grow: 1;
+/* Estilo para elementos que crescem automaticamente */
+.navbar-list .gambiarra,
+.gambiarra {
+    flex-grow: 1; /* Permite que o elemento cresça para ocupar o espaço disponível */
 }
 
-/* Estilo para os links dentro dos itens da lista */
-.carrinho, .usuario{
-    margin-right: 0; /* Remove as margens padrão das duas lista */
-    margin-left: auto; /* Permite que as margens esquerdas das duas listas sejam redimensionaveis */
+/* Estilo para os links de carrinho e usuário dentro dos itens da lista */
+.carrinho, .usuario {
+    margin-right: 0; /* Remove a margem direita */
+    margin-left: auto; /* Define a margem esquerda como automática para empurrar os itens para a direita */
 }
 
-/* Estilo para o itena de usuario dentro da lista(navbar) */
-.navbar .navbar-list .usuario a{
-    margin: 0px 4rem 0px 0px;  /* Retirando a margem(espço entre as extremidades da tela e da box
-     dos itens(hyperlinks) do menu) mas adicionando um espaço de 4rem para o lado direito */
+/* Estilo para os links dentro dos itens de usuário na lista */
+.navbar .navbar-list .usuario a,
+.navbar .navbar-list .usuario .tmp {
+    margin: 0 4rem 0 0; /* Define a margem direita como 4rem, remove as outras margens */
     display: inline-block; /* Exibe os itens da lista em linha */
 }
-
-/* #TODO: apagar o tmp depois */
-.navbar .navbar-list .usuario .tmp{
-    margin: 0px;  /* Retirando a margem(espço entre as extremidades da tela e da box
-     dos itens(hyperlinks) do menu) mas adicionando um espaço de 4rem para o lado direito */
-    display: inline-block; /* Exibe os itens da lista em linha */
-}
-
 
 /* Estilo para os links dentro dos itens da lista */
 .navbar-list li a {
@@ -145,7 +134,7 @@ body {
 /* Estilo para os links quando o mouse passa por cima */
 .navbar-list li a:hover {
     background-color: #120052; /* Altera a cor de fundo dos links quando o mouse passa por cima */
-    border-radius: 10px;  /* Adiciona uma borda arredondada ao campo de seleção */
+    border-radius: 10px; /* Adiciona uma borda arredondada ao campo de seleção */
 }
 
 /* Estilo para o botão de pesquisa */
@@ -173,46 +162,42 @@ body {
 
 /* Estilo para o botão de pesquisa quando o mouse passa por cima */
 .navbar-list li.pesquisa button[type="submit"]:hover {
-    background-color: rgb(218,165,32); /* Altera a cor de fundo do botão quando o mouse passa por cima */
+    background-color: rgb(218, 165, 32); /* Altera a cor de fundo do botão quando o mouse passa por cima */
 }
 
 /* Estilo para o campo de entrada de pesquisa */
 .navbar-list li.pesquisa input[type="text"] {
     padding: 10px; /* Adiciona um preenchimento interno de 10px ao campo de entrada */
-    margin: 10px; /* Adiciona uma margem de 10px ao redor do campo de entrada */
-    margin-left: 0px; /* Redimensiona a margem esquerda da parte externa do campo de entrada para 0px(anteriormente 10px)*/
+    margin: 10px 0 10px 0; /* Define margens de 10px em cima e embaixo e remove as margens laterais */
     border: none; /* Remove a borda do campo de entrada */
     border-radius: 5px; /* Adiciona uma borda arredondada ao campo de entrada */
 }
 
-.gambiarra{
-    flex-grow: 1;
-}
-
 /* Estilo para o conteúdo da página */
 .conteudo {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    display: flex; /* Define o elemento como um flex container */
+    flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
+    flex-grow: 1; /* Permite que o elemento cresça para ocupar o espaço disponível */
     padding-left: 20px; /* Adiciona um preenchimento à esquerda de 20px ao conteúdo */
-    padding-top: 5px;
-    box-shadow: inset 0 0 10px #00bfff; /* Sombra interna Azul Neon */
+    padding-top: 5px; /* Adiciona um preenchimento superior de 5px ao conteúdo */
+    box-shadow: inset 0 0 10px #00bfff; /* Adiciona uma sombra interna Azul Neon */
 }
 
 iframe {
     width: 100%; /* Define a largura do iframe como 100% do contêiner pai */
-    height: 80px; /* Define a altura do iframe como 500 pixels */
+    height: 80px; /* Define a altura do iframe como 80 pixels */
 }
 
 /* Estilo do Rodapé */
 footer {
-    background-color: #000; /* Define a cor de fundo do rodapé */
-    color: #fff;/* Define a cor do texto do rodapé */
-    text-align: center;
-    padding: 20px 0;/* Adiciona preenchimento interno ao rodapé */
-    width: 100%;/* Define a largura do rodapé */
-    border-top: 2px solid #00ffff;
+    background-color: #000; /* Define a cor de fundo do rodapé como preto */
+    color: #fff; /* Define a cor do texto do rodapé como branco */
+    text-align: center; /* Alinha o texto do rodapé ao centro */
+    padding: 20px 0; /* Adiciona preenchimento interno ao rodapé */
+    width: 100%; /* Define a largura do rodapé como 100% */
+    border-top: 2px solid #00ffff; /* Adiciona uma borda superior de 2px com cor ciano */
 }
+
 .rodape-container {
     display: flex; /* Usa um modelo de layout flexível para o contêiner do rodapé */
     flex-wrap: wrap; /* Permite que os itens do rodapé sejam quebrados em várias linhas */
