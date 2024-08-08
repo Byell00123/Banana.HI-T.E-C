@@ -34,16 +34,23 @@
 }
 
 /* Estilos para telas entre 1201px e 1440px */
-@media (min-width: 1201px) and (max-width: 1440px){
+@media (min-width: 1201px) and (max-width: 1400px){
     body {
-        font-size: 22px; /* Reduz o tamanho da fonte para telas entre 1201px e 1440px */
+        font-size: 20px; /* Reduz o tamanho da fonte para telas entre 1201px e 1440px */
+    }
+}
+
+/* Estilos para telas entre 1401px e 1600px */
+@media (min-width: 1401px) and (max-width: 1600px){
+    body {
+        font-size: 22px; /* Aumenta o tamanho da fonte para telas maiores */
     }
 }
 
 /* Estilos para telas maiores que 1441px */
-@media (min-width: 1201px) {
+@media (min-width: 1601px) {
     body {
-        font-size: 25px; /* Aumenta o tamanho da fonte para telas maiores */
+        font-size: 24px; /* Aumenta o tamanho da fonte para telas maiores */
     }
 }
 
@@ -55,19 +62,31 @@ img {
 
 
 /* Define as configurações padrão para o documento HTML */
-body {
-    margin: 0px; /* Remove as margens padrão do corpo */
-    font-family: Arial, sans-serif; /* Define a fonte padrão */
+
+*{
+    box-sizing: border-box;
 }
+
+body {
+    display: flex;/* Usa um modelo de layout flexível para o corpo */
+    flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos toda a altura da janela de visualização */
+    margin: 0px; /* Remove as margens padrão do corpo */
+    padding: 0px;
+    font-family: Arial, sans-serif; /* Define a fonte padrão */
+    background-color: #1a1a1a; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+}
+
+
 
 /* Estilo para a barra de menu */
 .navbar {
+    margin: 0px; /* Remove as margens padrão da navbar */
     background-color: #000; /* Define a cor de fundo da barra de menu */
-    width: 100%; /* Define a largura da barra de menu para ocupar quase a largura da janela */
-    padding: 10px 20px; /* Adiciona um preenchimento interno de 20px aos itens dentro da navbar */
     padding: 0.3rem 0.0rem; /* Adiciona um preenchimento interno(entre a box do menu e a box dos
      itens(hyperlinks) do menu) de 0.3rem(vertical) e 0.0rem(horizontal) */
-    margin: 0px; /* Remove as margens padrão da navbar */
+    border-bottom: 2px solid #00ffff;
 }
 
 /* Estilo para a lista não ordenada dentro da barra de menu */
@@ -95,7 +114,7 @@ body {
 }
 
 /* Estilo para os links dentro dos itens da lista */
-.carrinho,.usuario{
+.carrinho, .usuario{
     margin-right: 0; /* Remove as margens padrão das duas lista */
     margin-left: auto; /* Permite que as margens esquerdas das duas listas sejam redimensionaveis */
 }
@@ -106,6 +125,14 @@ body {
      dos itens(hyperlinks) do menu) mas adicionando um espaço de 4rem para o lado direito */
     display: inline-block; /* Exibe os itens da lista em linha */
 }
+
+/* #TODO: apagar o tmp depois */
+.navbar .navbar-list .usuario .tmp{
+    margin: 0px;  /* Retirando a margem(espço entre as extremidades da tela e da box
+     dos itens(hyperlinks) do menu) mas adicionando um espaço de 4rem para o lado direito */
+    display: inline-block; /* Exibe os itens da lista em linha */
+}
+
 
 /* Estilo para os links dentro dos itens da lista */
 .navbar-list li a {
@@ -158,83 +185,63 @@ body {
     border-radius: 5px; /* Adiciona uma borda arredondada ao campo de entrada */
 }
 
-.conteudo .gambiarra{
+.gambiarra{
     flex-grow: 1;
 }
 
 /* Estilo para o conteúdo da página */
 .conteudo {
-    /*padding-top: 0.051em; 
-    /*padding-left: 20px; /* Adiciona um preenchimento à esquerda de 20px ao conteúdo */
-    background-color: grey;
-    /*margin: 0.051em 2em 0.0em 2em; */
-    /* margin: 0.051em auto 0.0em auto; */
-    
-    
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-left: 20px; /* Adiciona um preenchimento à esquerda de 20px ao conteúdo */
+    padding-top: 5px;
+    box-shadow: inset 0 0 10px #00bfff; /* Sombra interna Azul Neon */
 }
-
-.titulos{
-    color: rgb(60, 255, 0);
-}
-
-.banner {
-    min-width: 30%;
-    max-width: 100%; /* Garante que o contêiner se ajuste ao tamanho da tela */
-    margin: 0 auto; /* Centraliza o contêiner na página */
-    padding: 0px; /* retira um espaçamento interno horizontal e vertical */
-}
-
-/*.banner,*/.teste{
-    background-image: url("/static/img/banners/banner-promocional.png");
-    margin: 0rem 0rem 0rem 0rem ;
-    
-}
-
-/*.banner*/.cupon{
-    margin: 0rem;
-    
-}
-
-
-div .list{
-    background-color: red;
-    list-style-type: none; /* Remove os marcadores padrão da lista */
-    margin: 0; /* Remove as margens padrão da lista */
-    padding: 0; /* Remove os preenchimentos padrão da lista */
-    display: flex; /* Define o elemento como um flex container */
-    justify-content: flex-start; /* Alinha os itens no início do eixo principal (horizontal) */
-    border: solid;
-    border-radius: 30px;
-}
-
-div .list a{
-    margin: 0px 10px 0px 0px;
-}
-
-div .list .itens{
-    margin: 10px; /* Define as margens padrão da lista para 10px*/
-    padding: 15px 1px;
-    display: inline-block; /* Exibe os itens da lista em linha */
-    border: solid;
-    text-align: center;
-    border-radius: 30px;
-    background-color: lightblue;
-}
-
-div .list .itens img{
-    width: 70%; /* ---------------  Depois tirar pois as imagnes devem ter o tamanho correto desde o inicio ------------*/
-    border-radius: 10px;
-}
-div .list .itens:hover{
-    background-color: goldenrod;
-    color: lightgreen;
-}
-
-/* div .list a div:hover{
-    font-size: 10px;
-} */
 
 iframe {
     width: 100%; /* Define a largura do iframe como 100% do contêiner pai */
-    height: 68px; /* Define a altura do iframe como 500 pixels */
+    height: 80px; /* Define a altura do iframe como 500 pixels */
+}
+
+/* Estilo do Rodapé */
+footer {
+    background-color: #000; /* Define a cor de fundo do rodapé */
+    color: #fff;/* Define a cor do texto do rodapé */
+    text-align: center;
+    padding: 20px 0;/* Adiciona preenchimento interno ao rodapé */
+    width: 100%;/* Define a largura do rodapé */
+    border-top: 2px solid #00ffff;
+}
+.rodape-container {
+    display: flex; /* Usa um modelo de layout flexível para o contêiner do rodapé */
+    flex-wrap: wrap; /* Permite que os itens do rodapé sejam quebrados em várias linhas */
+    justify-content: space-around; /* Distribui uniformemente os itens do rodapé com espaçamento em torno deles */
+    max-width: 100%; /* Define a largura máxima do contêiner do rodapé */
+}
+
+.rodape-item {
+    flex: 1 1 250px; /* Faz os itens do rodapé flexíveis */
+    margin: 0 10px; /* Define a margem dos itens do rodapé */
+    max-width: 100%; /* Define a largura máxima dos itens do rodapé */
+}
+
+.rodape-item .titulo4 {
+    font-size: 16px; /* Define o tamanho da fonte do título */
+    margin-bottom: 10px; /* Define a margem inferior do título */
+}
+
+.rodape-item .rodape-list {
+    list-style: none; /* Remove os marcadores padrão da lista */
+    padding: 0; /* Remove o preenchimento da lista */
+}
+
+.rodape-item .rodape-list li {
+    font-size: 12px; /* Define o tamanho da fonte dos itens da lista */
+    margin-bottom: 5px; /* Define a margem inferior dos itens da lista */
+}
+
+.rodape-item .rodape-text {
+    margin-top: 0; /* Define a margem superior do texto do rodapé */
+    font-size: 12px; /* Define o tamanho da fonte do texto do rodapé */
 }

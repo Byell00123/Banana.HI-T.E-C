@@ -1,0 +1,72 @@
+@import url(../base/base.css);
+
+.titulos{
+    color: rgb(60, 255, 0);
+}
+
+.banner {
+    min-width: 30%;
+    margin: 0 auto; /* Centraliza o contêiner na página */
+    padding: 0px; /* retira um espaçamento interno horizontal e vertical */
+}
+
+.banner{
+    margin: 10px 0px;
+}
+
+div .list{
+    background-color: red;
+    list-style-type: none; /* Remove os marcadores padrão da lista */
+    margin: 0; /* Remove as margens padrão da lista */
+    padding: 0; /* Remove os preenchimentos padrão da lista */
+    display: flex; /* Define o elemento como um flex container */
+    justify-content: flex-start; /* Alinha os itens no início do eixo principal (horizontal) */
+    border: solid;
+    border-radius: 30px;
+    overflow: auto;
+}
+
+div .list .list-itens{
+    display: grid;
+    margin: 0px 10px 0px 0px;
+    text-decoration: none;
+}
+
+div .list .list-itens .itens{
+    width: 300px;
+    height: 300px;
+    margin: 10px; /* Define as margens padrão da lista para 10px*/
+    padding-top: 8px;
+    display: inline-block; /* Exibe os itens da lista em linha */
+    border: solid;
+    text-align: center;
+    border-radius: 30px;
+    background-color: lightblue;
+}
+
+
+div .list .list-itens .itens:hover{
+    background-color: goldenrod;
+    color: lightgreen;
+}
+
+div .list .list-itens .itens .iten-img{
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+}
+
+div .list .list-itens .itens .iten-txt {
+    margin: 0px 0px 0px 15px;
+    font-size: 16px;
+    text-align: left;
+    overflow: hidden; /* Oculta o texto que excede o contêiner */
+    display: -webkit-box; /* Define o contêiner flexível de layout em bloco específico do WebKit */
+    -webkit-box-orient: vertical; /* Define a orientação do contêiner flexível para ser vertical */
+    -webkit-line-clamp: 4; /* Limita a exibição a 5 linhas de texto */
+    /* Comentário explicativo:
+        O uso de `-webkit-line-clamp` é específico para navegadores baseados em WebKit, como Chrome e Safari.
+       Não há uma propriedade `line-clamp` padrão no CSS, portanto, usamos o prefixo `-webkit` para compatibilidade. */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+}
+

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="div-nsc">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-list">
+                <!-- Botão de menu -->
+                <div class="lista menu" onclick="toggleSidebar()">
+                    <div class="menu-btn">
+                        <div class="menu-icon">
+                            <img class="menu-img" src="botao-de-menu-circular-azul-32px.png" alt="Icone do botão de menu">
+                        </div>
+                        <div class="menu-texto">Menu</div>
+                    </div>
+                </div>
+                <div class="lista"><a href="#">Página Inicial</a></div>
+                <div class="lista"><a href="#">Sobre</a></div>
+                <div class="lista">
+                    <a href="#">Serviços</a>
+                    <!-- Submenu -->
+                    <div class="submenu">
+                        <div><a href="#">Serviço 1</a></div>
+                        <div><a href="#">Serviço 2</a></div>
+                        <div><a href="#">Serviço 3</a></div>
+                    </div>
+                    <div class="submenu">
+                        <div><a href="#">Serviço 4</a></div>
+                        <div><a href="#">Serviço 5</a></div>
+                        <div><a href="#">Serviço 6</a></div>
+                    </div>
+                </div>
+                <div class="lista"><a href="#">Contato</a></div>
+                <div class="lista">
+                    <a href="#">Produtos</a>
+                    <!-- Submenu -->
+                    <div class="submenu">
+                        <div><a href="#">Produto 1</a></div>
+                        <div><a href="#">Produto 2</a></div>
+                        <div><a href="#">Produto 3</a></div>
+                    </div>
+                </div>
+                <div class="lista">
+                    <a href="#">Problemas</a>
+                    <!-- Submenu -->
+                    <div class="submenu">
+                        <div><a href="#">problema 1</a></div>
+                        <div><a href="#">problema 2</a></div>
+                        <div><a href="#">problema 3</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="div-sc">
+            <!-- Sidebar -->
+            <div class="sidebar" id="sidebar">
+                <div class="toggle-btn" onclick="toggleSidebar()">
+                    <div class="arrow"></div>
+                </div>
+                <ul>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                    <li><a href="#">Item 3</a></li>
+                    <li><a href="#">Item 4</a></li>
+                </ul>
+            </div>
+            
+            <!-- Conteúdo -->
+            <div class="conteudo">
+                <!-- Conteúdo do site aqui -->
+                <img src="botao-de-menu-azul.png" alt="">
+                <img src="botao-de-menu-circular-azul.png" alt="">
+                <img src="botao-de-menu-circular-azul-24px.png" alt="">
+                <img src="botao-de-menu-com-bordas-pretas-vazio.png" alt="">
+                <img src="botao-de-menu-preto.png" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Accusantium dolorem assumenda nulla. Blanditiis laborum iure iste facilis culpa earum dolores saepe harum nobis?
+                    Sunt consequuntur unde optio vel eaque. Reiciendis.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Accusantium dolorem assumenda nulla. Blanditiis laborum iure iste facilis culpa earum dolores saepe harum nobis?
+                    Sunt consequuntur unde optio vel eaque. Reiciendis.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Rodapé -->
+    <footer>
+        <div class="rodape-container">
+            <div class="rodape-item">
+                <h4 class="titulo4">Sobre Nós</h4>
+                <p class="rodape-text">Informações sobre nossa empresa e equipe.</p>
+            </div>
+            <div class="rodape-item">
+                <h4 class="titulo4">Produtos</h4>
+                <ul class="rodape-list">
+                    <li>Produto 1</li>
+                    <li>Produto 2</li>
+                    <li>Produto 3</li>
+                </ul>
+            </div>
+            <div class="rodape-item">
+                <h4 class="titulo4">Contato</h4>
+                <ul class="rodape-list">
+                    <li>Endereço: Rua XYZ, nº 123</li>
+                    <li>Telefone: (XX) XXXX-XXXX</li>
+                    <li>Email: contato@exemplo.com</li>
+                </ul>
+            </div>
+            <div class="rodape-item">
+                <h4 class="titulo4">Redes Sociais</h4>
+                <ul class="rodape-list">
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+            <div class="rodape-item">
+                <h4 class="titulo4">Termos e Condições</h4>
+                <p class="rodape-text">Leia nossos termos e condições de uso.</p>
+            </div>
+            <div class="rodape-item">
+                <h4 class="titulo4">Política de Privacidade</h4>
+                <p class="rodape-text">Leia nossa política de privacidade.</p>
+            </div>
+            <div class="rodape-item">
+                <h4 class="titulo4">Ajuda</h4>
+                <p class="rodape-text">Encontre respostas para perguntas frequentes.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js.js"></script>
+    
+</body>
+</html>

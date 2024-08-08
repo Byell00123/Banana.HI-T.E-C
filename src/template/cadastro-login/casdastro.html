@@ -13,77 +13,104 @@
     <iframe src="/src/template/base/base.html" frameborder="0"></iframe>
 
     <div class="conteudo">
-
         <div class="formulario">
-            
             <form action="#" class="cadastro-form">
                 <h2>Cadastro</h2>
                 <div class="form-group">
                     <label for="nome"class="texto-informacao">Nome completo:</label>
                     <input type="text" id="nome" name="nome" placeholder="exemplo: João Eduardo Jacoby de Oliveira">
                 </div>
-
                 <div class="form-group">
                     <label for="gênero"class="texto-informacao">Gênero:</label>
                     <input type="radio" class="gênero" name="gênero" value="F">
                     <span>Feminino</span>
                     <input type="radio" class="gênero" name="gênero" value="M">
                     <span>Masculino</span>
-                    <input type="radio" class="gênero" name="gênero" value="Helicopter">
+                    <input type="radio" class="gênero" name="gênero" value="H">
                     <span>Helicopter</span>
                 </div>
-
                 <div class="form-group">
                     <label for="nascimento"class="texto-informacao">Data de Nascimento:</label>
                     <input type="text" id="nascimento" name="nascimento" placeholder="exemplo: 01/01/0001" type="tel" maxlength="10">
                 </div>
-
                 <div class="form-group">
                     <label for="cpf"class="texto-informacao">CPF:</label>
                     <input type="tel" id="cpf" name="cpf" placeholder="exemplo: 000.000.000-00">
                 </div>
-
                 <div class="form-group">
                     <label for="telefone"class="texto-informacao">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone" placeholder="exemplo: 000.000.000-00">
+                    <input type="tel" id="telefone" name="telefone" placeholder="exemplo: (00) 90000-0000">
                 </div>
-
                 <div class="form-group">
                     <label for="username"class="texto-informacao">Usuário:</label>
                     <input type="text" id="username" name="username" placeholder="exemplo: Joãozinho123">
                 </div>
-
                 <div class="form-group">
                     <label for="email"class="texto-informacao">E-mail:</label>
                     <input type="email" id="email" name="email" placeholder="exemplo: joãozinho123@gmail.com">
                 </div>
-
                 <div class="form-group">
                     <label for="password"class="texto-informacao">Senha:</label>
-                    <input type="password" id="password1" name="password" placeholder="Digite a senha">
+                    <input type="password" id="password1" name="password1" placeholder="Digite a senha">
                 </div>
-
                 <div class="form-group">
                     <label for="password"class="texto-informacao">Senha(novamente):</label>
-                    <input type="password" id="password2" name="password" placeholder="Digite a senha(novamente)">
+                    <input type="password" id="password2" name="password2" placeholder="Digite a senha(novamente)">
                 </div>
-
-                <div class="div-link-auxiliar">
+                <div class="form-group">
                     <div class="links-auxiliares">
-                        <a href="#" class="link-auxiliar cor-do-link-auxiliar">Esqueceu sua senha?</a>
-                    </div>
-                    <div class="links-auxiliares">
-                        <a href="#" class="link-auxiliar cor-do-link-auxiliar">Ainda não tem uma conta?</a>
+                        <a class="link-auxiliar" href="http://127.0.0.1:5500/src/template/cadastro-login/login.html" target="_blank">Ja tenho uma conta</a>
                     </div>
                 </div>
-
                 <button type="submit" class="botao-form">Cadastrar</button>
             </form>
-
         </div>
-
     </div>
 
+    <footer>
+        <div class="rodape-container">
+            <div class="rodape-item">
+                <h4 class="titulo4">Sobre Nós</h4>
+                <p class="rodape-text">Informações sobre nossa empresa e equipe.</p>
+            </div>
+            <div class="rodape-item">
+                <h4 class="titulo4">Produtos</h4>
+                <ul class="rodape-list">
+                    <li>Produto 1</li>
+                    <li>Produto 2</li>
+                    <li>Produto 3</li>
+                </ul>
+            </div>
+            <div class="rodape-item">
+                <h4 class="titulo4">Contato</h4>
+                <ul class="rodape-list">
+                <li>Endereço: Rua XYZ, nº 123</li>
+                <li>Telefone: (XX) XXXX-XXXX</li>
+                <li>Email: contato@exemplo.com</li>
+                </ul>
+            </div>
+            <div class="rodape-item">
+                <h4 class="titulo4">Redes Sociais</h4>
+                <ul class="rodape-list">
+                <li>Facebook</li>
+                <li>Twitter</li>
+                <li>Instagram</li>
+                </ul>
+            </div>
+            <div class="rodape-item">
+                <h4 class="titulo4">Termos e Condições</h4>
+                <p class="rodape-text">Leia nossos termos e condições de uso.</p>
+            </div>
+            <div class="rodape-item">
+                <h4 class="titulo4">Política de Privacidade</h4>
+                <p class="rodape-text">Leia nossa política de privacidade.</p>
+            </div>
+            <div class="rodape-item">
+                <h4 class="titulo4">Ajuda</h4>
+                <p class="rodape-text">Encontre respostas para perguntas frequentes.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

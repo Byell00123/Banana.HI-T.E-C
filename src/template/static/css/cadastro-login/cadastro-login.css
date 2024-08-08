@@ -1,34 +1,68 @@
-.conteudo{
-    background-color: white;
-    
-}
+@import url(../base/base.css);
 
-.formulario{
-    /* depois tem uqe tentar dar um tamnho para a caixa que esta ciano */
-    background-color: darkcyan;
+.conteudo .formulario{
+    width: 80vh;
+    margin: 30px auto;
+    background-color: #0a0a23;
+    border: solid;
     padding: 20px;
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    border-radius: 10px;
 }
 
-.cadastro-form, .login-form{
-    width: 50rem;
-    background-color: red;
-    text-align: center; /* Centraliza horizontalmente */
+.conteudo .formulario .login-form{
+    padding: 0 20px;
+    background-color: #0a0a23;
+    border-color: #fff;
+    border: solid;
+    border-radius: 10px;
 }
 
-/* .cadastro-form .div-link-auxiliar .links-auxiliares .link-auxiliar {
-    color: green;
-} */
-
-.cor-do-link-auxiliar{
-    color: green;
+.conteudo .formulario .cadastro-form{
+    padding: 0 20px;
+    background-color: #0a0a23;
+    border-color: #fff;
+    border: solid;
+    border-radius: 10px;
 }
 
-.form-group {
+.conteudo .formulario .login-form .form-group {
     margin-bottom: 15px;
-    
+}
+
+.conteudo .formulario .cadastro-form .form-group {
+    margin-bottom: 15px;
+}
+
+.conteudo .formulario .login-form .form-group .links-auxiliares .link-auxiliar {
+    padding: 4px;
+    text-decoration: none;
+    border: 2px solid #ff00ff; /* Borda Rosa Neon */
+    box-shadow: 0 0 10px #ff007f; /* Sombra Magenta Neon */
+    background-color: #8a2be2;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.conteudo .formulario .cadastro-form .form-group .links-auxiliares .link-auxiliar {
+    padding: 4px;
+    text-decoration: none;
+    border: 2px solid #ff00ff; /* Borda Rosa Neon */
+    box-shadow: 0 0 10px #ff007f; /* Sombra Magenta Neon */
+    background-color: #8a2be2;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.conteudo .formulario .login-form .form-group .links-auxiliares .link-auxiliar:hover{
+    background-color: #ff00ff; /* Hover Rosa Neon */
+    box-shadow: 0 0 15px #ff007f; /* Sombra Magenta Neon */
+}
+
+.conteudo .formulario .cadastro-form .form-group .links-auxiliares .link-auxiliar:hover{
+    background-color: #ff00ff; /* Hover Rosa Neon */
+    box-shadow: 0 0 15px #ff007f; /* Sombra Magenta Neon */
 }
 
 .texto-informacao {
@@ -47,13 +81,15 @@
 .botao-form {
     margin: 10px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #0016b3;
     color: #fff;
-    border: none;
+    border: 1px solid #007bff;
     border-radius: 3px;
     cursor: pointer;
+    box-shadow: 0 0 10px #00bfff; /* Sombra Azul Neon */
+
 }
 
 .botao-form:hover {
-    background-color: #0056b3;
+    background-color: #007bff;
 }

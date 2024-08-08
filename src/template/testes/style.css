@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+}
+
+.div-nsc {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 50px; /* Ajuste para a altura da navbar */
+    width: 15%;
+    height: calc(100vh - 50px); /* Ajuste para a altura da navbar */
+    background-color: #2a2a2a;
+    transition: width 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #00ffff; /* Ciano Neon */
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    color: #ff00ff; /* Rosa Neon */
+}
+
+.conteudo {
+    margin-left: 15%; /* Espaço para a sidebar */
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+footer {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h4 {
+    color: #00ffff; /* Ciano Neon */
+}
+
+a {
+    color: #00ffff; /* Ciano Neon */
+}
+
+a:hover {
+    color: #ff00ff; /* Rosa Neon */
+}
+
+.toggle-btn .arrow::before {
+    content: '▶'; /* Seta para a direita */
+}
