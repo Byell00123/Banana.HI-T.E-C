@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banana.Hi-T.E-C</title>
-    <link rel="shortcut icon" href="/src/template/static/icon/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/src/template/static/css/base/base.css">
-    <link rel="stylesheet" href="/src/template/static/css/cadastro-login/cadastro-login.css">
-</head>
-<body>
-
-    <iframe src="/src/template/base/base.html" frameborder="0"></iframe>
-
-    <div class="conteudo">
-        <div class="formulario">
-            <div class="decisao-form">
-                <h2>Decisão</h2>
-                <div class="form-group">
-                    <div class="links-auxiliares">
-                        <a class="link-auxiliar" href="http://127.0.0.1:5500/src/template/cadastro-login/login.html" target="_blank">Login</a>
-                        <a class="link-auxiliar" href="http://127.0.0.1:5500/src/template/cadastro-login/casdastro.html" target="_blank">cadastro</a>
-                        <a class="link-auxiliar" href="http://127.0.0.1:5500/src/template/home/home.html" target="_blank">Ir para a home</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
+<footer>
         <div class="rodape-container">
             <div class="rodape-item">
                 <h4 class="titulo4">Sobre Nós</h4>
@@ -71,6 +42,3 @@
             </div>
         </div>
     </footer>
-
-</body>
-</html>

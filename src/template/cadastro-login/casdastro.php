@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banana.Hi-T.E-C</title>
-    <link rel="shortcut icon" href="/src/template/static/icon/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/src/template/static/css/base/base.css">
-    <link rel="stylesheet" href="/src/template/static/css/cadastro-login/cadastro-login.css">
+    <!-- <link rel="shortcut icon" href="/src/template/static/icon/favicon/favicon.ico" type="image/x-icon"> -->
+    <!-- <link rel="stylesheet" href="/src/template/static/css/base/base.css"> -->
+    <!-- <link rel="stylesheet" href="/src/template/static/css/cadastro-login/cadastro-login.css"> -->
+    <link rel="shortcut icon" href="../static/icon/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/base/base.css">
+    <link rel="stylesheet" href="../static/css/cadastro-login/cadastro-login.css">
 </head>
 <body>
 
-    <iframe src="/src/template/base/base.html" frameborder="0"></iframe>
+    <?php include('../partials/navbar.php') ?>
 
     <div class="conteudo">
         <div class="formulario">
@@ -59,7 +62,7 @@
                 </div>
                 <div class="form-group">
                     <div class="links-auxiliares">
-                        <a class="link-auxiliar" href="http://127.0.0.1:5500/src/template/cadastro-login/login.html" target="_blank">Ja tenho uma conta</a>
+                        <a class="link-auxiliar" href="http://localhost/Banana.Hi-T.E-C/src/template/cadastro-login/login.php" target="_blank">Ja tenho uma conta</a>
                     </div>
                 </div>
                 <button type="submit" class="botao-form">Cadastrar</button>
@@ -67,50 +70,7 @@
         </div>
     </div>
 
-    <footer>
-        <div class="rodape-container">
-            <div class="rodape-item">
-                <h4 class="titulo4">Sobre Nós</h4>
-                <p class="rodape-text">Informações sobre nossa empresa e equipe.</p>
-            </div>
-            <div class="rodape-item">
-                <h4 class="titulo4">Produtos</h4>
-                <ul class="rodape-list">
-                    <li>Produto 1</li>
-                    <li>Produto 2</li>
-                    <li>Produto 3</li>
-                </ul>
-            </div>
-            <div class="rodape-item">
-                <h4 class="titulo4">Contato</h4>
-                <ul class="rodape-list">
-                <li>Endereço: Rua XYZ, nº 123</li>
-                <li>Telefone: (XX) XXXX-XXXX</li>
-                <li>Email: contato@exemplo.com</li>
-                </ul>
-            </div>
-            <div class="rodape-item">
-                <h4 class="titulo4">Redes Sociais</h4>
-                <ul class="rodape-list">
-                <li>Facebook</li>
-                <li>Twitter</li>
-                <li>Instagram</li>
-                </ul>
-            </div>
-            <div class="rodape-item">
-                <h4 class="titulo4">Termos e Condições</h4>
-                <p class="rodape-text">Leia nossos termos e condições de uso.</p>
-            </div>
-            <div class="rodape-item">
-                <h4 class="titulo4">Política de Privacidade</h4>
-                <p class="rodape-text">Leia nossa política de privacidade.</p>
-            </div>
-            <div class="rodape-item">
-                <h4 class="titulo4">Ajuda</h4>
-                <p class="rodape-text">Encontre respostas para perguntas frequentes.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include('../partials/rodape.php') ?>
 
 </body>
 </html>
