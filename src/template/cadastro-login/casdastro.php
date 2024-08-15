@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banana.Hi-T.E-C</title>
-    <!-- <link rel="shortcut icon" href="/src/template/static/icon/favicon/favicon.ico" type="image/x-icon"> -->
-    <!-- <link rel="stylesheet" href="/src/template/static/css/base/base.css"> -->
-    <!-- <link rel="stylesheet" href="/src/template/static/css/cadastro-login/cadastro-login.css"> -->
     <link rel="shortcut icon" href="../static/icon/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../static/css/base/base.css">
     <link rel="stylesheet" href="../static/css/cadastro-login/cadastro-login.css">
