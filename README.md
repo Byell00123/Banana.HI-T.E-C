@@ -1,3 +1,3 @@
-Gabryell Costa de Moura, Arthur Bastos dos Santos, Ana Julia Alves Alencar, Maisa Cristina Araujo Gonçalves
+Gabryell Costa de Moura, Arthur Bastos dos Santos.
 
-temas: loja de informatica
+tema: loja de informática
