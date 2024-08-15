@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `banana_hitec` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `banana_hitec`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: banana_hitec
@@ -23,16 +25,19 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuario` (
-  `id_usuario` bigint NOT NULL,
-  `senha` varchar(255) NOT NULL,
-  `cpf` bigint NOT NULL,
+  `id_usuario` bigint NOT NULL AUTO_INCREMENT,
   `nome_usuario` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL,
   `primeiro_nome` varchar(255) NOT NULL,
   `sebrenome` varchar(255) NOT NULL,
+  `data_nascimento` date NOT NULL,
   `email` varchar(255) NOT NULL,
+  `telefone` bigint NOT NULL,
   `sexo` enum('f','m','h') NOT NULL,
+  `cpf` bigint NOT NULL,
   `data_engressou` datetime NOT NULL,
   `ultimo_login` datetime NOT NULL,
+  `status` tinyint NOT NULL DEFAULT '0',
   `fk_id_grupo` bigint DEFAULT NULL,
   PRIMARY KEY (`id_usuario`),
   KEY `fk_id_grupo` (`fk_id_grupo`),
@@ -58,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-21 16:26:58
+-- Dump completed on 2024-08-15 15:56:11
