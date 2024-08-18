@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `banana_hitec` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `banana_hitec`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: banana_hitec
@@ -31,7 +29,7 @@ CREATE TABLE `produto` (
   `marca` varchar(45) NOT NULL,
   `preco` decimal(8,2) NOT NULL,
   `peso` decimal(8,2) NOT NULL,
-  `descrição` varchar(255) DEFAULT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
   `url_foto` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_produto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -55,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-15 15:56:11
+-- Dump completed on 2024-08-15 19:46:50

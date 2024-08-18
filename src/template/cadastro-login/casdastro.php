@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group">
                     <label for="telefone"class="texto-informacao">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone" placeholder="exemplo: (00) 90000-0000">
+                    <input type="number" id="telefone" name="telefone" placeholder="exemplo: (00) 90000-0000">
                 </div>
                 <div class="form-group">
                     <label for="genero"class="texto-informacao">Gênero:</label>
