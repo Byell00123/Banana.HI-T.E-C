@@ -14,9 +14,9 @@
 
     <!--conteudo do site-->
     <div class="conteudo">
-        <!--  -->
-        <div class="banner cupon"><a href="#" target="_blank"><img src="../static/img/banners/banner-promocionais/banner3.png" alt="banner de ofertas"></a></div>
-        <!--  -->
+        
+        <!-- <div class="banner cupon">< href="#" target="_blank"><img src="../static/img/banners/banner-promocionais/banner3.png" alt="banner de ofertas"></div>
+
         <div>
             <h1 class="titulos">Marcas sugeridas</h1>
             <div class="list">
@@ -52,38 +52,7 @@
                 </a>
             </div>
         </div>
-        <!--  -->
-        <div class="banner promocional"><a href="#" target="_blank"><img src="../static/img/banners/banner-promocionais/banner3.png" alt="banner de ofertas"></a></a></div>
-        <!--  -->
-        <div>
-            <h1 class="titulos">Noteboks</h1>
-            <div class="list">
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/notebooks/notebook-apple-macbook.jpg" alt=""><p class="iten-txt" class="iten-txt">
-                        notebook-apple-macbook,notebook-apple-macbook,notebook-apple-macbook,notebook-apple-macbook,  
-                        notebook-apple-macbook,notebook-apple-macbook,notebook-apple-macbook,notebook-apple-macbook,
-                        notebook-apple-macbook,notebook-apple-macbook,notebook-apple-macbook,notebook-apple-macbook
-                        
-                    </p>
-                    </div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/notebooks/notebook-galaxy-book2.jpg" alt=""><p class="iten-txt">Monitores</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/notebooks/Notebook-Gamer-Acer-Nitro-5-Intel.jpg" alt=""><p class="iten-txt">notebok2</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/notebooks/notebook-gamer-asus-tuf.jpg" alt=""><p class="iten-txt">Teclados</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/notebooks/notebook-lenovo-ideapad-3.jpg" alt=""><p class="iten-txt">Fones</p></div>
-                </a>
-            </div>
-        </div>
-        <!--  -->
         <div class="banner promocional"><a href="#" target="_blank"><img src="../static/img/banners/banner-promocionais/banner3.png" alt="banner de ofertas"></a></div>
-        <!--  -->
         <div>
             <h1 class="titulos">Produtos sugeridos</h1>
             <div class="list">
@@ -119,91 +88,52 @@
                 </a>
             </div>
         </div>
-            <!--  -->
-        <div>
-            <h1 class="titulos">Gabinetes</h1>
-            <div class="list">
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/gabinetes/gabinete-fortrek sc501bk.jpg" alt=""><p class="iten-txt">notebook-apple-macbook</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/gabinetes/gabinete-gamer-aigo-black-technology-mini-preto-pichau.jpg" alt=""><p class="iten-txt">Monitores</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/gabinetes/gabinete-gamer-aigo-darkflash-c285.jpg" alt=""><p class="iten-txt">Fones</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/gabinetes/gabinete-gamer-rise-mode-galaxy-glass-standard.jpg" alt=""><p class="iten-txt">notebok2</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/gabinetes/gabinete-gamer-rise-mode-glass-06x.jpg" alt=""><p class="iten-txt">Teclados</p></div>
-                </a>
-            </div>
-        </div>
-        <!--  -->
-        <div>
-            <h1 class="titulos">Placas de video</h1>
-            <div class="list">
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/placas-de-video/placa-de-video-gigabyte-radeon-rx-6600-eagle amd.jpg" alt=""><p class="iten-txt">notebook-apple-macbook</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/placas-de-video/placa-de-video-gtx-1650-d6-ventus-xs-ocv1-msi-nvidia--geforce.jpg" alt=""><p class="iten-txt">Monitores</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/placas-de-video/placa-de-video-rtx-4060-ti-ventus3x-8g-oc-msi-nvidia-geforce.jpg" alt=""><p class="iten-txt">notebok2</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/placas-de-video/placa-de-video-rx-6600-v2-asus-dual-amd-radeon.jpg" alt=""><p class="iten-txt">Teclados</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/placas-de-video/placa-de-video-rx-7600-gaming-oc.jpg" alt=""><p class="iten-txt">Fones</p></div>
-                </a>
-            </div>
-        </div>
-        <!--  -->
-        <div>
-            <h1 class="titulos">Processadores</h1>
-            <div class="list">
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/processadores/processador-amd-ryzen-5-4600g-box.jpg" alt=""><p class="iten-txt">notebook-apple-macbook</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/processadores/processador-amd-ryzen-5-4600g-cache.jpg" alt=""><p class="iten-txt">Monitores</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/processadores/processador-amd-ryzen-7-5700g.jpg" alt=""><p class="iten-txt">notebok2</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/processadores/processador-intel-core-i5-10400f.jpg" alt=""><p class="iten-txt">Teclados</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/processadores/processador-intel-core-i5-12400f.jpg" alt=""><p class="iten-txt">Fones</p></div>
-                </a>
-            </div>
-        </div>
-        <!--  -->
-        <div>
-            <h1 class="titulos">Processadores</h1>
-            <div class="list">
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/fones-de-ouvido/fone-de-ouvido-beats-studio3-cinza chumbo.jpg" alt=""><p class="iten-txt">notebook-apple-macbook</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/fones-de-ouvido/fone-de-ouvido-husky-technologies-headset-bluetooth.jpg" alt=""><p class="iten-txt">Monitores</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/fones-de-ouvido/fone-de-ouvido-on-ear-jb.jpg" alt=""><p class="iten-txt">notebok2</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/fones-de-ouvido/headset-astro-a10-gaming-gen-2.jpg" alt=""><p class="iten-txt">Teclados</p></div>
-                </a>
-                <a class="list-itens" href="#">
-                    <div class="itens"><img class="iten-img" src="../static/img/produtos/fones-de-ouvido/headset-gamer-redragon-zeus-x.jpg" alt=""><p class="iten-txt">Fones</p></div>
-                </a>
-            </div>
-        </div>
-        
+        -->
+        <?php
+            // Conexão com o banco de dados MySQL
+            $servername = "localhost";
+            $username = "root";
+            $password = "12345";
+            $dbname = "banana_hitec";
+            // Criando a conexão
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Verificando a conexão
+            if ($conn->connect_error) {
+                die("Falha na conexão: " . $conn->connect_error);
+            }
+            // Consultando os produtos
+            $sql = "SELECT tipo_produto, nome, url_foto FROM produto";
+            $result = $conn->query($sql);
+            // Verificando se há resultados
+            if ($result->num_rows > 0) {
+                // Agrupando os produtos por tipo_produto
+                $produtos_por_tipo = [];
+                while ($row = $result->fetch_assoc()) {
+                    $produtos_por_tipo[$row['tipo_produto']][] = $row;
+                }
+                // Gerando o HTML
+                foreach ($produtos_por_tipo as $tipo_produto => $produtos) {
+                    echo "<div class=\"banner promocional\"><a href=\"#\" target=\"_blank\"><img src=\"../static/img/banners/banner-promocionais/banner3.png\" alt=\"banner de ofertas\"></a></div>";
+                    //TODO: Depois tem que fazer esses banners serem colocados igual aos produtos usando o php pra buscar diferentes banners no MySQL
+                    echo "<div>\n";
+                    echo "<h1 class=\"titulos\">$tipo_produto</h1>\n";
+                    echo "<div class=\"list\">\n";
+                    foreach ($produtos as $produto) {
+                        $nome = htmlspecialchars($produto['nome']);
+                        $url_foto = htmlspecialchars($produto['url_foto']);
+                        echo "<a class=\"list-itens\" href=\"#\">\n";
+                        echo "<div class=\"itens\"><img class=\"iten-img\" src=\"$url_foto\" alt=\"\"><p class=\"iten-txt\">$nome</p></div>\n";
+                        echo "</a>\n";
+                    }
+                    echo "</div>\n";
+                    echo "</div>\n";
+                }
+            } else {
+                echo "Nenhum produto encontrado.";
+            }
+            // Fechando a conexão
+            $conn->close();
+        ?>
     </div>
 
     <?php include('../partials/rodape.php') ?>

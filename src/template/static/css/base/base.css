@@ -178,8 +178,7 @@ body {
     display: flex; /* Define o elemento como um flex container */
     flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
     flex-grow: 1; /* Permite que o elemento cresça para ocupar o espaço disponível */
-    padding-left: 20px; /* Adiciona um preenchimento à esquerda de 20px ao conteúdo */
-    padding-top: 5px; /* Adiciona um preenchimento superior de 5px ao conteúdo */
+    padding: 5px 20px; /* Adiciona um preenchimento à esquerda e direita de 20px e um preenchimento superior e inferior de 5px ao conteúdo */
     box-shadow: inset 0 0 10px #00bfff; /* Adiciona uma sombra interna Azul Neon */
 }
 
