@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `banana_hitec` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `banana_hitec`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: banana_hitec
@@ -16,31 +18,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `permissao_grupo`
+-- Table structure for table `permissoes_grupos`
 --
 
-DROP TABLE IF EXISTS `permissao_grupo`;
+DROP TABLE IF EXISTS `permissoes_grupos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `permissao_grupo` (
+CREATE TABLE `permissoes_grupos` (
   `id_permissao_grupo` bigint NOT NULL,
-  `fK_id_permissao` bigint NOT NULL,
+  `fk_id_permissao` bigint NOT NULL,
   `fk_id_grupo` bigint NOT NULL,
   PRIMARY KEY (`id_permissao_grupo`),
-  KEY `fK_id_permissao` (`fK_id_permissao`),
+  KEY `fK_id_permissao` (`fk_id_permissao`),
   KEY `fk_id_grupo` (`fk_id_grupo`),
-  CONSTRAINT `permissao_grupo_ibfk_1` FOREIGN KEY (`fK_id_permissao`) REFERENCES `permissao` (`id_permissao`),
-  CONSTRAINT `permissao_grupo_ibfk_2` FOREIGN KEY (`fk_id_grupo`) REFERENCES `grupo` (`id_grupo`)
+  CONSTRAINT `permissoes_grupos_ibfk_1` FOREIGN KEY (`fk_id_permissao`) REFERENCES `permissoes` (`id_permissao`),
+  CONSTRAINT `permissoes_grupos_ibfk_2` FOREIGN KEY (`fk_id_grupo`) REFERENCES `grupos` (`id_grupo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `permissao_grupo`
+-- Dumping data for table `permissoes_grupos`
 --
 
-LOCK TABLES `permissao_grupo` WRITE;
-/*!40000 ALTER TABLE `permissao_grupo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `permissao_grupo` ENABLE KEYS */;
+LOCK TABLES `permissoes_grupos` WRITE;
+/*!40000 ALTER TABLE `permissoes_grupos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `permissoes_grupos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-15 19:46:51
+-- Dump completed on 2024-08-30 20:16:51

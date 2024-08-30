@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `banana_hitec` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `banana_hitec`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: banana_hitec
@@ -16,27 +18,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `permissao`
+-- Table structure for table `grupos`
 --
 
-DROP TABLE IF EXISTS `permissao`;
+DROP TABLE IF EXISTS `grupos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `permissao` (
-  `id_permissao` bigint NOT NULL,
-  `descricao` varchar(255) DEFAULT NULL,
-  `codinome` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_permissao`)
+CREATE TABLE `grupos` (
+  `id_grupo` bigint NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_grupo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `permissao`
+-- Dumping data for table `grupos`
 --
 
-LOCK TABLES `permissao` WRITE;
-/*!40000 ALTER TABLE `permissao` DISABLE KEYS */;
-/*!40000 ALTER TABLE `permissao` ENABLE KEYS */;
+LOCK TABLES `grupos` WRITE;
+/*!40000 ALTER TABLE `grupos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `grupos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-15 19:46:50
+-- Dump completed on 2024-08-30 20:16:50

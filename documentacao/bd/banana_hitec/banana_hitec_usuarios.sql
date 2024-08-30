@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `banana_hitec` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `banana_hitec`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: banana_hitec
@@ -16,32 +18,40 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `produto`
+-- Table structure for table `usuarios`
 --
 
-DROP TABLE IF EXISTS `produto`;
+DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `produto` (
-  `id_produto` bigint NOT NULL,
-  `nome` varchar(45) NOT NULL,
-  `tipo_produto` varchar(255) NOT NULL,
-  `marca` varchar(45) NOT NULL,
-  `preco` decimal(8,2) NOT NULL,
-  `peso` decimal(8,2) NOT NULL,
-  `descricao` varchar(255) DEFAULT NULL,
-  `url_foto` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id_produto`)
+CREATE TABLE `usuarios` (
+  `id_usuario` bigint NOT NULL AUTO_INCREMENT,
+  `nome_usuario` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `primeiro_nome` varchar(255) NOT NULL,
+  `sebrenome` varchar(255) NOT NULL,
+  `data_nascimento` date NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `telefone` bigint NOT NULL,
+  `sexo` enum('f','m','h') NOT NULL,
+  `cpf` bigint NOT NULL,
+  `data_engressou` datetime NOT NULL,
+  `ultimo_login` datetime NOT NULL,
+  `status` tinyint NOT NULL DEFAULT '0',
+  `fk_id_grupo` bigint DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`),
+  KEY `fk_id_grupo` (`fk_id_grupo`),
+  CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`fk_id_grupo`) REFERENCES `grupos` (`id_grupo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `produto`
+-- Dumping data for table `usuarios`
 --
 
-LOCK TABLES `produto` WRITE;
-/*!40000 ALTER TABLE `produto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `produto` ENABLE KEYS */;
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-15 19:46:50
+-- Dump completed on 2024-08-30 20:16:51

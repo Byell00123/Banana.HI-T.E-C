@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `banana_hitec` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `banana_hitec`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: banana_hitec
@@ -16,34 +18,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `vendedor`
+-- Table structure for table `permissoes`
 --
 
-DROP TABLE IF EXISTS `vendedor`;
+DROP TABLE IF EXISTS `permissoes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `vendedor` (
-  `id_vendedor` bigint NOT NULL,
-  `nome_fantasia` varchar(255) NOT NULL,
-  `cnpj` bigint NOT NULL,
-  `senha` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `data_engressou` datetime NOT NULL,
-  `ultimo_login` datetime NOT NULL,
-  `fk_id_grupo` bigint DEFAULT NULL,
-  PRIMARY KEY (`id_vendedor`),
-  KEY `fk_id_grupo` (`fk_id_grupo`),
-  CONSTRAINT `vendedor_ibfk_1` FOREIGN KEY (`fk_id_grupo`) REFERENCES `grupo` (`id_grupo`)
+CREATE TABLE `permissoes` (
+  `id_permissao` bigint NOT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
+  `codinome` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_permissao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `vendedor`
+-- Dumping data for table `permissoes`
 --
 
-LOCK TABLES `vendedor` WRITE;
-/*!40000 ALTER TABLE `vendedor` DISABLE KEYS */;
-/*!40000 ALTER TABLE `vendedor` ENABLE KEYS */;
+LOCK TABLES `permissoes` WRITE;
+/*!40000 ALTER TABLE `permissoes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `permissoes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-15 19:46:50
+-- Dump completed on 2024-08-30 20:16:51
