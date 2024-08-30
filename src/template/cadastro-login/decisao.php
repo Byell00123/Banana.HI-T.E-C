@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <?php include('../partials/navbar.php') ?>
+    <?php include('../partials/navbar_u.php') ?>
 
     <div class="conteudo">
         <div class="formulario">
@@ -18,9 +18,9 @@
                 <h2>Decisão</h2>
                 <div class="form-group">
                     <div class="links-auxiliares">
-                        <a class="link-auxiliar" href="http://localhost/Banana.Hi-T.E-C/src/template/cadastro-login/login.php" target="_blank">Login</a>
-                        <a class="link-auxiliar" href="http://localhost/Banana.Hi-T.E-C/src/template/cadastro-login/casdastro.php" target="_blank">cadastro</a>
-                        <a class="link-auxiliar" href="http://localhost/Banana.Hi-T.E-C/src/template/home/" target="_blank">Ir para a home</a>
+                        <a class="link-auxiliar" href="http://localhost/Banana.Hi-T.E-C/src/template/cadastro-login/login_u.php" target="_blank">Login</a>
+                        <a class="link-auxiliar" href="http://localhost/Banana.Hi-T.E-C/src/template/cadastro-login/casdastro_u.php" target="_blank">cadastro</a>
+                        <a class="link-auxiliar" href="http://localhost/Banana.Hi-T.E-C/src/template/home/home_u.php" target="_blank">Voltar para a home</a>
                     </div>
                 </div>
             </div>

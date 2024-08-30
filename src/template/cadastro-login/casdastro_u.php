@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <?php include('../partials/navbar.php') ?>
+    <?php include('../partials/navbar_u.php') ?>
 
     <div class="conteudo">
         <div class="formulario">
@@ -63,7 +63,7 @@
                 </div>
                 <div class="form-group">
                     <div class="links-auxiliares">
-                        <a class="link-auxiliar" href="http://localhost/Banana.Hi-T.E-C/src/template/cadastro-login/login.php" target="_blank">Ja tenho uma conta</a>
+                        <a class="link-auxiliar" href="http://localhost/Banana.Hi-T.E-C/src/template/cadastro-login/login_u.php" target="_blank">Ja tenho uma conta</a>
                     </div>
                 </div>
                 <button type="submit" class="botao-form">Cadastrar</button>

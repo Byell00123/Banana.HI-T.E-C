@@ -32,9 +32,9 @@
 .conteudo .formulario .decisao-form .form-group .links-auxiliares .link-auxiliar {
     padding: 4px; /* Adiciona um preenchimento interno de 4px */
     text-decoration: none; /* Remove a decoração de sublinhado */
+    background-color: #e22bcdec; /* Define a cor de fundo como roxo */
     border: 2px solid #ff00ff; /* Adiciona uma borda rosa neon */
     box-shadow: 0 0 10px #ff007f; /* Adiciona uma sombra magenta neon */
-    background-color: #8a2be2; /* Define a cor de fundo como roxo */
     border-radius: 10px; /* Adiciona bordas arredondadas */
     text-align: center; /* Centraliza o texto */
     color: #ffffff; /* Define a cor do texto como branco */
@@ -55,7 +55,7 @@
 }
 
 /* Estilo para campos de entrada */
-#nome, #nascimento, #cpf, #username, #telefone, #email, #password1, #password2, #password {
+.nome, .nascimento, .cpf, .username, .telefone, .email, .password1, .password2, .password, .nome_fantasia .cnpj {
     padding: 10px; /* Adiciona um preenchimento interno de 10px */
     border: 1px solid #ccc; /* Define uma borda cinza clara */
     border-radius: 3px; /* Adiciona bordas arredondadas */
@@ -70,7 +70,7 @@
     padding: 10px 20px; /* Adiciona um preenchimento interno de 10px em cima e embaixo e 20px nas laterais */
     background-color: #0016b3; /* Define a cor de fundo como azul escuro */
     color: #fff; /* Define a cor do texto como branco */
-    border: 1px solid #007bff; /* Define a cor da borda como azul */
+    border: 1px solid #007bff; /* Define a cor da borda como meio azul */
     border-radius: 3px; /* Adiciona bordas arredondadas */
     cursor: pointer; /* Altera o cursor para uma mão quando passa por cima do botão */
     box-shadow: 0 0 10px #00bfff; /* Adiciona uma sombra azul neon */

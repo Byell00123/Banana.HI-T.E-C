@@ -73,14 +73,14 @@ body {
     margin: 0; /* Remove as margens padrão do corpo */
     padding: 0; /* Remove os preenchimentos padrão do corpo */
     font-family: Arial, sans-serif; /* Define a fonte padrão */
-    background-color: #1a1a1a; /* Define a cor de fundo do corpo como um tom escuro */
+    background-color: #1a1919; /* Define a cor de fundo do corpo como um tom escuro */
     color: #ffffff; /* Define a cor do texto como branco */
 }
 
 /* Estilo para a barra de menu */
 .navbar {
     margin: 0; /* Remove as margens padrão da navbar */
-    background-color: #000; /* Define a cor de fundo da barra de menu como preto */
+    background-color: #000000; /* Define a cor de fundo da barra de menu como preto */
     padding: 0.3rem 0; /* Adiciona um preenchimento interno vertical de 0.3rem e nenhum horizontal */
     border-bottom: 2px solid #00ffff; /* Adiciona uma borda inferior de 2px com cor ciano */
 }
@@ -91,7 +91,14 @@ body {
     margin: 0; /* Remove as margens padrão da lista */
     padding: 0; /* Remove os preenchimentos padrão da lista */
     display: flex; /* Define o elemento como um flex container */
-    justify-content: flex-start; /* Alinha os itens no início do eixo principal (horizontal) */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+}
+
+/* Estilo para cada item da lista dentro da barra de menu */
+.navbar-list li {
+    margin: 0 10px; /* Adiciona uma pequena margem entre os itens da lista */
+    display: inline-block; /* Exibe os itens da lista em linha */
 }
 
 .navbar .navbar-list #menu {
@@ -149,8 +156,8 @@ body {
 
 /* Estilo para o item de menu de pesquisa */
 .navbar-list li.pesquisa {
-    display: inline-block; /* Exibe o item de pesquisa em linha */
-    vertical-align: middle; /* Alinha verticalmente o item de pesquisa */
+    display: flex; /* Define o item de pesquisa como flex container */
+    align-items: center; /* Alinha verticalmente o item de pesquisa */
 }
 
 /* Estilo para o formulário de pesquisa dentro do item de menu de pesquisa */

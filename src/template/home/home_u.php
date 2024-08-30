@@ -6,11 +6,11 @@
     <title>Banana.Hi-T.E-C</title>
     <link rel="shortcut icon" href="../static/icon/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../static/css/base/base.css">
-    <link rel="stylesheet" href="../static/css/home/home.css">
+    <link rel="stylesheet" href="../static/css/home/home_u.css">
 </head>
 <body>
 
-    <?php include('../partials/navbar.php') ?>
+    <?php include('../partials/navbar_u.php') ?>
 
     <!--conteudo do site-->
     <div class="conteudo">
@@ -102,7 +102,7 @@
                 die("Falha na conexão: " . $conn->connect_error);
             }
             // Consultando os produtos
-            $sql = "SELECT tipo_produto, nome, url_foto FROM produto";
+            $sql = "SELECT tipo_produto, nome, url_foto FROM produtos";
             $result = $conn->query($sql);
             // Verificando se há resultados
             if ($result->num_rows > 0) {

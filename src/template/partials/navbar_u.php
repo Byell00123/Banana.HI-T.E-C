@@ -2,7 +2,7 @@
 <nav class="navbar">
         <ul class="navbar-list">
             <li id="menu"><a href="#">Menu</a></li>
-            <li><a href="http://localhost/Banana.Hi-T.E-C/src/template/home/" target="_blank">Página Inicial</a></li>
+            <li><a href="http://localhost/Banana.Hi-T.E-C/src/template/home/home_u.php" target="_blank">Página Inicial</a></li>
             <li class="pesquisa">
                 <form id="formPesquisa">
                     <button type="submit">Pesquisar</button>

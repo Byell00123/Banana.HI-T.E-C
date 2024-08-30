@@ -74,7 +74,7 @@ if ($file) {
             $url_foto = $conn->real_escape_string($url_foto);
 
             // SQL para inserir dados na tabela
-            $sql = "INSERT INTO produto (nome, tipo_produto, marca, preco, peso, descricao, url_foto)
+            $sql = "INSERT INTO produtos (nome, tipo_produto, marca, preco, peso, descricao, url_foto)
                     VALUES ('$nome', '$tipo_produto', '$marca', '$preco', '$peso', '$descricao', '$url_foto')";
 
             if ($conn->query($sql) === TRUE) {

@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <?php include('../partials/navbar.php') ?>
+    <?php include('../partials/navbar_u.php') ?>
 
     <div class="conteudo">
         <div class="formulario">
@@ -27,7 +27,7 @@
                 <div class="form-group">
                     <div class="links-auxiliares">
                         <a class="link-auxiliar" href="#">Esqueceu sua senha?</a>
-                        <a class="link-auxiliar" href="http://localhost/Banana.Hi-T.E-C/src/template/cadastro-login/casdastro.php" target="_blank">Ainda não tem uma conta?</a>
+                        <a class="link-auxiliar" href="http://localhost/Banana.Hi-T.E-C/src/template/cadastro-login/casdastro_u.php" target="_blank">Ainda não tem uma conta?</a>
                     </div>
                 </div>
                 <button type="submit" class="botao-form">Entrar</button>
