@@ -1,16 +1,17 @@
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/Banana.Hi-T.E-C/src/config.php');?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banana.Hi-T.E-C</title>
-    <link rel="shortcut icon" href="../static/icon/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../static/css/base/base.css">
-    <link rel="stylesheet" href="../static/css/home/home_u.css">
+    <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>icon/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/base/base.css">
+    <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/home/home_u.css">
 </head>
 <body>
 
-    <?php include('../partials/navbar_u.php') ?>
+    <?php include(TEMPLATE_PATH . 'partials/navbar_u.php'); ?>
 
     <!--conteudo do site-->
     <div class="conteudo">
@@ -136,7 +137,7 @@
         ?>
     </div>
 
-    <?php include('../partials/rodape.php') ?>
+    <?php include(TEMPLATE_PATH . 'partials/rodape.php'); ?>
 
 </body>
 </html>

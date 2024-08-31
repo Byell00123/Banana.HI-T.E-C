@@ -11,8 +11,7 @@
 }
 
 /* Estilo comum para formulários de login, cadastro e decisão */
-.conteudo .formulario .login-form,
-.conteudo .formulario .cadastro-form, .conteudo .formulario .decisao-form {
+.conteudo .formulario .form {
     padding: 0 20px; /* Adiciona preenchimento interno apenas nas laterais */
     background-color: #0a0a23; /* Define a cor de fundo como um tom escuro */
     border-color: #fff; /* Define a cor da borda como branco */
@@ -21,15 +20,12 @@
 }
 
 /* Estilo comum para os grupos de formulários de login, cadastro e decisão */
-.conteudo .formulario .login-form .form-group,
-.conteudo .formulario .cadastro-form .form-group, .conteudo .formulario .decisao-form .form-group {
+.conteudo .formulario .form .form-group {
     margin-bottom: 15px; /* Adiciona uma margem inferior de 15px */
 }
 
 /* Estilo comum para links auxiliares */
-.conteudo .formulario .login-form .form-group .links-auxiliares .link-auxiliar,
-.conteudo .formulario .cadastro-form .form-group .links-auxiliares .link-auxiliar,
-.conteudo .formulario .decisao-form .form-group .links-auxiliares .link-auxiliar {
+.conteudo .formulario .form .form-group .links-auxiliares .link-auxiliar {
     padding: 4px; /* Adiciona um preenchimento interno de 4px */
     text-decoration: none; /* Remove a decoração de sublinhado */
     background-color: #e22bcdec; /* Define a cor de fundo como roxo */
@@ -41,9 +37,7 @@
 }
 
 /* Estilo comum para links auxiliares quando o mouse passa por cima */
-.conteudo .formulario .login-form .form-group .links-auxiliares .link-auxiliar:hover,
-.conteudo .formulario .cadastro-form .form-group .links-auxiliares .link-auxiliar:hover,
-.conteudo .formulario .decisao-form .form-group .links-auxiliares .link-auxiliar:hover {
+.conteudo .formulario .form .form-group .links-auxiliares .link-auxiliar:hover {
     background-color: #ff00ff; /* Altera a cor de fundo para rosa neon quando o mouse passa por cima */
     box-shadow: 0 0 15px #ff007f; /* Adiciona uma sombra magenta neon mais intensa */
 }
@@ -55,7 +49,7 @@
 }
 
 /* Estilo para campos de entrada */
-.nome, .nascimento, .cpf, .username, .telefone, .email, .password1, .password2, .password, .nome_fantasia .cnpj {
+.input {
     padding: 10px; /* Adiciona um preenchimento interno de 10px */
     border: 1px solid #ccc; /* Define uma borda cinza clara */
     border-radius: 3px; /* Adiciona bordas arredondadas */

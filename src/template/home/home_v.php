@@ -1,6 +1,4 @@
-<?php
-include($_SERVER['DOCUMENT_ROOT'] . '/Banana.Hi-T.E-C/src/config.php');
-?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/Banana.Hi-T.E-C/src/config.php');?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,7 +11,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/Banana.Hi-T.E-C/src/config.php');
 </head>
 <body>
 
-<?php include(TEMPLATE_PATH . 'partials/navbar_v.php'); ?>
+    <?php include(TEMPLATE_PATH . 'partials/navbar_v.php'); ?>
     <!-- Conteúdo do site -->
     <div class="conteudo">
         <?php

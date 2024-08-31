@@ -1,6 +1,4 @@
-<?php
-include($_SERVER['DOCUMENT_ROOT'] . '/Banana.Hi-T.E-C/src/config.php');
-?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/Banana.Hi-T.E-C/src/config.php');?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,24 +11,24 @@ include($_SERVER['DOCUMENT_ROOT'] . '/Banana.Hi-T.E-C/src/config.php');
 </head>
 <body>
 
-    <?php include($_SERVER['DOCUMENT_ROOT'] . TEMPLATE_URL . 'partials/navbar_v.php'); ?>
+    <?php include(TEMPLATE_PATH . 'partials/navbar_v.php'); ?>
 
     <div class="conteudo">
         <div class="formulario">
-            <form action="#" class="login-form">
+            <form action="#" class="form login">
                 <h2>Login do Vendedor</h2>
                 <div class="form-group">
                     <label for="username">CNPJ:</label>
-                    <input type="text" class="username" name="CNPJ" placeholder="Nome de Usuario ou email">
+                    <input type="text" class="input username" name="CNPJ" placeholder="Nome de Usuário ou email">
                 </div>
                 <div class="form-group">
                     <label for="password">Senha:</label>
-                    <input type="password" class="password" name="password" placeholder="Digite a senha">
+                    <input type="password" class="input password" name="password" placeholder="Digite a senha">
                 </div>
                 <div class="form-group">
                     <div class="links-auxiliares">
                         <a class="link-auxiliar" href="#">Esqueceu sua senha?</a>
-                        <a class="link-auxiliar" href="http://localhost/Banana.Hi-T.E-C/src/template/cadastro-login/casdastro_u.php" target="_blank">Ainda não tem uma conta?</a>
+                        <a class="link-auxiliar" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_u.php" target="_blank">Ainda não tem uma conta?</a>
                     </div>
                 </div>
                 <button type="submit" class="botao-form">Entrar</button>
@@ -38,7 +36,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/Banana.Hi-T.E-C/src/config.php');
         </div>
     </div>
 
-    <?php include($_SERVER['DOCUMENT_ROOT'] . TEMPLATE_URL . 'partials/rodape.php') ?>
+    <?php include(TEMPLATE_PATH . 'partials/rodape.php'); ?>
 
 </body>
 </html>

@@ -1,0 +1,16 @@
+
+.conteudo{
+    align-items: center;
+}
+
+.div-cental{
+}
+
+.td-pre {
+    margin: 0;
+    padding: 0;
+    font-size: small;
+    text-align: left; /* Garante o alinhamento do texto à esquerda */
+    white-space: pre-line; /* Mantém a quebra de linha, mas permite que o texto se ajuste à largura do container */
+    border: none; /* Remove qualquer borda padrão do <pre> */
+}
