@@ -95,24 +95,17 @@ body {
     align-items: center; /* Centraliza os itens verticalmente */
 }
 
-/* Estilo para cada item da lista dentro da barra de menu */
-.navbar-list li {
-    margin: 0 10px; /* Adiciona uma pequena margem entre os itens da lista */
-    display: inline-block; /* Exibe os itens da lista em linha */
-}
-
-.navbar .navbar-list #menu {
+.menu {
     padding-left: 0.6rem; /* Adiciona um preenchimento à esquerda de 0.6rem */
 }
 
 /* Estilo para cada item da lista dentro da barra de menu */
-.navbar-list li {
-    margin: 0; /* Remove as margens padrão dos itens da lista */
+.li {
+    margin: 0px 5px; /* Remove as margens padrão dos itens da lista */
     display: inline-block; /* Exibe os itens da lista em linha */
 }
 
 /* Estilo para elementos que crescem automaticamente */
-.navbar-list .gambiarra,
 .gambiarra {
     flex-grow: 1; /* Permite que o elemento cresça para ocupar o espaço disponível */
 }
@@ -124,14 +117,13 @@ body {
 }
 
 /* Estilo para os links dentro dos itens de usuário na lista */
-.navbar .navbar-list .usuario a,
-.navbar .navbar-list .usuario .tmp {
+.usuario .a {
     margin: 0 4rem 0 0; /* Define a margem direita como 4rem, remove as outras margens */
     display: inline-block; /* Exibe os itens da lista em linha */
 }
 
 /* Estilo para os links dentro dos itens da lista */
-.navbar-list li a {
+.a {
     display: inline-block; /* Exibe os links em linha */
     padding: 20px; /* Adiciona um preenchimento interno de 20px aos links */
     text-decoration: none; /* Remove a decoração de sublinhado dos links */
@@ -139,13 +131,14 @@ body {
 }
 
 /* Estilo para os links quando o mouse passa por cima */
-.navbar-list li a:hover {
+.a:hover {
     background-color: #120052; /* Altera a cor de fundo dos links quando o mouse passa por cima */
     border-radius: 10px; /* Adiciona uma borda arredondada ao campo de seleção */
 }
 
 /* Estilo para o botão de pesquisa */
-.navbar-list li.pesquisa button[type="submit"] {
+.button[type="submit"] {
+    margin-left: 10px;
     padding: 10px 20px; /* Adiciona preenchimento interno ao botão */
     border: none; /* Remove a borda do botão */
     border-radius: 5px; /* Adiciona uma borda arredondada ao botão */
@@ -155,25 +148,30 @@ body {
 }
 
 /* Estilo para o item de menu de pesquisa */
-.navbar-list li.pesquisa {
+.pesquisa {
     display: flex; /* Define o item de pesquisa como flex container */
     align-items: center; /* Alinha verticalmente o item de pesquisa */
 }
 
 /* Estilo para o formulário de pesquisa dentro do item de menu de pesquisa */
-.navbar-list li.pesquisa form {
+.form-pesquisa {
     display: inline-block; /* Exibe o formulário em linha */
     margin: 0; /* Remove as margens padrão do formulário */
     padding: 0; /* Remove os preenchimentos padrão do formulário */
 }
 
 /* Estilo para o botão de pesquisa quando o mouse passa por cima */
-.navbar-list li.pesquisa button[type="submit"]:hover {
+.button[type="submit"]:hover {
     background-color: rgb(218, 165, 32); /* Altera a cor de fundo do botão quando o mouse passa por cima */
 }
 
+.label{
+    display: inline-block; /* Exibe os links em linha */
+    padding: 20px; /* Adiciona um preenchimento interno de 20px aos links */
+}
+
 /* Estilo para o campo de entrada de pesquisa */
-.navbar-list li.pesquisa input[type="text"] {
+.input-pesquisa[type="text"], .select-pesquisa {
     padding: 10px; /* Adiciona um preenchimento interno de 10px ao campo de entrada */
     margin: 10px 0 10px 0; /* Define margens de 10px em cima e embaixo e remove as margens laterais */
     border: none; /* Remove a borda do campo de entrada */

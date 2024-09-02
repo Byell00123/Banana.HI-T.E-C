@@ -1,16 +1,26 @@
+@import url(../base/base.css);
 
-.conteudo{
-    align-items: center;
+.formulario {
+    max-width: 100vw; /* Define a largura máxima como 100% da largura da viewport (tela) */
+    min-width: 10vw; /* Define a largura mínima como 10% da largura da viewport */
+    margin: 30px auto; /* Adiciona uma margem de 30px em cima e embaixo e centraliza horizontalmente */
+    background-color: #0a0a23; /* Define a cor de fundo como um tom escuro */
+    border: solid; /* Adiciona uma borda sólida */
+    padding: 20px; /* Adiciona um preenchimento interno de 20px */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
 }
 
-.div-cental{
+/* Estilo comum para formulários de login, cadastro e decisão */
+.form {
+    padding: 0 20px; /* Adiciona preenchimento interno apenas nas laterais */
+    background-color: #0a0a23; /* Define a cor de fundo como um tom escuro */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
 }
-
 .td-pre {
     margin: 0;
     padding: 0;
     font-size: small;
     text-align: left; /* Garante o alinhamento do texto à esquerda */
-    white-space: pre-line; /* Mantém a quebra de linha, mas permite que o texto se ajuste à largura do container */
+    white-space: pre-wrap; /* Mantém a quebra de linha, mas permite que o texto se ajuste à largura do container */
     border: none; /* Remove qualquer borda padrão do <pre> */
 }

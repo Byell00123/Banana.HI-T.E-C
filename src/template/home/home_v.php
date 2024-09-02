@@ -1,12 +1,11 @@
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/Banana.Hi-T.E-C/src/config.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/config.php');?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banana.Hi-T.E-C</title>
+    <title>Banana.HI-T.E-C</title>
     <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>icon/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/base/base.css">
     <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/home/home_v.css">
 </head>
 <body>

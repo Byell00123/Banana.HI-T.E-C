@@ -10,25 +10,24 @@
 </head>
 <body>
 
-    <?php include(TEMPLATE_PATH . 'partials/navbar_v.php'); ?>
+    <?php include(TEMPLATE_PATH . 'partials/navbar_u.php'); ?>
 
     <div class="conteudo">
         <div class="formulario">
-            <form action="#" class="form login">
-                <h2>Login do Vendedor</h2>
+            <form action="#" class="form recuperar_senha">
+                <h2>Recuperar Senha</h2>
                 <div class="form-group">
-                    <label for="cnpj">CNPJ:</label>
-                    <input type="text" class="input username" name="cnpj" placeholder="Nome Fantasia ou CNPJ">
+                    <label for="email"class="label-informacao">E-mail:</label>
+                    <input type="email" class="input email" name="email" placeholder="exemplo: joãozinho123@gmail.com">
                 </div>
                 <div class="form-group">
-                    <label for="password">Senha:</label>
-                    <input type="password" class="input password" name="password" placeholder="Digite a senha">
+                    <label for="telefone"class="label-informacao">Telefone:</label>
+                    <input type="tel" class="input telefone" name="telefone" placeholder="exemplo: (00) 90000-0000">
                 </div>
                 <div class="form-group link-botao">
                     <div class="links-auxiliares">
-                        <a class="link-auxiliar l1" href="<?php echo TEMPLATE_URL; ?>cadastro-login/recuperar_senha.php">Esqueceu sua senha?</a>
+                        <a class="link-auxiliar l2" href="#">Tentar outro metodo</a>
                         <div class="gambiarra"></div>
-                        <a class="link-auxiliar l2" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_v.php" target="_blank">Ainda não tem uma conta?</a>
                     </div>
                     <button type="submit" class="botao-form">Entrar</button>
                 </div>

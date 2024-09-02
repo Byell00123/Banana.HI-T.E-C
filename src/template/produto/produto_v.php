@@ -1,5 +1,5 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . '/Banana.Hi-T.E-C/src/config.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/config.php');
 
 $produto = null;
 
@@ -91,9 +91,8 @@ if (isset($_POST['delete'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banana.Hi-T.E-C</title>
+    <title>Banana.HI-T.E-C</title>
     <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>icon/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/base/base.css">
     <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/produto/produto_v.css">
 </head>
 <body>
@@ -102,8 +101,8 @@ if (isset($_POST['delete'])) {
 
     <div class="conteudo">
 
-        <div class="formualario">
-            <form method="post" action="" enctype="multipart/form-data">
+        <div class="formulario">
+            <form class="form" method="post" action="" enctype="multipart/form-data">
                 <h1>Editar Produto</h1>
                 <table border="1" cellpadding="10">
                     <tr>
@@ -133,9 +132,10 @@ if (isset($_POST['delete'])) {
                         <td>
                             <input type="file" id="nova_foto" name="nova_foto" accept=".jpg">
                             <pre class="td-pre">
-                                Recomendações:
-                                    Somente imagens em formato JPG.
-                                    Opte por imagens nativamente 200x200 pixels, pois imagens maiores que isso serão redimensionadas para 200x200 pixels podendo ocasionar em distorções na imagem.
+Recomendações:
+    Somente imagens em formato JPG.
+    Opte por imagens nativamente 200x200 pixels, pois imagens maiores que isso serão redimensionadas para 200x200 pixels podendo ocasionar em distorções na imagem.
+    <!-- TODO: tem que adicionar para quebra linha -->
                             </pre>
                         </td>
                     </tr>
