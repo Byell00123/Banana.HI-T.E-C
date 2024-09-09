@@ -1,5 +1,11 @@
 @import url(../base/base.css); /* Importa estilos base */
 
+
+.conteudo {
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
 /* Estilo para os títulos */
 .titulos {
     color: rgb(60, 255, 0); /* Define a cor do texto dos títulos como verde neon */

@@ -1,4 +1,14 @@
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/config.php');?>
+<?php 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/ProductModel.php');
+
+// Obtenha a marca selecionada (se houver)
+$marca = isset($_GET['marca']) && $_GET['marca'] !== '' ? $_GET['marca'] : null;
+
+// Obtenha os produtos filtrados pela marca, se especificada
+$produtos_por_marca = getProdutosPorMarca($marca);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,50 +16,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banana.HI-T.E-C</title>
     <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>icon/favicon/favicon.ico" type="image/x-icon">
+    
     <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/home/home_v.css">
 </head>
 <body>
 
     <?php include(TEMPLATE_PATH . 'partials/navbar_v.php'); ?>
+
+    
     <!-- Conteúdo do site -->
     <div class="conteudo">
-        <?php
-            // Conexão com o banco de dados MySQL
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Verifica se uma marca foi selecionada e ajusta a query
-            $marca = isset($_GET['marca']) && $_GET['marca'] != '' ? $_GET['marca'] : null;
-            $sql = "SELECT id_produto, nome, tipo_produto, url_foto FROM produtos";
-            if ($marca) {
-                $sql .= " WHERE marca = '" . $conn->real_escape_string($marca) . "'";
-            }
-            $result = $conn->query($sql);
+        
+        <?php if ($flash_messages): ?>
+            <?php foreach ($flash_messages as $flash_message): ?>
+                <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
+                    <?php echo $flash_message['message']; ?>
+                </div>
+            <?php endforeach;?>
+        <?php endif; ?>
 
-            if ($result->num_rows > 0) {
-                $produtos_por_tipo = [];
-                while ($row = $result->fetch_assoc()) {
-                    $produtos_por_tipo[$row['tipo_produto']][] = $row;
-                }
-                foreach ($produtos_por_tipo as $tipo_produto => $produtos) {
-                    echo "<div>\n";
-                    echo "<h1 class=\"titulos\">$tipo_produto</h1>\n";
-                    echo "<div class=\"list\">\n";
-                    foreach ($produtos as $produto) {
-                        $nome = htmlspecialchars($produto['nome']);
-                        $url_foto = htmlspecialchars($produto['url_foto']);
-                        $id_produto = htmlspecialchars($produto['id_produto']);
-                        echo "<a class=\"list-itens\" href=\"" . TEMPLATE_URL . "produto/produto_v.php?id=$id_produto\">\n";
-                        echo "<div class=\"itens\"><img class=\"iten-img\" src=\"$url_foto\" alt=\"\"><p class=\"iten-txt\">$nome</p></div>\n";
-                        echo "</a>\n";
-                    }
-                    echo "</div>\n";
-                    echo "</div>\n";
-                }
-            } else {
-                echo "Nenhum produto encontrado.";
-            }
+        <?php if (!empty($produtos_por_marca)): ?>
+            <?php foreach ($produtos_por_marca as $marca_produto => $produtos): ?>
+                <div class="carrosel">
+                    <h1 class="titulos"><?php echo htmlspecialchars($marca_produto); ?></h1>
+                    <div class="list">
+                        <?php foreach ($produtos as $produto): ?>
+                            <a class="list-itens" href="<?php echo TEMPLATE_URL . 'produto/produto_v_editar.php?id=' . htmlspecialchars($produto['id_produto']); ?>">
+                                <div class="itens">
+                                    <img class="iten-img" src="<?php echo htmlspecialchars($produto['url_foto']); ?>" alt="">
+                                    <p class="iten-txt"><?php echo htmlspecialchars($produto['nome']); ?></p>
+                                </div>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>Nenhum produto encontrado.</p>
+        <?php endif; ?>
+        <div class="div-link-inserir" >
+            <a class="link-inserir" href="<?php echo TEMPLATE_URL; ?>produto/produto_v_inserir.php" target="_blank">
+                <div class="div-link-img"><img class="link-img" src="<?php echo STATIC_URL; ?>icon/links/plus.svg" alt="Botão para inserir produtos"></div>
+            </a>
+        </div>
 
-            $conn->close();
-        ?>
     </div>
 
     <?php include(TEMPLATE_PATH . 'partials/rodape.php'); ?>

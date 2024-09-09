@@ -1,4 +1,4 @@
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/config.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/UserModel.php');?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +15,17 @@
     <div class="conteudo">
         <div class="formulario">
             <form action="#" class="form recuperar_senha">
+
                 <h2>Recuperar Senha</h2>
+                
+                <?php if ($flash_messages): ?>
+                    <?php foreach ($flash_messages as $flash_message): ?>
+                        <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
+                            <?php echo $flash_message['message']; ?>
+                        </div>
+                    <?php endforeach;?>
+                <?php endif; ?>
+
                 <div class="form-group">
                     <label for="email"class="label-informacao">E-mail:</label>
                     <input type="email" class="input email" name="email" placeholder="exemplo: joãozinho123@gmail.com">
@@ -26,7 +36,7 @@
                 </div>
                 <div class="form-group link-botao">
                     <div class="links-auxiliares">
-                        <a class="link-auxiliar l2" href="#">Tentar outro metodo</a>
+                        <a class="link-auxiliar c1" href="#">Tentar outro metodo</a>
                         <div class="gambiarra"></div>
                     </div>
                     <button type="submit" class="botao-form">Entrar</button>

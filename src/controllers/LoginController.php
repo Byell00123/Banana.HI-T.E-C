@@ -1,6 +1,5 @@
 <?php
 // controller/LoginController.php
-
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/config.php';
 include_once MODEL_PATH . 'UserModel.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/utils/FlashMessages.php';

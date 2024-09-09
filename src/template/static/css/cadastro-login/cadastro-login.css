@@ -71,13 +71,14 @@
     flex-direction: column; /* Organiza os itens em coluna */
 }
 
-.l1, .l2{
+.c1, .c2{
     width: 45%;
 }
 
 /* Estilo para o botão do formulário */
 .botao-form {
     width: 15vw;
+    min-height: 3em;
     margin: 16px auto; /* Centraliza o botão horizontalmente e adiciona uma margem superior de 16px */
     padding: 10px 20px; /* Adiciona um preenchimento interno de 10px em cima e embaixo e 20px nas laterais */
     background-color: #0016b3; /* Define a cor de fundo como azul escuro */

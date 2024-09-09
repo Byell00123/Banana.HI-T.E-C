@@ -1,5 +1,10 @@
 @import url(../base/base.css); /* Importa estilos base */
 
+.conteudo {
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
 /* Estilo para os títulos */
 .titulos {
     color: rgb(60, 255, 0); /* Define a cor do texto dos títulos como verde neon */
@@ -14,7 +19,7 @@
 }
 
 /* Estilo para a lista dentro de um div */
-div .list {
+.carrosel .list {
     background-color: rgb(43, 40, 40); /* Define a cor de fundo da lista como vermelho */
     list-style-type: none; /* Remove os marcadores padrão da lista */
     margin: 0; /* Remove as margens padrão da lista */
@@ -27,14 +32,14 @@ div .list {
 }
 
 /* Estilo para os itens da lista */
-div .list .list-itens {
+.carrosel .list .list-itens {
     display: grid; /* Define o elemento como um grid container */
     margin: 0px 10px 0px 0px; /* Adiciona uma margem de 10px à direita */
     text-decoration: none; /* Remove a decoração de sublinhado */
 }
 
 /* Estilo para cada item da lista */
-div .list .list-itens .itens {
+.carrosel .list .list-itens .itens {
     width: 300px; /* Define a largura dos itens como 300px */
     height: 300px; /* Define a altura dos itens como 300px */
     margin: 10px; /* Adiciona uma margem de 10px ao redor dos itens */
@@ -49,13 +54,12 @@ div .list .list-itens .itens {
 }
 
 /* Estilo para os itens da lista quando o mouse passa por cima */
-div .list .list-itens .itens:hover {
+.carrosel .list .list-itens .itens:hover {
     background-color: #007bff; /* Altera a cor de fundo para azul quando o mouse passa por cima */
-    box-shadow: 0 0 15px #00bfff; /* Adiciona uma sombra azul neon */
 }
 
 /* Estilo para as imagens dentro dos itens da lista */
-div .list .list-itens .itens .iten-img {
+.carrosel .list .list-itens .itens .iten-img {
     width: 200px; /* Define a largura dos itens como 200px */
     height: 200px; /* Define a altura dos itens como 200px */
     margin: 0; /* Remove as margens padrão */
@@ -64,7 +68,7 @@ div .list .list-itens .itens .iten-img {
 }
 
 /* Estilo para os textos dentro dos itens da lista */
-div .list .list-itens .itens .iten-txt {
+.carrosel .list .list-itens .itens .iten-txt {
     margin: 0px 0px 0px 15px; /* Adiciona uma margem de 15px à esquerda */
     font-size: 16px; /* Define o tamanho da fonte como 16px */
     text-align: left; /* Alinha o texto à esquerda */
@@ -76,4 +80,37 @@ div .list .list-itens .itens .iten-txt {
        O uso de `-webkit-line-clamp` é específico para navegadores baseados em WebKit, como Chrome e Safari.
        Não há uma propriedade `line-clamp` padrão no CSS, portanto, usamos o prefixo `-webkit` para compatibilidade. */
     white-space: normal; /* Permite que o texto quebre em várias linhas */
+}
+
+.div-link-inserir {
+    position: fixed;
+    top: auto;
+    right: 10px;
+    left: auto;
+    bottom: 5vh;
+    width: 7vw;
+    height: 7vw;
+    background-color: rgb(0, 255, 255); /* Define a cor de fundo como  */
+    border: 3px solid rgb(100, 255, 255); /* Define a cor da borda como  */
+    box-shadow: 0 0 5px rgb(0, 255, 255); /* Adiciona uma sombra azul neon */
+    border-radius: 30px;
+}
+
+.div-link-inserir:hover {
+    background-color: rgb(100, 255, 255); /* Altera a cor de fundo para azul quando o mouse passa por cima */
+}
+
+.div-link-inserir .link-inserir {
+    width: 100%;
+    height: 100%;
+}
+
+.div-link-inserir .link-inserir .div-link-img {
+    width: 100%;
+    height: 100%;
+}
+
+.div-link-inserir .link-inserir .div-link-img .link-img {
+    width: 100%;
+    height: 100%;
 }

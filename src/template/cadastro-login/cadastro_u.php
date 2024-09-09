@@ -1,9 +1,5 @@
-<?php
-include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/config.php'); 
-include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/UserModel.php');
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/utils/FlashMessages.php';
-$flash_messages = FlashMessages::getMessages();
-?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/UserModel.php'); ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,7 +16,9 @@ $flash_messages = FlashMessages::getMessages();
 <div class="conteudo">
     <div class="formulario">
         <form action="<?php echo CONTROLLER_URL; ?>CadastroController.php" method="POST" class="form cadastro">
+
             <h2>Cadastro</h2>
+
             <?php if ($flash_messages): ?>
                 <?php foreach ($flash_messages as $flash_message): ?>
                     <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
@@ -28,6 +26,7 @@ $flash_messages = FlashMessages::getMessages();
                     </div>
                 <?php endforeach;?>
             <?php endif; ?>
+            
             <div class="form-group">
                 <label for="username" class="label-informacao">Nome de Usuário:</label>
                 <input type="text" class="input username" name="username" placeholder="exemplo: Joãozinho123" required>
@@ -76,7 +75,7 @@ $flash_messages = FlashMessages::getMessages();
             </div>
             <div class="form-group link-botao">
                 <div class="links-auxiliares">
-                    <a class="link-auxiliar l1" href="<?php echo TEMPLATE_URL; ?>cadastro-login/login_u.php" target="_blank">Já tenho uma conta</a>
+                    <a class="link-auxiliar c1" href="<?php echo TEMPLATE_URL; ?>cadastro-login/login_u.php" target="_blank">Já tenho uma conta</a>
                     <div class="gambiarra"></div>
                 </div>
                 <button type="submit" class="botao-form">Cadastrar</button>

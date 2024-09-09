@@ -13,6 +13,7 @@ define('BASE_URL', 'http://localhost/Banana.HI-T.E-C/');
 define('TEMPLATE_URL', BASE_URL . 'src/template/');
 define('STATIC_URL', BASE_URL . 'src/template/static/');
 define('VIEWS_URL', BASE_URL . 'src/views/');
+define('UPLOADS_URL', BASE_URL . 'src/uploads/');
 
 // Caminho para a pasta dos controllers
 define('CONTROLLER_URL', BASE_URL . 'src/controllers/');
@@ -21,126 +22,13 @@ define('CONTROLLER_URL', BASE_URL . 'src/controllers/');
 define('MODEL_PATH', __DIR__ . '/models/');
 
 define('TEMPLATE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/template/');
+define('UTILS_PATH', $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/utils/');
 
+// Criando a conexão com o banco de dados
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
+// Verificando a conexão
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+}
 ?>
-
-<!-- 
--Banana.HI-T.E-C
-    -documentacao
-    -src
-        -views
-            -cadastro-login
-                -cadastro-login.php
-            -home
-                -home.php
-        -template 
-            -base
-            -carrinho
-                -carrinho_v.php
-                -carrinho_u.php
-            -cadastro-login
-                -cadastro_v.php
-                -login_v.php
-                -cadastro_u.php
-                -login_u.php
-                -decisao.php
-                -recuperar_senha.php
-            -home
-                -home_v.php
-                -home_u.php
-            -partials
-                -navbar_v.php
-                -navbar_u.php
-                -rodape.php
-            -produto
-                -produto_v.php
-                -produto_u.php
-            -scripst
-            -static
-                -css
-                    -base
-                        -base.css
-                    -cadastro-login
-                        -cadastro-login.php
-                    -home
-                        -home_v.css
-                        -home_u.css
-                    -produto
-                        -produto_v.php
-                        -produto_u.php
-                -icon
-                    -botoes
-                    -favicon
-                -img
-                    -banners
-                    -produtos
-        -.vscode
-
-
-
-COMO DEVE FICAR: 
-
-Banana.HI-T.E-C
-    - documentacao
-    - src
-        - controllers
-            - CadastroController.php
-            - LoginController.php
-            - LogoutController.php
-        - models
-            - database.php
-            - UserModel.php
-            - Product.php
-        - template 
-            - base
-                -base.html
-            - carrinho
-                - carrinho_v.php
-                - carrinho_u.php
-            - cadastro-login
-                - cadastro_v.php
-                - login_v.php
-                - cadastro_u.php
-                - login_u.php
-                - decisao.php
-                - recuperar_senha.php
-            - home
-                - home_v.php
-                - home_u.php
-            - partials
-                - navbar_v.php
-                - navbar_u.php
-                - rodape.php
-            - produto
-                - produto_v.php
-                - produto_u.php
-            - scripst
-            - static
-                - css
-                    - base
-                        - base.css
-                    - cadastro-login
-                        - cadastro-login.php
-                    - home
-                        - home_v.css
-                        - home_u.css
-                    - produto
-                        - produto_v.php
-                        - produto_u.php
-                - icon
-                    - botoes
-                    - favicon
-                - img
-                    - banners
-                    - produtos
-        - util
-            - FlashMessages..php
-            - isLogado.php
-            - session_start.php
-        - scripts
-    - .vscode
-
-
-
--->

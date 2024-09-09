@@ -1,15 +1,15 @@
 <?php
-
 // models/UserModel.php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/database.php';
-include_once MODEL_PATH . 'UserModel.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/utils/FlashMessages.php';
+$flash_messages = FlashMessages::getMessages();
 
 class UserModel {
 
     // Função para cadastrar um usuário
     public function cadastraUsuario($dados) {
         // Conectar ao banco de dados
-        $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $conn = getConnection();
         
         // Verificar se houve erro na conexão
         if ($conn->connect_error) {

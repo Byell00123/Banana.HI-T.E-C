@@ -1,5 +1,4 @@
 <?php 
-include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/config.php'); 
 include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/ProductModel.php'); // Corrigido o caminho
 
 // Obtenha os produtos usando a função do modelo
@@ -22,6 +21,15 @@ $produtos_por_tipo = getProdutosPorTipo();
 
     <!-- Conteúdo do site -->
     <div class="conteudo">
+
+        <?php if ($flash_messages): ?>
+            <?php foreach ($flash_messages as $flash_message): ?>
+                <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
+                    <?php echo $flash_message['message']; ?>
+                </div>
+            <?php endforeach;?>
+        <?php endif; ?>
+
         <?php if (!empty($produtos_por_tipo)): ?>
             <?php foreach ($produtos_por_tipo as $tipo_produto => $produtos): ?>
                 <div class="banner promocional">

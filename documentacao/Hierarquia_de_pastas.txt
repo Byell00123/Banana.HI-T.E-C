@@ -1,0 +1,65 @@
+
+<!-- 
+COMO DEVE FICAR: 
+
+Banana.HI-T.E-C
+    - documentacao
+    - src
+        - controllers
+            - CadastroController.php
+            - LoginController.php
+            - LogoutController.php
+        - models
+            - database.php
+            - UserModel.php
+            - Product.php
+        - template 
+            - base
+                -base.html
+            - carrinho
+                - carrinho_v.php
+                - carrinho_u.php
+            - cadastro-login
+                - cadastro_v.php
+                - login_v.php
+                - cadastro_u.php
+                - login_u.php
+                - decisao.php
+                - recuperar_senha.php
+            - home
+                - home_v.php
+                - home_u.php
+            - partials
+                - navbar_v.php
+                - navbar_u.php
+                - rodape.php
+            - produto
+                - produto_v.php
+                - produto_u.php
+            - scripst
+            - static
+                - css
+                    - base
+                        - base.css
+                    - cadastro-login
+                        - cadastro-login.php
+                    - home
+                        - home_v.css
+                        - home_u.css
+                    - produto
+                        - produto_v.php
+                        - produto_u.php
+                - icon
+                    - botoes
+                    - favicon
+                - img
+                    - banners
+                    - produtos
+        - util
+            - FlashMessages..php
+            - isLogado.php
+            - session_start.php
+        - scripts
+    - .vscode
+
+-->

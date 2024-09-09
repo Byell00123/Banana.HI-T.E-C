@@ -1,9 +1,4 @@
-<?php 
-include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/config.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/UserModel.php');
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/utils/FlashMessages.php';
-$flash_messages = FlashMessages::getMessages();
-?>
+<?php  include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/UserModel.php'); ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,6 +18,7 @@ $flash_messages = FlashMessages::getMessages();
             <form class="form login" action="<?php echo CONTROLLER_URL; ?>LoginController.php" method="POST">
 
                 <h2>Login</h2>
+
                 <?php if ($flash_messages): ?>
                     <?php foreach ($flash_messages as $flash_message): ?>
                         <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
@@ -41,9 +37,9 @@ $flash_messages = FlashMessages::getMessages();
                 </div>
                 <div class="form-group link-botao">
                     <div class="links-auxiliares">
-                        <a class="link-auxiliar l1" href="<?php echo TEMPLATE_URL; ?>cadastro-login/recuperar_senha.php" target="_blank">Esqueceu sua senha?</a>
+                        <a class="link-auxiliar c1" href="<?php echo TEMPLATE_URL; ?>cadastro-login/recuperar_senha.php" target="_blank">Esqueceu sua senha?</a>
                         <div class="gambiarra"></div>
-                        <a class="link-auxiliar l2" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_u.php" target="_blank">Ainda não tem uma conta?</a>
+                        <a class="link-auxiliar c2" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_u.php" target="_blank">Ainda não tem uma conta?</a>
                     </div>
                     <button type="submit" class="botao-form">Entrar</button>
                 </div>

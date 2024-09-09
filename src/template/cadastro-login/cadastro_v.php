@@ -1,4 +1,5 @@
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/config.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/ProductModel.php'); ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +16,17 @@
     <div class="conteudo">
         <div class="formulario">
             <form action="#" class="form cadastro">
+
                 <h2>Cadastro de Vendedor</h2>
+
+                <?php if ($flash_messages): ?>
+                    <?php foreach ($flash_messages as $flash_message): ?>
+                        <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
+                            <?php echo $flash_message['message']; ?>
+                        </div>
+                    <?php endforeach;?>
+                <?php endif; ?>
+
                 <div class="form-group">
                     <label for="nome_fantasia"class="label-informacao">Nome Fantasia:</label>
                     <input type="txt" class="input username" name="nome_fantasia" placeholder="exemplo: Acer" autocomplete="username" required>
@@ -45,7 +56,7 @@
                 </div>
                 <div class="form-group link-botao">
                     <div class="links-auxiliares">
-                        <a class="link-auxiliar l1" href="<?php echo TEMPLATE_URL; ?>cadastro-login/login_v.php" target="_blank">Ja tenho uma conta</a>
+                        <a class="link-auxiliar c1" href="<?php echo TEMPLATE_URL; ?>cadastro-login/login_v.php" target="_blank">Ja tenho uma conta</a>
                         <div class="gambiarra"></div>
                     </div>
                     <button type="submit" class="botao-form">Cadastrar</button>
