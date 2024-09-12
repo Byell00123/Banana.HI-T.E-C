@@ -35,15 +35,6 @@ CREATE TABLE `permissoes_grupos` (
   CONSTRAINT `permissoes_grupos_ibfk_2` FOREIGN KEY (`fk_id_grupo`) REFERENCES `grupos` (`id_grupo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `permissoes_grupos`
---
-
-LOCK TABLES `permissoes_grupos` WRITE;
-/*!40000 ALTER TABLE `permissoes_grupos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `permissoes_grupos` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -54,4 +45,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-30 20:16:51
+-- Dump completed on 2024-09-12 14:10:01

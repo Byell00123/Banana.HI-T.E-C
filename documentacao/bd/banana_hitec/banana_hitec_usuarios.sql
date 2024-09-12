@@ -26,33 +26,24 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuarios` (
   `id_usuario` bigint NOT NULL AUTO_INCREMENT,
-  `nome_usuario` varchar(255) NOT NULL,
+  `nome_usuario` varchar(146) NOT NULL,
   `senha` varchar(255) NOT NULL,
-  `primeiro_nome` varchar(255) NOT NULL,
-  `sebrenome` varchar(255) NOT NULL,
+  `primeiro_nome` varchar(50) NOT NULL,
+  `sobrenome` varchar(50) NOT NULL,
   `data_nascimento` date NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `email` varchar(150) NOT NULL,
   `telefone` bigint NOT NULL,
   `sexo` enum('f','m','h') NOT NULL,
   `cpf` bigint NOT NULL,
   `data_engressou` datetime NOT NULL,
-  `ultimo_login` datetime NOT NULL,
+  `ultimo_login` datetime DEFAULT NULL,
   `status` tinyint NOT NULL DEFAULT '0',
   `fk_id_grupo` bigint DEFAULT NULL,
   PRIMARY KEY (`id_usuario`),
   KEY `fk_id_grupo` (`fk_id_grupo`),
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`fk_id_grupo`) REFERENCES `grupos` (`id_grupo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `usuarios`
---
-
-LOCK TABLES `usuarios` WRITE;
-/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -63,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-30 20:16:51
+-- Dump completed on 2024-09-12 14:10:01

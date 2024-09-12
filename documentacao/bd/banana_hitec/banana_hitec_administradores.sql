@@ -26,8 +26,8 @@ DROP TABLE IF EXISTS `administradores`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `administradores` (
   `id_admin` bigint NOT NULL,
-  `codenome` varchar(255) NOT NULL,
-  `senha` varchar(255) NOT NULL,
+  `codenome` varchar(146) NOT NULL,
+  `senha` varchar(30) NOT NULL,
   `data_engressou` datetime NOT NULL,
   `ultimo_login` datetime NOT NULL,
   `status` tinyint NOT NULL DEFAULT '0',
@@ -37,15 +37,6 @@ CREATE TABLE `administradores` (
   CONSTRAINT `administradores_ibfk_1` FOREIGN KEY (`fk_id_grupo`) REFERENCES `grupos` (`id_grupo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `administradores`
---
-
-LOCK TABLES `administradores` WRITE;
-/*!40000 ALTER TABLE `administradores` DISABLE KEYS */;
-/*!40000 ALTER TABLE `administradores` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -56,4 +47,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-30 20:16:51
+-- Dump completed on 2024-09-12 14:10:02
