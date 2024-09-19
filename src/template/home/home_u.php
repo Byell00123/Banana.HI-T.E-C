@@ -1,5 +1,6 @@
 <?php 
-include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/ProductModel.php'); // Corrigido o caminho
+//include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/ProductModel.php'); // Corrigido o caminho
+include(dirname(__FILE__) . "/../../models/ProductModel.php");
 
 // Obtenha os produtos usando a função do modelo
 $produtos_por_tipo = getProdutosPorTipo();

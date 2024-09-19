@@ -1,7 +1,10 @@
 <?php
 // src/models/ProductModel.php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/database.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/utils/FlashMessages.php';
+/*require_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/database.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/utils/FlashMessages.php';*/
+
+require_once(dirname(__FILE__) . '/database.php');
+include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
 $flash_messages = FlashMessages::getMessages();
 
 function getProdutosPorTipo($marca = null) {

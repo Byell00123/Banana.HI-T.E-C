@@ -1,6 +1,6 @@
 <?php
 // models/database.php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.Hi-T.E-C/src/config.php';
+require_once(dirname(__FILE__) . '/../config.php');
 
 function getConnection() {
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
