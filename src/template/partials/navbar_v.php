@@ -28,6 +28,7 @@
             </form>
         </li>
         <li class="li gambiarra"></li>
-        <li class="li usuario"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/decisao.php" target="_blank">Login/Cadastro</a></li>
+        <li class="li usuario"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_v.php" target="_blank">Cadastro</a></li>
+        <li class="li usuario"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/login_v.php" target="_blank">Login</a></li>
     </ul>
 </nav>

@@ -37,7 +37,9 @@ if (isset($_GET['id'])) {
                 <?php endif; ?>
                 
                 <table border="1" cellpadding="10">
+                    
                     <tr>
+                        <input type="hidden" name="id_produto" value="<?php echo $produto['id_produto']; ?>">
                         <td><label for="nome">Nome:</label></td>
                         <td><input type="text" class="input nome" name="nome" value="<?php echo htmlspecialchars($produto['nome']); ?>"></td>
 
@@ -89,9 +91,9 @@ Recomendações:
                 <div class="form-group link-botao">
                     <div class="links-auxiliares">
                     <!-- TODO: Tem que fazer a distinção do botão epertado -->
-                        <button class="botao-form c1" type="submit">Atualizar Produto</button>
+                        <button class="botao-form c1" name="atualiza" type="submit">Atualizar Produto</button>
                         <div class="gambiarra"></div>
-                        <button class="botao-form c2" type="submit" name="delete" onclick="return confirm('Tem certeza que deseja excluir este produto?')">Excluir Produto</button>
+                        <button class="botao-form c2" type="submit" name="deleta" onclick="return confirm('Tem certeza que deseja excluir este produto?')">Excluir Produto</button>
                     </div>
                 </div>
             </form>

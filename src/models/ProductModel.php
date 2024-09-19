@@ -100,9 +100,6 @@ function getMarcasDisponiveis() {
     return $marcas;
 }
 
-
-
-// TODO: Ta salvando de qualquer jeito, depois tem que adicionar as validadações nos campos para so deixar passar os dados corretos 
 function salvarProduto($nome, $tipo_produto, $marca, $preco, $peso, $qtd, $descricao, $url_foto, $fk_vendedores) {
     $conn = getConnection(); // Obtendo a conexão do banco de dados
     $sql = "INSERT INTO produtos (nome, tipo_produto, marca, preco, peso, qtd, descricao, url_foto, fk_vendedores) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -124,6 +121,71 @@ function salvarProduto($nome, $tipo_produto, $marca, $preco, $peso, $qtd, $descr
     $conn->close();
 
     return $resultado;
+}
+
+// Atualizar produto por ID
+function atualizarProduto($id_produto, $nome, $tipo_produto, $marca, $preco, $peso, $qtd, $descricao, $url_foto) {
+    $conn = getConnection();
+    $sql = "UPDATE produtos SET nome = ?, tipo_produto = ?, marca = ?, preco = ?, peso = ?, qtd = ?, descricao = ?, url_foto = ? WHERE id_produto = ?";
+    
+    $stmt = $conn->prepare($sql);
+
+    if ($stmt === false) {
+        return false;
+    }
+
+    $stmt->bind_param("sssddissi", $nome, $tipo_produto, $marca, $preco, $peso, $qtd, $descricao, $url_foto, $id_produto);
+    $resultado = $stmt->execute();
+
+    $stmt->close();
+    $conn->close();
+
+    return $resultado;
+}
+
+// Função para excluir um produto pelo ID
+function excluirProduto($id_produto) {
+    $conn = getConnection();
+
+    // Primeiramente, obter a URL da imagem do produto
+    $sql = "SELECT url_foto FROM produtos WHERE id_produto = ?";
+    $stmt = $conn->prepare($sql);
+    if ($stmt === false) {
+        return false;
+    }
+
+    $stmt->bind_param("i", $id_produto);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Se o produto existir, pegamos a URL da imagem
+    if ($result->num_rows > 0) {
+        $produto = $result->fetch_assoc();
+        $url_foto = $_SERVER['DOCUMENT_ROOT'] . $produto['url_foto'];  // Caminho completo da imagem
+
+        // Agora, deletamos o produto do banco de dados
+        $stmt->close();
+        $sql = "DELETE FROM produtos WHERE id_produto = ?";
+        $stmt = $conn->prepare($sql);
+        if ($stmt === false) {
+            return false;
+        }
+
+        $stmt->bind_param("i", $id_produto);
+        $resultado = $stmt->execute();
+
+        // Após deletar do banco, verificar se o arquivo de imagem existe e deletá-lo
+        if ($resultado && file_exists($url_foto)) {
+            unlink($url_foto);  // Excluir o arquivo de imagem
+        }
+
+        $stmt->close();
+        $conn->close();
+
+        return $resultado;
+    }
+
+    return false;  // Produto não encontrado
 }
 
 

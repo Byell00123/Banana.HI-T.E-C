@@ -32,9 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nome_imagem = strtolower(str_replace([' ', '_'], ['-','_'], $imagem['name'])); // Transformar o nome da imagem
             $caminho_imagem = $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/uploads/produtos/' . $nome_imagem;
             
-
             
-
             // Movendo o arquivo para o diretório de uploads
             if (move_uploaded_file($imagem['tmp_name'], $caminho_imagem)) {
                 // Caminho da imagem que será salvo no banco de dados
