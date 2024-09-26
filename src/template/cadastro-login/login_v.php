@@ -15,7 +15,7 @@
 
     <div class="conteudo">
         <div class="formulario">
-            <form action="#" class="form login">
+            <form action="../../controllers/VendedorLoginController.php" method="POST" class="form login">
 
                 <h2>Login do Vendedor</h2>
 
@@ -28,8 +28,8 @@
                 <?php endif; ?>
 
                 <div class="form-group">
-                    <label for="cnpj">CNPJ:</label>
-                    <input type="text" class="input username" name="cnpj" placeholder="Nome Fantasia ou CNPJ">
+                    <label for="cnpj">Cnpj:</label>
+                    <input type="text" class="input username" name="cnpj" placeholder="Nome Fantasia ou Cnpj">
                 </div>
                 <div class="form-group">
                     <label for="password">Senha:</label>

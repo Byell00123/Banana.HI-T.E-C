@@ -1,13 +1,13 @@
 <?php
-// models/UserModel.php
+// models/VendedorModel.php
 require_once(dirname(__FILE__) . '/database.php');
 include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
 $flash_messages = FlashMessages::getMessages();
 
-class UserModel {
+class VendModel {
 
-    // Função para cadastrar um usuário
-    public function cadastraUsuario($dados) {
+    // Função para cadastrar um vendedor
+    public function cadastraVendedor($dados) {
         // Conectar ao banco de dados
         $conn = getConnection();
         
@@ -17,8 +17,8 @@ class UserModel {
         }
     
         // Preparar a consulta SQL para inserção de dados
-        $sql = "INSERT INTO usuarios (nome_usuario, senha, primeiro_nome, sobrenome, data_nascimento, email, telefone, sexo, cpf, data_engressou) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
+        $sql = "INSERT INTO vendedores (cnpj,nome_fantasia,senha,email,telefone,data_engressou) VALUES (?, ?, ?, ?, ?, ?)";
+        //TODO: Depois criar coluna telefone na tabela de vendedor e direcionar o result para BD
         // Preparar a instrução
         $stmt = $conn->prepare($sql);
         if (!$stmt) {
@@ -29,39 +29,34 @@ class UserModel {
         $senhaCriptografada = password_hash($dados['password1'], PASSWORD_DEFAULT);
         
         // Associar os parâmetros
-        $stmt->bind_param("ssssssssss", 
-            $dados['username'], 
+        $stmt->bind_param("ssssss", 
+            $dados['cnpj'], 
+            $dados['nome_fantasia'],
             $senhaCriptografada, 
-            $dados['primeiro_nome'], 
-            $dados['sobrenome'], 
-            $dados['nascimento'], 
             $dados['email'], 
-            $dados['telefone'], 
-            $dados['sexo'], 
-            $dados['cpf'], 
-            $dados['data_engressou']
+            $dados['telefone'],
+            $dados['data_engressou'],
         );
 
         // Executar a consulta
         if ($stmt->execute()) {
             // Cadastro bem-sucedido
-            header("Location: " . TEMPLATE_URL . "cadastro-login/login_u.php");
+            header("Location: " . TEMPLATE_URL . "cadastro-login/login_v.php");
             exit();
         } else {
             // Exibir erro em caso de falha
-            echo "Erro ao cadastrar o usuário: " . $stmt->error;
+            echo "Erro ao cadastrar o vendedor: " . $stmt->error;
         }
         
         // Fechar a instrução e a conexão
         $stmt->close();
         $conn->close();
     }
-
-    public function loginUsuario($username, $password) {
+    public function loginVendedor($cnpj, $password) {
         $conn = getConnection();
-        $sql = "SELECT * FROM usuarios WHERE nome_usuario = ? OR email = ?";
+        $sql = "SELECT * FROM vendedores WHERE cnpj = ? OR email = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $username, $username);
+        $stmt->bind_param("ss", $cnpj, $cnpj);
         $stmt->execute();
         $result = $stmt->get_result();
     
@@ -69,14 +64,14 @@ class UserModel {
             $user = $result->fetch_assoc();
             // Verificar a senha
             if (password_verify($password, $user['senha'])) {
-                // Iniciar a sessão e armazenar informações do usuário
+                // Iniciar a sessão e armazenar informações do vendedor
                 session_start();
-                $_SESSION['user_id'] = $user['id_usuario'];
-                $_SESSION['user_name'] = $user['nome_usuario'];
+                $_SESSION['user_cnpj'] = $user['cnpj'];
+                $_SESSION['user_fantasia'] = $user['nome_fantasia'];
                 return true;
             }
         }
         return false; // Login falhou
     }
-    
 }
+    ?>

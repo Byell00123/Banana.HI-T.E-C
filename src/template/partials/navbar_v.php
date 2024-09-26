@@ -1,3 +1,7 @@
+<?php
+include_once (dirname(__FILE__) . '/../../utils/isLogado.php');
+include_once (dirname(__FILE__) . '/../../models/ProductModel.php');
+?>
 <!-- Menu que fica na parte superior do site-->
 <nav class="navbar">
     <ul class="navbar-list">
@@ -16,7 +20,6 @@
                     <option value="">Todas</option>
                     <?php
                         // Usando a função do modelo para obter marcas
-                        include_once($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/ProductModel.php');
                         $marcas = getMarcasDisponiveis(); // Função que obtem as marcas disponíveis
 
                         foreach ($marcas as $marcaOption) {
@@ -28,7 +31,17 @@
             </form>
         </li>
         <li class="li gambiarra"></li>
-        <li class="li usuario"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_v.php" target="_blank">Cadastro</a></li>
-        <li class="li usuario"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/login_v.php" target="_blank">Login</a></li>
+        <?php if (isLogado()): ?>
+            <form id="logoutForm" action="<?php echo CONTROLLER_URL; ?>LogoutController.php" method="POST" style="display: none;">
+                <input type="hidden" name="action" value="logout">
+            </form>
+            <li class="li"><a class="a" href="#" onclick="document.getElementById('logoutForm').submit(); return false;">Sair</a></li>
+                <li class="li usuario"><a class="a" href="#">Usuario</a></li>
+        <?php else: ?>
+            <li class="li"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_v.php" target="_blank">Cadastro</a></li>
+            <li class="li usuario"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/login_v.php" target="_blank">Login</a></li>
+        <?php endif; ?>
+        
+
     </ul>
 </nav>
