@@ -24,7 +24,7 @@ if (isset($_GET['id'])) {
     <div class="conteudo">
 
         <div class="formulario">
-            <form class="form" method="POST" action="<?php echo CONTROLLER_URL; ?>EditarProdutoController.php" enctype="multipart/form-data">
+            <form class="form" method="POST" action="../../controllers/EditarProdutoController.php" enctype="multipart/form-data">
 
                 <h1>Editar Produto</h1>
 

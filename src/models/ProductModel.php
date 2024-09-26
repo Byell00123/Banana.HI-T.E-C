@@ -102,7 +102,7 @@ function getMarcasDisponiveis() {
 
 function salvarProduto($nome, $tipo_produto, $marca, $preco, $peso, $qtd, $descricao, $url_foto, $fk_vendedores) {
     $conn = getConnection(); // Obtendo a conexão do banco de dados
-    $sql = "INSERT INTO produtos (nome, tipo_produto, marca, preco, peso, qtd, descricao, url_foto, fk_vendedores) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO produtos (nome, tipo_produto, marca, preco, peso, qtd, descricao, url_foto, fk_vendedor) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
     $stmt = $conn->prepare($sql);
     

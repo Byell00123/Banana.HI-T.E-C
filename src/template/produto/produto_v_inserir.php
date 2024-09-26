@@ -19,7 +19,7 @@ include(dirname(__FILE__) . '/../../models/ProductModel.php');
     <div class="conteudo">
 
         <div class="formulario">
-            <form class="form inserir-produto" method="POST" action="<?php echo CONTROLLER_URL; ?>InserirProdutoController.php" enctype="multipart/form-data">
+            <form class="form inserir-produto" method="POST" action="../../controllers/InserirProdutoController.php" enctype="multipart/form-data">
 
                 <h1>Inserir Produto</h1>
 
