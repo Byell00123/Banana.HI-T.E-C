@@ -1,7 +1,5 @@
 <?php
 // src/models/ProductModel.php
-/*require_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/database.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/utils/FlashMessages.php';*/
 
 require_once(dirname(__FILE__) . '/database.php');
 include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
@@ -164,7 +162,18 @@ function excluirProduto($id_produto) {
     // Se o produto existir, pegamos a URL da imagem
     if ($result->num_rows > 0) {
         $produto = $result->fetch_assoc();
-        $url_foto = $_SERVER['DOCUMENT_ROOT'] . $produto['url_foto'];  // Caminho completo da imagem
+        //$url_foto = '../' . $produto['url_foto'];  // Caminho completo da imagem // TODO: isso era como estava, apagar depois das alterações
+        
+        // O campo url_foto pode ter dois formatos
+        $url_foto = $produto['url_foto']; // Transformar o nome da imagem
+
+        // Usar explode() para dividir a string com base nas barras '/'
+        $partes_url = explode('/', $url_foto);
+
+        // O último índice da lista é o nome do arquivo da imagem
+        $nome_imagem = end($partes_url); // Pega o último elemento da lista
+
+        $url_foto = dirname(__FILE__) . '/../uploads/produtos/' . $nome_imagem;  // Caminho completo da imagem
 
         // Agora, deletamos o produto do banco de dados
         $stmt->close();
@@ -190,6 +199,7 @@ function excluirProduto($id_produto) {
 
     return false;  // Produto não encontrado
 }
+
 
 
 

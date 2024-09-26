@@ -1,6 +1,6 @@
 <?php 
 //include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/ProductModel.php'); // Corrigido o caminho
-include(dirname(__FILE__) . "/../../models/ProductModel.php");
+include(dirname(__FILE__) . '/../../models/ProductModel.php');
 
 // Obtenha os produtos usando a função do modelo
 $produtos_por_tipo = getProdutosPorTipo();
@@ -18,7 +18,7 @@ $produtos_por_tipo = getProdutosPorTipo();
 </head>
 <body>
 
-    <?php include(TEMPLATE_PATH . 'partials/navbar_u.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials/navbar_u.php'); ?>
 
     <!-- Conteúdo do site -->
     <div class="conteudo">
@@ -58,7 +58,7 @@ $produtos_por_tipo = getProdutosPorTipo();
         <?php endif; ?>
     </div>
 
-    <?php include(TEMPLATE_PATH . 'partials/rodape.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials/rodape.php'); ?>
 
 </body>
 </html>

@@ -1,8 +1,10 @@
 <?php
 // controller/CadastroController.php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/config.php';
-include_once MODEL_PATH . 'UserModel.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/utils/FlashMessages.php';
+include_once(dirname(__FILE__) . '/../config.php');
+
+include_once(dirname(__FILE__) . '/../models/UserModel');
+
+include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
 
 function processarCadastroUsuario($dadosUsuario) {
     $userModel = new UserModel(); // Instancia a classe UserModel

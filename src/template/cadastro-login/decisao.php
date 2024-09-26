@@ -1,4 +1,4 @@
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/config.php');?>
+<?php include(dirname(__FILE__) . '/../../config.php');?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <?php include(TEMPLATE_PATH . 'partials/navbar_u.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials/navbar_u.php'); ?>
 
     <div class="conteudo">
         <div class="formulario">
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <?php include(TEMPLATE_PATH . 'partials/rodape.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials/rodape.php'); ?>
 
 </body>
 </html>

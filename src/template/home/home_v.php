@@ -1,5 +1,5 @@
 <?php 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/ProductModel.php');
+include(dirname(__FILE__) . '/../../models/ProductModel.php');
 
 // Obtenha a marca selecionada (se houver)
 $marca = isset($_GET['marca']) && $_GET['marca'] !== '' ? $_GET['marca'] : null;
@@ -21,7 +21,7 @@ $produtos_por_marca = getProdutosPorMarca($marca);
 </head>
 <body>
 
-    <?php include(TEMPLATE_PATH . 'partials/navbar_v.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials//navbar_v.php'); ?>
 
     
     <!-- Conteúdo do site -->
@@ -62,7 +62,7 @@ $produtos_por_marca = getProdutosPorMarca($marca);
 
     </div>
 
-    <?php include(TEMPLATE_PATH . 'partials/rodape.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials//rodape.php'); ?>
 
 </body>
 </html>

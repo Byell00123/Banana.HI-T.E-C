@@ -1,6 +1,6 @@
 <?php
 // src/controllers/logoutController.php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/config.php';
+include_once(dirname(__FILE__) . '/../config.php');
 // Incluir a sessão, necessário para verificar se o usuário está logado
 if (session_status() === PHP_SESSION_NONE) {
     session_start();

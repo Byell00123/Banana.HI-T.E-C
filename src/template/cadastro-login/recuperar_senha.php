@@ -1,4 +1,4 @@
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/UserModel.php');?>
+<?php include(dirname(__FILE__) . '/../../modelsUserModel.php');?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

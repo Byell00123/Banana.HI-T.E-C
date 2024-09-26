@@ -1,5 +1,5 @@
 <?php 
-include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/ProductModel.php'); 
+include(dirname(__FILE__) . '/../../models/ProductModel.php'); 
 // TODO: Por favor não mexa aqui!! o codigo só funciona se estiver dessa exata forma e não me pergunte o porque.
 if (isset($_GET['id'])) {
     $id_produto = intval($_GET['id']);  // Captura o ID do produto a partir da URL
@@ -19,7 +19,7 @@ if (isset($_GET['id'])) {
 </head>
 <body>
 
-    <?php include(TEMPLATE_PATH . 'partials/navbar_v.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials/navbar_v.php'); ?>
 
     <div class="conteudo">
 
@@ -98,8 +98,8 @@ Recomendações:
                 </div>
             </form>
         </div>
-
     </div>
+    <?php include(dirname(__FILE__) . '/../partials/rodape.php'); ?>
 
 </body>
 </html>

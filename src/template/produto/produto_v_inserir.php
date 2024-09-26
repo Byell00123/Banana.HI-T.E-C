@@ -1,5 +1,5 @@
 <?php 
-include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/ProductModel.php');
+include(dirname(__FILE__) . '/../../models/ProductModel.php');
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/models/ProductModel.ph
 </head>
 <body>
 
-    <?php include(TEMPLATE_PATH . 'partials/navbar_v.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials/navbar_v.php'); ?>
 
     <div class="conteudo">
 
@@ -120,10 +120,6 @@ Recomendações:
         });
         
     </script>
-</body>
-</html>
-
-    <?php include(TEMPLATE_PATH . 'partials/rodape.php'); ?>
-
+    <?php include(dirname(__FILE__) . '/../partials/rodape.php'); ?>
 </body>
 </html>

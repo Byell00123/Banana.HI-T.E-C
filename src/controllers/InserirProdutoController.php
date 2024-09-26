@@ -1,7 +1,7 @@
 <?php
 // src/controllers/ProductController.php
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/config.php';
-include_once MODEL_PATH . 'ProductModel.php';
+include_once(dirname(__FILE__) . '/../config.php');
+include_once(dirname(__FILE__) . '/../models/ProductModel.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     header("Location: " . TEMPLATE_URL . "produto/produto_v_inserir.php");
@@ -29,14 +29,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Manipulação da imagem
             $imagem = $_FILES['url_foto'];
-            $nome_imagem = strtolower(str_replace([' ', '_'], ['-','_'], $imagem['name'])); // Transformar o nome da imagem
-            $caminho_imagem = $_SERVER['DOCUMENT_ROOT'] . '/Banana.HI-T.E-C/src/uploads/produtos/' . $nome_imagem;
+            $nome_imagem = strtolower(str_replace([' ', '-'], ['_'], $imagem['name'])); // Transformar o nome da imagem
+            $caminho_imagem = '../uploads/produtos/' . $nome_imagem; // caminho ate o pasta de uploados, onde a imagens ficarão salvas
             
             
             // Movendo o arquivo para o diretório de uploads
             if (move_uploaded_file($imagem['tmp_name'], $caminho_imagem)) {
                 // Caminho da imagem que será salvo no banco de dados
-                $url_foto = '/Banana.HI-T.E-C/src/uploads/produtos/' . $nome_imagem;
+                    
+                $url_foto = '../../uploads/produtos/' . $nome_imagem; // Todas as imagens renderizadas a partir do template logo é nescessario voltar duas pasta para conseguir chegar na uploads/produtos
 
                 // Tente salvar o produto no banco de dados
                 $resultado = salvarProduto($nome, $tipo_produto, $marca, $preco, $peso, $qtd, $descricao, $url_foto, $fk_vendedores);
