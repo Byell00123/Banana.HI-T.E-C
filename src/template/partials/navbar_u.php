@@ -16,7 +16,6 @@ include_once (dirname(__FILE__) . '/../../utils/isLogado.php');
         <li class="li"><a class="a" href="#">Suporte</a></li>
         <div class="gambiarra"></div>
         <li class="li carrinho"><a class="a" href="#">Carrinho</a></li>
-        <li class="li carrinho"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_v.php">Vendedor</a></li>
         <?php if (isLogado()): ?>
             <form id="logoutForm" action="<?php echo CONTROLLER_URL; ?>LogoutController.php" method="POST" style="display: none;">
                 <input type="hidden" name="action" value="logout">
@@ -24,6 +23,7 @@ include_once (dirname(__FILE__) . '/../../utils/isLogado.php');
             <li class="li"><a class="a" href="#" onclick="document.getElementById('logoutForm').submit(); return false;">Sair</a></li>
                 <li class="li usuario"><a class="a" href="#">Usuario</a></li>
         <?php else: ?>
+            <li class="li"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_v.php">Vendedor</a></li>
             <li class="li usuario"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/decisao.php" target="_blank">Login/Cadastro</a></li>
         <?php endif; ?>
     </ul>

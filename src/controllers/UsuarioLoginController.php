@@ -2,7 +2,7 @@
 // controller/LoginController.php
 include_once(dirname(__FILE__) . '/../config.php');
 include_once(dirname(__FILE__) . '/../models/UserModel.php');
-include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
+
 
 // Inicie a sessão se ainda não estiver ativa
 if (session_status() === PHP_SESSION_NONE) {

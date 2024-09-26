@@ -2,7 +2,7 @@
 // controller/CadastroController.php
 include_once(dirname(__FILE__) . '/../config.php');
 
-include_once(dirname(__FILE__) . '/../models/UserModel');
+include_once(dirname(__FILE__) . '/../models/UserModel.php');
 
 include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
 

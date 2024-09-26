@@ -15,7 +15,7 @@
 
     <div class="conteudo">
         <div class="formulario">
-            <form class="form login" action="<?php echo CONTROLLER_URL; ?>LoginController.php" method="POST">
+            <form action="../../controllers/UsuarioLoginController.php" method="POST" class="form login">
 
                 <h2>Login</h2>
 

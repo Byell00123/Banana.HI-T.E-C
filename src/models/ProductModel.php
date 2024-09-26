@@ -1,6 +1,5 @@
 <?php
 // src/models/ProductModel.php
-
 require_once(dirname(__FILE__) . '/database.php');
 include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
 $flash_messages = FlashMessages::getMessages();
