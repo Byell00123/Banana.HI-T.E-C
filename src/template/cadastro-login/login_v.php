@@ -1,4 +1,5 @@
 <?php include(dirname(__FILE__) . '/../../models/ProductModel.php'); ?>
+<?php include(dirname(__FILE__) . '/../../models/VendedorModel.php'); ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">

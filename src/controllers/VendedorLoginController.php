@@ -17,9 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $cnpj = isset($_POST['cnpj']) ? $_POST['cnpj'] : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    // Debug: Exibir os valores recebidos
-    FlashMessages::addMessage('erro', "cnpj: $cnpj");
-    FlashMessages::addMessage('erro', "Password: $password");
+     // Debug: Exibir os valores recebidos
+    //FlashMessages::addMessage('erro', "cnpj: $cnpj");
+    // FlashMessages::addMessage('erro', "Password: $password");
 
     $VendedorModel = new VendModel();
     if ($VendedorModel->loginVendedor($cnpj, $password)) {
