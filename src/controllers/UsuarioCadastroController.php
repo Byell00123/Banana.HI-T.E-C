@@ -2,7 +2,7 @@
 // controller/CadastroController.php
 include_once(dirname(__FILE__) . '/../config.php');
 
-include_once(dirname(__FILE__) . '/../models/UserModel.php');
+include_once(dirname(__FILE__) . '/../models/UsuarioModel.php');
 
 include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
 
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     // Coletar dados do usuário
     $dadosUsuario = [
-        'username' => $_POST['username'],
+        'apelido' => $_POST['username'],
         'password1' => $_POST['password1'],
         'primeiro_nome' => $_POST['primeiro_nome'],
         'sobrenome' => $_POST['sobrenome'],
