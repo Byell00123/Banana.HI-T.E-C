@@ -20,7 +20,7 @@ include_once (dirname(__FILE__) . '/../../utils/isLogado.php');
             <form id="logoutForm" action="<?php echo CONTROLLER_URL; ?>LogoutController.php" method="POST" style="display: none;">
                 <input type="hidden" name="action" value="logout">
             </form>
-            <li class="li"><a class="a" href="#" onclick="document.getElementById('logoutForm').submit(); return false;">Sair</a></li>
+            <li class="li"><a class="a" onclick="document.getElementById('logoutForm').submit(); return false;">Sair</a></li>
                 <li class="li usuario"><a class="a" href="#">Usuario</a></li>
         <?php else: ?>
             <li class="li"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_v.php">Vendedor</a></li>

@@ -3,6 +3,7 @@
 require_once(dirname(__FILE__) . '/database.php');
 include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
 $flash_messages = FlashMessages::getMessages();
+include_once (dirname(__FILE__) . '/../utils/session_start.php');
 
 function getProdutosPorTipo($marca = null) {
     $conn = getConnection();
@@ -199,6 +200,11 @@ function excluirProduto($id_produto) {
     return false;  // Produto não encontrado
 }
 
+// Função para verificar se o usuário está logado
+function VendedorLogado() {
+    // Verifique se a sessão do usuário está ativa
+    return isset($_SESSION['user_cnpj']); // chave que usada para armazenar o login do usuário
+}
 
 
 

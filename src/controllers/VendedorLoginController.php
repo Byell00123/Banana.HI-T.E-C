@@ -1,6 +1,5 @@
 <?php
 // controller/VendedorLoginController.php
-
 include_once(dirname(__FILE__) . '/../config.php');
 include_once(dirname(__FILE__) . '/../models/VendedorModel.php');
 
@@ -17,14 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $cnpj = isset($_POST['cnpj']) ? $_POST['cnpj'] : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-     // Debug: Exibir os valores recebidos
-    //FlashMessages::addMessage('erro', "cnpj: $cnpj");
+    // Debug: Exibir os valores recebidos
+    // FlashMessages::addMessage('erro', "cnpj: $cnpj");
     // FlashMessages::addMessage('erro', "Password: $password");
 
-    $VendedorModel = new VendModel();
+    $VendedorModel = new VendedorModel();
     if ($VendedorModel->loginVendedor($cnpj, $password)) {
         // Defina a variável de sessão após o login bem-sucedido
-        $_SESSION['cnpj'] = $cnpj; // Armazene o nome de vendedor na sessão
+        $_SESSION['username'] = $cnpj; // Armazene o cnpj do vendedor na sessão
         
         FlashMessages::addMessage('success', 'Login realizado com sucesso!');
         header("Location: " . TEMPLATE_URL . "home/home_v.php");

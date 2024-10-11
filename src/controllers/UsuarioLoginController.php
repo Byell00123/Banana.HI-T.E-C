@@ -3,7 +3,6 @@
 include_once(dirname(__FILE__) . '/../config.php');
 include_once(dirname(__FILE__) . '/../models/UserModel.php');
 
-
 // Inicie a sessão se ainda não estiver ativa
 if (session_status() === PHP_SESSION_NONE) {
     session_start();

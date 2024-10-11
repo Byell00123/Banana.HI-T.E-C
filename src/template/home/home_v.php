@@ -1,5 +1,5 @@
 <?php 
-include(dirname(__FILE__) . '/../../models/ProductModel.php');
+include_once (dirname(__FILE__) . '/../../models/ProdutoModel.php');
 
 // Obtenha a marca selecionada (se houver)
 $marca = isset($_GET['marca']) && $_GET['marca'] !== '' ? $_GET['marca'] : null;
@@ -21,19 +21,13 @@ $produtos_por_marca = getProdutosPorMarca($marca);
 </head>
 <body>
 
-    <?php include(dirname(__FILE__) . '/../partials//navbar_v.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials/navbar_v.php'); ?>
 
-    
+    <p>ola ususario <?php echo $_SESSION["user_ cnpj"] ?> </p>
     <!-- Conteúdo do site -->
     <div class="conteudo">
         
-        <?php if ($flash_messages): ?>
-            <?php foreach ($flash_messages as $flash_message): ?>
-                <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
-                    <?php echo $flash_message['message']; ?>
-                </div>
-            <?php endforeach;?>
-        <?php endif; ?>
+        <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 
         <?php if (!empty($produtos_por_marca)): ?>
             <?php foreach ($produtos_por_marca as $marca_produto => $produtos): ?>
@@ -62,7 +56,7 @@ $produtos_por_marca = getProdutosPorMarca($marca);
 
     </div>
 
-    <?php include(dirname(__FILE__) . '/../partials//rodape.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials/rodape.php'); ?>
 
 </body>
 </html>

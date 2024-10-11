@@ -1,5 +1,5 @@
 <?php 
-include(dirname(__FILE__) . '/../../models/ProductModel.php');
+include_once (dirname(__FILE__) . '/../../models/ProdutoModel.php');
 ?>
 
 <!DOCTYPE html>

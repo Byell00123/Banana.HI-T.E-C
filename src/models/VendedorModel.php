@@ -4,7 +4,7 @@ require_once(dirname(__FILE__) . '/database.php');
 include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
 $flash_messages = FlashMessages::getMessages();
 
-class VendModel {
+class VendedorModel {
 
     // Função para cadastrar um vendedor
     public function cadastraVendedor($dados) {

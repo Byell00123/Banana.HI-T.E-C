@@ -17,42 +17,46 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema banana_hitec
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `banana_hitec` ;
-USE `banana_hitec` ;
+CREATE SCHEMA IF NOT EXISTS `banana_hitec` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `banana_hitec`;
 
 -- -----------------------------------------------------
 -- Table `banana_hitec`.`grupos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banana_hitec`.`grupos` (
   `id_grupo` BIGINT NOT NULL,
-  `descricao` TEXT COLLATE 'utf8mb3_bin' NOT NULL,
-  `nome` TEXT COLLATE 'utf8mb3_bin' NOT NULL,
+  `descricao` TEXT NOT NULL,
+  `nome` TEXT NOT NULL,
   PRIMARY KEY (`id_grupo`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
+
 
 
 -- -----------------------------------------------------
 -- Table `banana_hitec`.`tokens`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banana_hitec`.`tokens` (
-  `token` VARCHAR(10) CHARACTER SET 'utf8mb3' NOT NULL,
+  `token` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`token`),
   UNIQUE INDEX `token_UNIQUE` (`token` ASC))
-ENGINE = InnoDB;
-
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
 
 -- -----------------------------------------------------
 -- Table `banana_hitec`.`administradores`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banana_hitec`.`administradores` (
   `id_adm` BIGINT NOT NULL,
-  `codenome` VARCHAR(146) COLLATE 'utf8mb3_bin' NOT NULL,
-  `senha` VARCHAR(60) COLLATE 'utf8mb3_bin' NOT NULL,
+  `codenome` VARCHAR(146) NOT NULL,
+  `senha` VARCHAR(60) NOT NULL,
   `data_engressou` DATETIME NOT NULL,
   `ultimo_login` DATETIME NOT NULL,
   `status` TINYINT NOT NULL DEFAULT '0',
   `fk_id_grupo` BIGINT NULL DEFAULT NULL,
-  `fk_token` VARCHAR(10) CHARACTER SET 'utf8mb3' NOT NULL,
+  `fk_token` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`id_adm`),
   UNIQUE INDEX `fk_token_UNIQUE` (`fk_token` ASC) ,
   INDEX `fk_id_grupo` (`fk_id_grupo` ASC),
@@ -62,19 +66,21 @@ CREATE TABLE IF NOT EXISTS `banana_hitec`.`administradores` (
   CONSTRAINT `administradores_ibfk_2`
     FOREIGN KEY (`fk_token`)
     REFERENCES `banana_hitec`.`tokens` (`token`))
-ENGINE = InnoDB;
-
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
 
 -- -----------------------------------------------------
 -- Table `banana_hitec`.`permissoes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banana_hitec`.`permissoes` (
   `id_permissao` BIGINT NOT NULL,
-  `descricao` TEXT COLLATE 'utf8mb3_bin' NULL DEFAULT NULL,
-  `codinome` VARCHAR(146) COLLATE 'utf8mb3_bin' NOT NULL,
+  `descricao` TEXT NULL DEFAULT NULL,
+  `codinome` VARCHAR(146) NOT NULL,
   PRIMARY KEY (`id_permissao`))
-ENGINE = InnoDB;
-
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
 
 -- -----------------------------------------------------
 -- Table `banana_hitec`.`permissoes_grupos`
@@ -91,7 +97,9 @@ CREATE TABLE IF NOT EXISTS `banana_hitec`.`permissoes_grupos` (
   CONSTRAINT `permissoes_grupos_ibfk_2`
     FOREIGN KEY (`pk_grupo`)
     REFERENCES `banana_hitec`.`grupos` (`id_grupo`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
 
 
 -- -----------------------------------------------------
@@ -99,10 +107,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banana_hitec`.`vendedores` (
   `cnpj` BIGINT NOT NULL AUTO_INCREMENT,
-  `nome_fantasia` TEXT COLLATE 'utf8mb3_bin' NOT NULL,
-  `senha` VARCHAR(60) COLLATE 'utf8mb3_bin' NOT NULL,
-  `email` VARCHAR(150) COLLATE 'utf8mb3_bin' NOT NULL,
-  `telefone` VARCHAR(14) COLLATE 'utf8mb3_bin' NOT NULL,
+  `nome_fantasia` TEXT NOT NULL,
+  `senha` VARCHAR(60) NOT NULL,
+  `email` VARCHAR(150) NOT NULL,
+  `telefone` VARCHAR(14) NOT NULL,
   `data_engressou` DATETIME NOT NULL,
   `ultimo_login` DATETIME NULL DEFAULT NULL,
   `fk_grupo` BIGINT NULL DEFAULT NULL,
@@ -112,7 +120,9 @@ CREATE TABLE IF NOT EXISTS `banana_hitec`.`vendedores` (
     FOREIGN KEY (`fk_grupo`)
     REFERENCES `banana_hitec`.`grupos` (`id_grupo`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 11111112;
+AUTO_INCREMENT = 91
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
 
 
 -- -----------------------------------------------------
@@ -120,14 +130,14 @@ AUTO_INCREMENT = 11111112;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banana_hitec`.`produtos` (
   `id_produto` BIGINT NOT NULL AUTO_INCREMENT,
-  `nome` TEXT COLLATE 'utf8mb3_bin' NOT NULL,
-  `tipo_produto` VARCHAR(100) COLLATE 'utf8mb3_bin' NOT NULL,
-  `marca` VARCHAR(50) COLLATE 'utf8mb3_bin' NOT NULL,
+  `nome` TEXT NOT NULL,
+  `tipo_produto` VARCHAR(100) NOT NULL,
+  `marca` VARCHAR(50) NOT NULL,
   `preco` DECIMAL(8,2) NOT NULL,
   `peso` DECIMAL(5,2) NOT NULL,
   `qtd` INT NOT NULL DEFAULT '1',
-  `descricao` VARCHAR(255) COLLATE 'utf8mb3_bin' NULL DEFAULT NULL,
-  `url_foto` VARCHAR(255) COLLATE 'utf8mb3_bin' NULL DEFAULT NULL,
+  `descricao` VARCHAR(255) NULL DEFAULT NULL,
+  `url_foto` VARCHAR(255) NULL DEFAULT NULL,
   `fk_vendedor` BIGINT NULL DEFAULT NULL,
   PRIMARY KEY (`id_produto`),
   INDEX `produtos_ibfk_1_idx` (`fk_vendedor` ASC),
@@ -135,7 +145,9 @@ CREATE TABLE IF NOT EXISTS `banana_hitec`.`produtos` (
     FOREIGN KEY (`fk_vendedor`)
     REFERENCES `banana_hitec`.`vendedores` (`cnpj`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 388;
+AUTO_INCREMENT = 383
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
 
 
 -- -----------------------------------------------------
@@ -143,14 +155,14 @@ AUTO_INCREMENT = 388;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banana_hitec`.`usuarios` (
   `id_usuario` BIGINT NOT NULL AUTO_INCREMENT,
-  `nome_usuario` TEXT COLLATE 'utf8mb3_bin' NOT NULL,
-  `senha` VARCHAR(60) COLLATE 'utf8mb3_bin' NOT NULL,
-  `primeiro_nome` TINYTEXT COLLATE 'utf8mb3_bin' NOT NULL,
-  `sobrenome` TEXT COLLATE 'utf8mb3_bin' NOT NULL,
+  `nome_usuario` TEXT NOT NULL,
+  `senha` VARCHAR(60) NOT NULL,
+  `primeiro_nome` TINYTEXT NOT NULL,
+  `sobrenome` TEXT NOT NULL,
   `data_nascimento` DATE NOT NULL,
-  `email` VARCHAR(150) COLLATE 'utf8mb3_bin' NOT NULL,
+  `email` VARCHAR(150) NOT NULL,
   `telefone` BIGINT NOT NULL,
-  `sexo` ENUM('f', 'm', 'h') COLLATE 'utf8mb3_bin' NOT NULL,
+  `sexo` ENUM('f', 'm') NOT NULL,
   `cpf` BIGINT NOT NULL,
   `data_engressou` DATETIME NOT NULL,
   `ultimo_login` DATETIME NULL DEFAULT NULL,
@@ -162,7 +174,9 @@ CREATE TABLE IF NOT EXISTS `banana_hitec`.`usuarios` (
     FOREIGN KEY (`fk_grupo`)
     REFERENCES `banana_hitec`.`grupos` (`id_grupo`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 8;
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

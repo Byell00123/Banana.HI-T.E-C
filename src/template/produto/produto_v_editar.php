@@ -1,5 +1,5 @@
 <?php 
-include(dirname(__FILE__) . '/../../models/ProductModel.php'); 
+include_once (dirname(__FILE__) . '/../../models/ProdutoModel.php');
 // TODO: Por favor não mexa aqui!! o codigo só funciona se estiver dessa exata forma e não me pergunte o porque.
 if (isset($_GET['id'])) {
     $id_produto = intval($_GET['id']);  // Captura o ID do produto a partir da URL
