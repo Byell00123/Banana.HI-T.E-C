@@ -1,6 +1,6 @@
 <?php 
-include(dirname(__FILE__) . '/../../models/ProductModel.php');
-
+include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
+include_once(dirname(__FILE__) . '/../../models/ProductModel.php');
 // Obtenha a marca selecionada (se houver)
 $marca = isset($_GET['marca']) && $_GET['marca'] !== '' ? $_GET['marca'] : null;
 
