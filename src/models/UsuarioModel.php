@@ -30,7 +30,7 @@ class UserModel {
         
         // Associar os parâmetros
         $stmt->bind_param("ssssssssss", 
-            $dados['username'], 
+            $dados['apelido'], 
             $senhaCriptografada, 
             $dados['primeiro_nome'], 
             $dados['sobrenome'], 

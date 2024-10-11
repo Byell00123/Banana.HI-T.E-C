@@ -1,4 +1,4 @@
-<?php include(dirname(__FILE__) . '/../../models/UserModel.php'); ?>
+<?php include(dirname(__FILE__) . '/../../models/UsuarioModel.php'); ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
