@@ -3,7 +3,12 @@
 require_once(dirname(__FILE__) . '/database.php');
 include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
 $flash_messages = FlashMessages::getMessages();
-include_once (dirname(__FILE__) . '/../utils/session_start.php');
+include_once(dirname(__FILE__) . '/../utils/VendedorLogado.php');
+
+// Função para verificar se o vendedor está logado e retornar o status
+function isVendedorLogado() {
+    return VendedorLogado();
+}
 
 function getProdutosPorTipo($marca = null) {
     $conn = getConnection();
@@ -101,6 +106,24 @@ function getMarcasDisponiveis() {
     return $marcas;
 }
 
+function getTiposDisponiveis() {
+    $conn = getConnection();
+
+    // Consultando as marcas distintas
+    $sql = "SELECT DISTINCT tipo_produto FROM produtos";
+    $result = $conn->query($sql);
+
+    $tipos = [];
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $tipos[] = $row['tipo_produto'];
+        }
+    }
+
+    $conn->close();
+    return $tipos;
+}
+
 function salvarProduto($nome, $tipo_produto, $marca, $preco, $peso, $qtd, $descricao, $url_foto, $fk_vendedores) {
     $conn = getConnection(); // Obtendo a conexão do banco de dados
     $sql = "INSERT INTO produtos (nome, tipo_produto, marca, preco, peso, qtd, descricao, url_foto, fk_vendedor) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -125,9 +148,9 @@ function salvarProduto($nome, $tipo_produto, $marca, $preco, $peso, $qtd, $descr
 }
 
 // Atualizar produto por ID
-function atualizarProduto($id_produto, $nome, $tipo_produto, $marca, $preco, $peso, $qtd, $descricao, $url_foto) {
+function atualizarProduto($id_produto, $nome, $tipo_produto, $preco, $peso, $qtd, $descricao, $url_foto) {
     $conn = getConnection();
-    $sql = "UPDATE produtos SET nome = ?, tipo_produto = ?, marca = ?, preco = ?, peso = ?, qtd = ?, descricao = ?, url_foto = ? WHERE id_produto = ?";
+    $sql = "UPDATE produtos SET nome = ?, tipo_produto = ?, preco = ?, peso = ?, qtd = ?, descricao = ?, url_foto = ? WHERE id_produto = ?";
     
     $stmt = $conn->prepare($sql);
 
@@ -135,7 +158,7 @@ function atualizarProduto($id_produto, $nome, $tipo_produto, $marca, $preco, $pe
         return false;
     }
 
-    $stmt->bind_param("sssddissi", $nome, $tipo_produto, $marca, $preco, $peso, $qtd, $descricao, $url_foto, $id_produto);
+    $stmt->bind_param("ssddissi", $nome, $tipo_produto, $preco, $peso, $qtd, $descricao, $url_foto, $id_produto);
     $resultado = $stmt->execute();
 
     $stmt->close();
@@ -199,13 +222,5 @@ function excluirProduto($id_produto) {
 
     return false;  // Produto não encontrado
 }
-
-// Função para verificar se o usuário está logado
-function VendedorLogado() {
-    // Verifique se a sessão do usuário está ativa
-    return isset($_SESSION['user_cnpj']); // chave que usada para armazenar o login do usuário
-}
-
-
 
 ?>

@@ -21,3 +21,101 @@
 .botao-form{
     width: 45%;
 }
+
+.toggle {
+    display: inline-block;
+    height: 2rem;
+    position: relative;
+    width: 4rem;
+}
+
+.toggle input {
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.toggle input::before {
+    background-color: #ff007f;
+    border-radius: 1rem;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: background-color 0.25s ease-in-out;
+    width: 100%;
+}
+
+.toggle input:checked::before {
+    background-color: #00bfff;
+}
+
+.toggle input::after {
+    background-color: #ffffff;
+    border-radius: 50%;
+    content: '';
+    height: 1.6rem;
+    left: 0.2rem;
+    position: absolute;
+    top: 0.2rem;
+    transition: transform 0.25s ease-in-out;
+    width: 1.6rem;
+}
+
+.toggle input:checked::after {
+    transform: translateX(2rem);
+}
+
+/* Estilos para os labels de input e select */
+.label-input, .label-select {
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.25s ease-in-out;
+}
+
+/* Estilos para o toggle do checkbox */
+.toggle {
+    display: inline-block;
+    height: 2rem;
+    position: relative;
+    width: 4rem;
+}
+
+.toggle input {
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.toggle input::before {
+    background-color: #ff007f;
+    border-radius: 1rem;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: background-color 0.25s ease-in-out;
+    width: 100%;
+}
+
+.toggle input:checked::before {
+    background-color: #00bfff;
+}
+
+.toggle input::after {
+    background-color: #ffffff;
+    border-radius: 50%;
+    content: '';
+    height: 1.6rem;
+    left: 0.2rem;
+    position: absolute;
+    top: 0.2rem;
+    transition: transform 0.25s ease-in-out;
+    width: 1.6rem;
+}
+
+.toggle input:checked::after {
+    transform: translateX(2rem);
+}

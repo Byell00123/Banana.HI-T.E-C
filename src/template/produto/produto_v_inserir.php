@@ -1,5 +1,6 @@
 <?php 
-include_once (dirname(__FILE__) . '/../../models/ProdutoModel.php');
+include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
+$tipos_disponiveis = getTiposDisponiveis();
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +12,7 @@ include_once (dirname(__FILE__) . '/../../models/ProdutoModel.php');
     <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>icon/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/produto/produto_v.css">
     <script src="https://cdn.jsdelivr.net/npm/cleave.js"></script>
+    <script src="<?php echo STATIC_URL; ?>js/produto/produto.js" defer></script>  <!-- Adiciona o script externo -->
 </head>
 <body>
 
@@ -23,13 +25,7 @@ include_once (dirname(__FILE__) . '/../../models/ProdutoModel.php');
 
                 <h1>Inserir Produto</h1>
 
-                <?php if ($flash_messages): ?>
-                    <?php foreach ($flash_messages as $flash_message): ?>
-                        <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
-                            <?php echo $flash_message['message']; ?>
-                        </div>
-                    <?php endforeach;?>
-                <?php endif; ?>
+                <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 
                 <div class="form-group">
                     <label for="nome">Nome:</label>
@@ -37,11 +33,22 @@ include_once (dirname(__FILE__) . '/../../models/ProdutoModel.php');
                 </div>
                 <div class="form-group">
                     <label for="tipo_produto">Tipo de Produto:</label>
-                    <input type="text" class="input tipo_produto" name="tipo_produto" required>
-                </div>
-                <div class="form-group">
-                    <label for="marca">Marca:</label>
-                    <input type="text" class="input marca" name="marca" required>
+                    <br>
+                    <label class="label-select" for="toggleInput">Tipo Já Existente</label>
+                    <div class="toggle">
+                        <input type="checkbox" id="toggleInput" onclick="toggleInputType()">
+                    </div>
+                    <label class="label-input" for="toggleInput">Adicionar Novo Tipo</label>
+                    <div id="inputContainer">
+                        <select class="input tipo_produto" name="tipo_produto" required>
+                            <option hidden></option>
+                            <?php if (!empty($tipos_disponiveis)): ?>
+                                <?php foreach ($tipos_disponiveis as $tipo): ?>
+                                    <option value="<?php echo htmlspecialchars($tipo); ?>"><?php echo htmlspecialchars($tipo); ?></option>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="preco">Preço:</label>
@@ -53,19 +60,15 @@ include_once (dirname(__FILE__) . '/../../models/ProdutoModel.php');
                 </div>
                 <div class="form-group">
                     <label for="peso">Quantidade:</label>
-                    <input type="text" class="input qtd" name="qtd"  placeholder="000.000" required>
+                    <input type="text" class="input qtd" name="qtd" maxlength="7"  placeholder="000.000" required>
                 </div>
                 <div class="form-group">
                     <label for="descricao">Descricão:</label>
-                    <input type="text" class="input descricao" name="descricao" required>
-                </div>
-                <div class="form-group">
-                    <label for="descricao">fk_vendedores:</label>
-                    <input type="text" class="input fk_vendedores" name="fk_vendedores" required>
+                    <textarea type="text" class="input descricao" name="descricao" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="foto">Foto:</label>
-                    <input type="file" class="input foto" name="url_foto" accept=".jpg" required>
+                    <input type="file" class="input foto" name="foto" accept=".jpg" required>
                     <pre class="td-pre">
 Recomendações:
     Somente imagens em formato JPG.
@@ -83,43 +86,6 @@ Recomendações:
             </form>
         </div>
     </div>
-
-    <script>
-        // Cria uma nova instância do Cleave.js para formatar o input de preço
-        var cleave = new Cleave('input.preco', {
-            numeral: true, // Ativa o modo numeral para que o campo funcione como um campo numérico formatado
-            numeralThousandsGroupStyle: 'thousand', // Define o estilo de agrupamento de milhares (ex: 1.000,00)
-            numeralDecimalMark: ',', // Define a vírgula como separador decimal (ex: 100,00)
-            delimiter: '.', // Define o ponto como delimitador de milhares (ex: 1.000)
-            numeralDecimalScale: 2, // Número de casas decimais (ex: 100,00)
-            numeralIntegerScale: 6, // Número máximo de dígitos inteiros permitidos antes da vírgula (ex: 999.999)
-            prefix: '', // Define o prefixo (pode ser um símbolo como 'R$' se necessário)
-            rawValueTrimPrefix: true, // Remove o prefixo ao obter o valor bruto (sem o prefixo)
-            numericOnly: true, // Permite apenas a entrada de números (sem letras ou caracteres especiais)
-            padFractionalZeros: true // Adiciona zeros após a vírgula para completar as casas decimais (ex: 100 se torna 100,00)
-        });
-
-        var cleave = new Cleave('input.peso', {
-            numeral: true, // Ativa o modo numeral para que o campo funcione como um campo numérico formatado
-            numeralThousandsGroupStyle: 'thousand', // Define o estilo de agrupamento de milhares (ex: 999.999,99)
-            numeralDecimalMark: ',', // Define a vírgula como separador decimal (ex: 100,00)
-            delimiter: '.', // Define o ponto como delimitador de milhares (ex: 1.000)
-            numeralDecimalScale: 2, // Número de casas decimais (ex: 100,00)
-            numeralIntegerScale: 3, // Número máximo de dígitos inteiros permitidos antes da vírgula (ex: 999.999)
-            prefix: '', // Define o prefixo (pode ser um símbolo como 'R$' se necessário)
-            rawValueTrimPrefix: true, // Remove o prefixo ao obter o valor bruto (sem o prefixo)
-            numericOnly: true, // Permite apenas a entrada de números (sem letras ou caracteres especiais)
-            padFractionalZeros: true // Adiciona zeros após a vírgula para completar as casas decimais (ex: 100 se torna 100,00)
-        });
-        const inputQtd = document.querySelector('.input.qtd');
-
-        inputQtd.addEventListener('input', function () {
-            if (this.value.length > 6) {
-                this.value = this.value.slice(0, 6);  // Limita o valor para os primeiros 7 dígitos
-            }
-        });
-        
-    </script>
     <?php include(dirname(__FILE__) . '/../partials/rodape.php'); ?>
 </body>
 </html>

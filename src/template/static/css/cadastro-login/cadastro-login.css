@@ -95,4 +95,12 @@
     background-color: #007bff; /* Altera a cor de fundo para azul quando o mouse passa por cima */
 }
 
+.tipo_produto{
+    cursor: pointer;
+}
 
+.descricao{
+    resize: vertical; /* Permite redimensionamento apenas na vertical */
+}
+
+/*  TODO: Ta dando pau em todas as navbar de todas as paginas ligadas a cadastro-login  */

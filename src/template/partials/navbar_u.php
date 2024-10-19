@@ -1,5 +1,7 @@
 <?php
-include_once (dirname(__FILE__) . '/../../utils/isLogado.php');
+// src/template/partials/navbar_v.php
+include_once(dirname(__FILE__) . '/../../models/UsuarioModel.php');
+include_once(dirname(__FILE__) . '/../../utils/UsuarioLogado.php');
 ?>
 <!-- Menu que fica na parte superior do site -->
 <nav class="navbar">
@@ -14,13 +16,12 @@ include_once (dirname(__FILE__) . '/../../utils/isLogado.php');
         </li>
         <li class="li"><a class="a" href="#">Acessibilidade</a></li>
         <li class="li"><a class="a" href="#">Suporte</a></li>
-        <div class="gambiarra"></div>
-        <li class="li carrinho"><a class="a" href="#">Carrinho</a></li>
-        <?php if (isLogado()): ?>
-            <form id="logoutForm" action="<?php echo CONTROLLER_URL; ?>LogoutController.php" method="POST" style="display: none;">
+        <li class="li gambiarra"></li>
+        <?php if (isUsuarioLogado()): ?>
+            <form id="logoutForm" action="../../controllers/LogoutController.php" method="POST" style="display: none;">
                 <input type="hidden" name="action" value="logout">
             </form>
-            <li class="li"><a class="a" onclick="document.getElementById('logoutForm').submit(); return false;">Sair</a></li>
+            <li class="li"><a class="a" onclick="document.getElementById('logoutForm').submit(); return false;" style="cursor: pointer;">Sair</a></li>
                 <li class="li usuario"><a class="a" href="#">Usuario</a></li>
         <?php else: ?>
             <li class="li"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_v.php">Vendedor</a></li>

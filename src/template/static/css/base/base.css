@@ -1,3 +1,5 @@
+/* base.css */
+
 /* Estilos para dispositivos com largura máxima de 480 pixels (como smartphones) */
 @media (max-width: 480px){
     body {
@@ -66,19 +68,29 @@ img {
     box-sizing: border-box; /* Faz com que padding e border sejam incluídos na largura e altura totais dos elementos */
 }
 
+body, .conteudo {
+    width: 100%;
+    max-width: 100%;
+    margin: 0; /* Remove as margens padrão do corpo */
+    padding: 0; /* Remove os preenchimentos padrão do corpo */
+}
+
 body {
+    width: 100%; /* TODO: dando erro, não fica na largura total da tela no celular */
+    flex-grow: 1;
     display: flex; /* Usa um modelo de layout flexível para o corpo */
     flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
     min-height: 100vh; /* Garante que o corpo ocupe pelo menos toda a altura da janela de visualização */
-    margin: 0; /* Remove as margens padrão do corpo */
-    padding: 0; /* Remove os preenchimentos padrão do corpo */
     font-family: Arial, sans-serif; /* Define a fonte padrão */
     background-color: #1a1919; /* Define a cor de fundo do corpo como um tom escuro */
     color: #ffffff; /* Define a cor do texto como branco */
+    
 }
 
 /* Estilo para a barra de menu */
 .navbar {
+    width: 100%;
+    flex-grow: 1;
     margin: 0; /* Remove as margens padrão da navbar */
     background-color: #000000; /* Define a cor de fundo da barra de menu como preto */
     padding: 0.3rem 0; /* Adiciona um preenchimento interno vertical de 0.3rem e nenhum horizontal */
@@ -96,7 +108,7 @@ body {
 }
 
 .menu {
-    padding-left: 0.6rem; /* Adiciona um preenchimento à esquerda de 0.6rem */
+    padding-left: 1rem; /* Adiciona um preenchimento à esquerda de 0.6rem */
 }
 
 /* Estilo para cada item da lista dentro da barra de menu */
@@ -165,11 +177,6 @@ body {
     background-color: rgb(218, 165, 32); /* Altera a cor de fundo do botão quando o mouse passa por cima */
 }
 
-.label{
-    display: inline-block; /* Exibe os links em linha */
-    padding: 20px; /* Adiciona um preenchimento interno de 20px aos links */
-}
-
 /* Estilo para o campo de entrada de pesquisa */
 .input-pesquisa[type="text"], .select-pesquisa {
     padding: 10px; /* Adiciona um preenchimento interno de 10px ao campo de entrada */
@@ -180,6 +187,8 @@ body {
 
 /* Estilo para o conteúdo da página */
 .conteudo {
+    height: 100%;
+    width: 100%;
     display: flex; /* Define o elemento como um flex container */
     flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
     flex-grow: 1; /* Permite que o elemento cresça para ocupar o espaço disponível */
@@ -199,6 +208,7 @@ footer {
     text-align: center; /* Alinha o texto do rodapé ao centro */
     padding: 20px 0; /* Adiciona preenchimento interno ao rodapé */
     width: 100%; /* Define a largura do rodapé como 100% */
+    flex-grow: 1;
     border-top: 2px solid #00ffff; /* Adiciona uma borda superior de 2px com cor ciano */
 }
 

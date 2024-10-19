@@ -3,6 +3,7 @@
 include_once(dirname(__FILE__) . '/../config.php');
 include_once(dirname(__FILE__) . '/../models/VendedorModel.php');
 
+// TODO: Tocar aqui por isVendedorLogado()
 // Inicie a sessão se ainda não estiver ativa
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -22,11 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $VendedorModel = new VendedorModel();
     if ($VendedorModel->loginVendedor($cnpj, $password)) {
-        // Defina a variável de sessão após o login bem-sucedido
-        $_SESSION['username'] = $cnpj; // Armazene o cnpj do vendedor na sessão
-        
         FlashMessages::addMessage('success', 'Login realizado com sucesso!');
-        header("Location: " . TEMPLATE_URL . "home/home_v.php");
+        header("Location: " . TEMPLATE_URL . "home/home_v.php?marca=" . $_SESSION["user_nome_fantasia"]);
         exit();
     } else {
         FlashMessages::addMessage('error', 'Nome do vendedor ou senha incorretos.');

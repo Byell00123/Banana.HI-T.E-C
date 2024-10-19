@@ -1,0 +1,29 @@
+Faça uma lista de teclados seguindo o formato exemplificado abaixo, crie uma discrição e altere o url_foto para ficar igual ao do modelo abaixo. Coloque-os em sequência(nome, tipo_produto, marca, preco, peso, qtd, descricao, url_foto), qtd sempre sera 1 e url foto segue o seguite formato ../static/img/produtos/tipo_do_produto_sem_acentuacao_espacos_vazio_caracter_especial_que_não_seja_underline/nome_do_produto_igual_está_na_lista.jpg, sem pular linhas desnecessária pois pode ocasionar um erro no meu script:
+
+exemplo:
+('ASRock B460M Steel Legend','Placa Mãe','ASRock',699.00,0.95,1,'Placa mãe com design estilizado e bom desempenho para uso geral e jogos leves.','../static/img/produtos/placas_mae/asrock_b460m_steel_legend.jpg'),
+('ASUS ROG Crosshair VIII Hero','Placa Mãe','ASUS',3299.00,1.70,1,'Placa mãe de alto desempenho com suporte completo para overclock e recursos avançados.','../static/img/produtos/placas_mae/asus_rog_crosshair_viii_hero.jpg'),
+
+onde você deve preencher:
+
+(363,' Logitech G Pro X Tkl Lightspeed','Teclado','Logitech',899.00,0.98,1,'Teclado mecânico personalizável com switches GX Blue removíveis, ideal para jogadores e profissionais.','../static/img/produtos/teclados/logitech_g_pro_x_lightspeed.jpg',53),
+(364,'Corsair K95 RGB Platinum','Teclado','Corsair',1099.00,1.30,1,'Teclado mecânico com iluminação RGB, estrutura em alumínio e switches Cherry MX Speed.','../static/img/produtos/teclados/corsair_k95_rgb_platinum.jpg',24),
+('ASUS ROG Crosshair VIII Hero','Placa Mãe','ASUS',3299.00,1.70,1,'Placa mãe de alto desempenho com suporte completo para overclock e recursos avançados.','../static/img/produtos/placas_mae/asus_rog_crosshair_viii_hero.jpg'),
+(365,'Razer BlackWidow V3','Teclado','Razer',749.00,1.25,1,'Teclado mecânico com switches verdes da Razer, ideal para jogos competitivos e alta durabilidade.','../static/img/produtos/teclados/razer_blackwidow_v3.jpg',67),
+(366,'HyperX Alloy FPS Pro','Teclado','HyperX',499.00,0.85,1,'Teclado mecânico compacto sem o teclado numérico, ideal para espaços pequenos e transporte fácil.','../static/img/produtos/teclados/hyperx_alloy_fps_pro.jpg',42),
+(367,'SteelSeries Apex Pro','Teclado','SteelSeries',1399.00,1.10,1,'Teclado com switches ajustáveis e iluminação RGB, ideal para personalização e desempenho de jogos.','../static/img/produtos/teclados/steelseries_apex_pro.jpg',80),
+(368,'Cooler Master CK550','Teclado','Cooler Master',599.00,0.95,1,'Teclado mecânico com switches Gateron Red, iluminação RGB e design robusto.','../static/img/produtos/teclados/cooler_master_ck550.jpg',23),
+(369,'Redragon Kumara K552','Teclado','Redragon',299.00,0.80,1,'Teclado mecânico compacto com switches Outemu Blue, ótimo para jogos e digitação rápida.','../static/img/produtos/teclados/redragon_kumara_k552.jpg',68),
+(370,'Alienware AW510K','Teclado','Alienware',899.00,1.20,1,'Teclado mecânico RGB com switches Cherry MX Red, ideal para jogos de alto desempenho.','../static/img/produtos/teclados/alienware_aw510k.jpg',7),
+(371,'Logitech G915 TKL','Teclado','Logitech',1199.00,0.75,1,'Teclado mecânico sem fio com switches low-profile, ideal para setups minimalistas e sem cabos.','../static/img/produtos/teclados/logitech_g915_tkl.jpg',53),
+(372,'Asus ROG Strix Scope RX','Teclado','Asus',699.00,1.15,1,'Teclado mecânico com switches óticos RX, design robusto e iluminação RGB ajustável.','../static/img/produtos/teclados/asus_rog_strix_scope_rx.jpg',16),
+(373,'AOC GK500','Teclado','AOC',349.00,0.90,1,'Teclado mecânico com switches Outemu Red e design minimalista, ideal para jogadores e profissionais.','../static/img/produtos/teclados/aoc_gk500.jpg',11),
+(374,'Ducky One 2 Mini','Teclado','Ducky',799.00,0.65,1,'Teclado compacto com layout 60% e switches Cherry MX Red, ideal para setups compactos e portáteis.','../static/img/produtos/teclados/ducky_one_2_mini.jpg',91),
+(375,'Keychron K2 V2','Teclado','Keychron',549.00,0.85,1,'Teclado mecânico sem fio, ideal para multitarefa, com suporte para Mac e Windows.','../static/img/produtos/teclados/keychron_k2_v2.jpg',92),
+(376,'Roccat Vulcan 121 Aimo','Teclado','Roccat',999.00,1.00,1,'Teclado mecânico com switches Titan e iluminação AIMO, ideal para alta performance e estética.','../static/img/produtos/teclados/roccat_vulcan_121_aimo.jpg',69),
+(377,'Logitech G213 Prodigy','Teclado','Logitech',349.00,0.90,1,'Teclado para jogos com membrana avançada, resistente a respingos e iluminação RGB.','../static/img/produtos/teclados/logitech_g213_prodigy.jpg',53),
+(378,'HyperX Alloy Origins','Teclado','HyperX',799.00,1.10,1,'Teclado mecânico com switches HyperX Red, ideal para jogadores que buscam desempenho e durabilidade.','../static/img/produtos/teclados/hyperx_alloy_origins.jpg',42),
+(379,'Corsair K70 RGB MK.2','Teclado','Corsair',999.00,1.25,1,'Teclado mecânico com switches Cherry MX Red, design premium e iluminação RGB completa.','../static/img/produtos/teclados/corsair_k70_rgb_mk2.jpg',24),
+(380,'Razer Huntsman Elite','Teclado','Razer',1299.00,1.30,1,'Teclado óptico-mecânico com switches Razer Purple e iluminação RGB Chroma para máxima performance.','../static/img/produtos/teclados/razer_huntsman_elite.jpg',67),
+(381,'SteelSeries Apex 7','Teclado','SteelSeries',1099.00,1.15,1,'Teclado mecânico com switches SteelSeries Red, design durável e display OLED.','../static/img/produtos/teclados/steelseries_apex_7.jpg',80),
+(382,'Asus TUF Gaming K7','Teclado','Asus',649.00,0.85,1,'Teclado mecânico com switches ópticos TUF, resistente a água e iluminação RGB ajustável.','../static/img/produtos/teclados/asus_tuf_gaming_k7.jpg',16),

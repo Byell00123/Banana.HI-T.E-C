@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `banana_hitec`.`produtos` (
     FOREIGN KEY (`fk_vendedor`)
     REFERENCES `banana_hitec`.`vendedores` (`cnpj`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 383
+AUTO_INCREMENT = 407
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 

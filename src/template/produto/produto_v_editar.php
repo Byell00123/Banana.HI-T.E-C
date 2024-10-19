@@ -1,11 +1,39 @@
 <?php 
-include_once (dirname(__FILE__) . '/../../models/ProdutoModel.php');
-// TODO: Por favor não mexa aqui!! o codigo só funciona se estiver dessa exata forma e não me pergunte o porque.
-if (isset($_GET['id'])) {
-    $id_produto = intval($_GET['id']);  // Captura o ID do produto a partir da URL
-    $produto = getProdutoPorId($id_produto);
+include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
+$tipos_disponiveis = getTiposDisponiveis();
+// Verifica se o vendedor está logado
+if (!isVendedorLogado()) {
+    // Se o vendedor não estiver logado, redireciona para a página de login
+    FlashMessages::addMessage('error', "Faça login como vendedor caso queira acessar a área de vendedores.");
+    header("Location: " . TEMPLATE_URL . "cadastro-login/login_v.php");
+    exit();
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "GET"){
+// Verifica se o ID do produto foi passado pela URL
+    if (isset($_GET['id'])) {
+        $id_produto = intval($_GET['id']);  // Captura o ID do produto a partir da URL
+        $produto = getProdutoPorId($id_produto); // Obter o produto a partir do banco de dados
+
+        // Obter o CNPJ do vendedor logado
+        $cnpj_vendedor_logado = $_SESSION['user_cnpj'];
+
+        // Verifica se o produto pertence ao vendedor logado
+        if ($produto && $produto['fk_vendedor'] === $cnpj_vendedor_logado) {
+            // O vendedor é dono do produto, permitir o acesso à página de edição
+        } else {
+            // Se não for o dono, redireciona para a home
+            FlashMessages::addMessage('error', "Você não tem permissão para editar este produto.");
+            header("Location: " . TEMPLATE_URL . "home/home_v.php");
+            exit();
+        }
+    } else {
+        // Se o ID do produto não for informado, redireciona para a página de erro ou home
+        FlashMessages::addMessage('error', "ID do produto não especificado.");
+        header("Location: " . TEMPLATE_URL . "home/home_v.php");
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,46 +56,52 @@ if (isset($_GET['id'])) {
 
                 <h1>Editar Produto</h1>
 
-                <?php if ($flash_messages): ?>
-                    <?php foreach ($flash_messages as $flash_message): ?>
-                        <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
-                            <?php echo $flash_message['message']; ?>
-                        </div>
-                    <?php endforeach;?>
-                <?php endif; ?>
+                <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
                 
                 <table border="1" cellpadding="10">
                     
                     <tr>
                         <input type="hidden" name="id_produto" value="<?php echo $produto['id_produto']; ?>">
+                        <input type="hidden" name="fk_vendedor" value="<?php echo $produto['fk_vendedor']; ?>">
                         <td><label for="nome">Nome:</label></td>
-                        <td><input type="text" class="input nome" name="nome" value="<?php echo htmlspecialchars($produto['nome']); ?>"></td>
-
+                        <td><input type="text" class="input nome" name="nome" value="<?php echo htmlspecialchars($produto['nome']); ?>" required></td>
                     </tr>
                     <tr>
                         <td><label for="tipo_produto">Tipo de Produto:</label></td>
-                        <td><input type="text" class="input tipo_produto" name="tipo_produto" value="<?php echo htmlspecialchars($produto['tipo_produto']); ?>"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="marca">Marca:</label></td>
-                        <td><input type="text" class="input marca" name="marca" value="<?php echo htmlspecialchars($produto['marca']); ?>"></td>
+                        <div class="toggle">
+                            <input type="checkbox">
+                        </div>
+                        <td>
+                            <select class="input tipo_produto" name="tipo_produto" required>
+                                <option value="<?php echo htmlspecialchars($produto['tipo_produto']); ?>"><?php echo htmlspecialchars($produto['tipo_produto']); ?></option>
+                                <hr>
+                                <?php if (!empty($tipos_disponiveis)): ?>
+                                    <?php foreach ($tipos_disponiveis as $tipos => $tipo):?>
+                                        <?php if ($tipo != $produto['tipo_produto']): ?>
+                                            <option value="<?php echo htmlspecialchars($tipo); ?>"><?php echo htmlspecialchars($tipo); ?></option>
+                                            <hr>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </select>
+                                    <!-- TODO: Colocar um input caso o tipo que o usuario queira não esteja cadastrado -->   
+                        </td> 
                     </tr>
                     <tr>
                         <td><label for="preco">Preço:</label></td>
-                        <td><input type="text" class="input preco" name="preco" value="<?php echo htmlspecialchars($produto['preco']); ?>"></td>
+                        <td><input type="text" class="input preco" name="preco" value="<?php echo htmlspecialchars($produto['preco']); ?>" required></td>
                     </tr>
                     <tr>
                         <td><label for="peso">Peso:</label></td>
-                        <td><input type="text" class="input peso" name="peso" value="<?php echo htmlspecialchars($produto['peso']); ?>"></td>
+                        <td><input type="text" class="input peso" name="peso" value="<?php echo htmlspecialchars($produto['peso']); ?>" required></td>
                     </tr>
                     <tr>
                         <td><label for="qtd">Quantidade:</label></td>
-                        <td><input type="text" class="input qtd" name="qtd" value="<?php echo htmlspecialchars($produto['qtd']); ?>"></td>
-                    </tr>
+                        <td><input type="text" class="input qtd" name="qtd" value="<?php echo htmlspecialchars($produto['qtd']); ?>" required></td>
                     </tr>
                     <tr>
-                        <td><label for="qtd">Descrição:</label></td>
-                        <td><input type="text" class="input descricao" name="descricao" value="<?php echo htmlspecialchars($produto['descricao']); ?>"></td>
+                        <td><label for="descricao">Descrição:</label></td>
+                        <td><textarea type="text" class="input descricao" name="descricao" required><?php echo htmlspecialchars($produto['descricao']); ?></textarea></td>
                     </tr>
                     <tr>
                         <td><label for="url_foto">Foto Atual:</label></td>
@@ -83,14 +117,12 @@ if (isset($_GET['id'])) {
 Recomendações:
     Somente imagens em formato JPG.
     Opte por imagens nativamente 200x200 pixels, pois imagens maiores que isso serão redimensionadas para 200x200 pixels podendo ocasionar em distorções na imagem.
-    <!-- TODO: tem que adicionar para quebra linha -->
                             </pre>
                         </td>
                     </tr>
                 </table>
                 <div class="form-group link-botao">
                     <div class="links-auxiliares">
-                    <!-- TODO: Tem que fazer a distinção do botão epertado -->
                         <button class="botao-form c1" name="atualiza" type="submit">Atualizar Produto</button>
                         <div class="gambiarra"></div>
                         <button class="botao-form c2" type="submit" name="deleta" onclick="return confirm('Tem certeza que deseja excluir este produto?')">Excluir Produto</button>

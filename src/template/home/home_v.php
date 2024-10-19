@@ -1,12 +1,13 @@
 <?php 
-include_once (dirname(__FILE__) . '/../../models/ProdutoModel.php');
+include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
 
 // Obtenha a marca selecionada (se houver)
 $marca = isset($_GET['marca']) && $_GET['marca'] !== '' ? $_GET['marca'] : null;
 
 // Obtenha os produtos filtrados pela marca, se especificada
 $produtos_por_marca = getProdutosPorMarca($marca);
-
+// TODO: So pode renderizar caso o nome fantasia da sessão for igual ao fk do produto:
+    // Da pra pegar a ?marca= na url e comparar com a $_Session["user_nome_fantasia"]
 ?>
 
 <!DOCTYPE html>
@@ -23,9 +24,9 @@ $produtos_por_marca = getProdutosPorMarca($marca);
 
     <?php include(dirname(__FILE__) . '/../partials/navbar_v.php'); ?>
 
-    <p>ola ususario <?php echo $_SESSION["user_ cnpj"] ?> </p>
     <!-- Conteúdo do site -->
     <div class="conteudo">
+        <div>ola vendedor <p style="color: red;display: inline;"><?php echo $_SESSION["user_nome_fantasia"] ?></p> de cnpj: <p style="color: red;display: inline;"><?php echo $_SESSION["user_cnpj"] ?></p> </div>
         
         <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 

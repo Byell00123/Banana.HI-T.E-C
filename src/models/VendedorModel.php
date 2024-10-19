@@ -4,6 +4,7 @@ require_once(dirname(__FILE__) . '/database.php');
 include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
 $flash_messages = FlashMessages::getMessages();
 
+
 class VendedorModel {
 
     // Função para cadastrar um vendedor
@@ -67,11 +68,14 @@ class VendedorModel {
                 // Iniciar a sessão e armazenar informações do vendedor
                 session_start();
                 $_SESSION['user_cnpj'] = $user['cnpj'];
-                $_SESSION['user_fantasia'] = $user['nome_fantasia'];
+                $_SESSION['user_nome_fantasia'] = $user['nome_fantasia'];
+                $_SESSION['user_email'] = $user['email'];
+                $_SESSION['user_telefone'] = $user['telefone'];
                 return true;
             }
         }
         return false; // Login falhou
     }
 }
-    ?>
+
+?>
