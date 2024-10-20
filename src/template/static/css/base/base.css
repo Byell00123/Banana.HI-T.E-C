@@ -90,7 +90,6 @@ body {
 /* Estilo para a barra de menu */
 .navbar {
     width: 100%;
-    flex-grow: 1;
     margin: 0; /* Remove as margens padrão da navbar */
     background-color: #000000; /* Define a cor de fundo da barra de menu como preto */
     padding: 0.3rem 0; /* Adiciona um preenchimento interno vertical de 0.3rem e nenhum horizontal */

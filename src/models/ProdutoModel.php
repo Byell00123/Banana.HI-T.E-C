@@ -44,11 +44,11 @@ function getProdutosPorMarca($marca = null) {
 
     // Se a marca não for especificada, retornamos todos os produtos
     if ($marca) {
-        $sql = "SELECT id_produto, nome, tipo_produto, url_foto FROM produtos WHERE marca = ?";
+        $sql = "SELECT * FROM produtos WHERE marca = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $marca);
     } else {
-        $sql = "SELECT id_produto, nome, tipo_produto, url_foto FROM produtos";
+        $sql = "SELECT * FROM produtos";
         $stmt = $conn->prepare($sql);
     }
 

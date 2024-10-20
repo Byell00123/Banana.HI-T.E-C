@@ -44,6 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
     <title>Banana.HI-T.E-C</title>
     <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>icon/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/produto/produto_v.css">
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js"></script>y
+    <script src="<?php echo STATIC_URL; ?>js/produto/produto.js" defer></script>  <!-- Adiciona o script externo -->
 </head>
 <body>
 
@@ -68,23 +70,27 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
                     </tr>
                     <tr>
                         <td><label for="tipo_produto">Tipo de Produto:</label></td>
-                        <div class="toggle">
-                            <input type="checkbox">
-                        </div>
                         <td>
-                            <select class="input tipo_produto" name="tipo_produto" required>
-                                <option value="<?php echo htmlspecialchars($produto['tipo_produto']); ?>"><?php echo htmlspecialchars($produto['tipo_produto']); ?></option>
-                                <hr>
-                                <?php if (!empty($tipos_disponiveis)): ?>
-                                    <?php foreach ($tipos_disponiveis as $tipos => $tipo):?>
-                                        <?php if ($tipo != $produto['tipo_produto']): ?>
-                                            <option value="<?php echo htmlspecialchars($tipo); ?>"><?php echo htmlspecialchars($tipo); ?></option>
-                                            <hr>
-                                        <?php endif; ?>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </select>
-                                    <!-- TODO: Colocar um input caso o tipo que o usuario queira não esteja cadastrado -->   
+                            <div class="div-toggle">
+                                <label class="label-select" for="toggleInput">Tipo Já Existente</label>
+                                <div class="toggle">
+                                    <input type="checkbox" id="toggleInput" onclick="toggleInputType()">
+                                </div>
+                                <label class="label-input" for="toggleInput">Adicionar Novo Tipo</label>
+                            </div>
+                            <div id="inputContainer">
+                                <select class="input tipo_produto" name="tipo_produto" required>
+                                    <option value="<?php echo htmlspecialchars($produto['tipo_produto']); ?>"><?php echo htmlspecialchars($produto['tipo_produto']); ?></option>
+                                    <hr>
+                                    <?php if (!empty($tipos_disponiveis)): ?>
+                                        <?php foreach ($tipos_disponiveis as $tipo): ?>
+                                            <?php if ($tipo != $produto['tipo_produto']): ?>
+                                                <option value="<?php echo htmlspecialchars($tipo); ?>"><?php echo htmlspecialchars($tipo); ?></option>
+                                                <hr>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </select>
                         </td> 
                     </tr>
                     <tr>
@@ -104,13 +110,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
                         <td><textarea type="text" class="input descricao" name="descricao" required><?php echo htmlspecialchars($produto['descricao']); ?></textarea></td>
                     </tr>
                     <tr>
-                        <td><label for="url_foto">Foto Atual:</label></td>
+                        <td><label for="url_foto">Foto Atual:</label></td> 
                         <td>
                             <img src="<?php echo htmlspecialchars($produto['url_foto']); ?>" alt="Foto do Produto" style="width: 200px; height: 200px;">
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="nova_foto">Nova Foto:</label></td>
+                        <td><label for="nova_foto">Nova Foto:</label></td><!-- TODO: FAzer o nome proprio para quando trocar de imagem -->
                         <td>
                             <input type="file" class="input nova_foto" name="nova_foto" accept=".jpg">
                             <pre class="td-pre">

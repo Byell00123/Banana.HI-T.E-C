@@ -1,6 +1,7 @@
 <?php 
 include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
-$tipos_disponiveis = getTiposDisponiveis();
+$tipos_disponiveis = getTiposDisponiveis(); 
+// TODO: Falta bloquear para que somente os vendedores posssam acessar
 ?>
 
 <!DOCTYPE html>
@@ -33,12 +34,13 @@ $tipos_disponiveis = getTiposDisponiveis();
                 </div>
                 <div class="form-group">
                     <label for="tipo_produto">Tipo de Produto:</label>
-                    <br>
-                    <label class="label-select" for="toggleInput">Tipo Já Existente</label>
-                    <div class="toggle">
-                        <input type="checkbox" id="toggleInput" onclick="toggleInputType()">
+                    <div class="div-toggle">
+                        <label class="label-select" for="toggleInput">Tipo Já Existente</label>
+                        <div class="toggle">
+                            <input type="checkbox" id="toggleInput" onclick="toggleInputType()">
+                        </div>
+                        <label class="label-input" for="toggleInput">Adicionar Novo Tipo</label>
                     </div>
-                    <label class="label-input" for="toggleInput">Adicionar Novo Tipo</label>
                     <div id="inputContainer">
                         <select class="input tipo_produto" name="tipo_produto" required>
                             <option hidden></option>
