@@ -5,6 +5,31 @@ include_once(dirname(__FILE__) . '/../../utils/FlashMessages.php');
 $flash_messages = FlashMessages::getMessages();
 
 class AdministradorModel {
+    public function verificaTokenDisponivel($token) {
+        $conn = getConnection();
+    
+        // Query para verificar se o token está disponível
+        $sql = "SELECT t.token FROM banana_hitec.tokens t  LEFT JOIN banana_hitec.administradores a ON t.token = a.fk_token WHERE t.token = ? AND a.fk_token IS NULL";
+        
+        $stmt = $conn->prepare($sql);
+        
+        if ($stmt) {
+            // Associar o token ao parâmetro e executar a consulta
+            $stmt->bind_param("s", $token);
+            $stmt->execute();
+            $result = $stmt->get_result();
+    
+            // Verificar se o token está disponível
+            if ($result->num_rows > 0) {
+                return true; // Token disponível
+            } else {
+                return false; // Token não disponível
+            }
+        }
+    
+        return false; // Caso algo dê errado na query
+    }
+
 
     // Função para cadastrar um adm
     public function cadastraAdministrador($dados) {
@@ -15,40 +40,25 @@ class AdministradorModel {
         if ($conn->connect_error) {
             die("Conexão falhou: " . $conn->connect_error);
         }
-         // Verificar se há tokens disponíveis para cadastro
-         $sqlToken = "SELECT t.token FROM tokens t LEFT JOIN administradores a ON t.token = a.fk_token WHERE a.fk_token IS NULL";
-         $stmtToken = $conn->prepare($sqlToken);
-         if (!$stmtToken) {
-             die("Erro ao preparar a consulta: " . $conn->error);
-         }
-         // Executar a consulta de token
-        $stmtToken->execute();
-        $resultToken = $stmtToken->get_result();
-
-        if ($resultToken->num_rows > 0) {
-            // Token disponível
-            $tokenData = $resultToken->fetch_assoc();
-            $tokenDisponivel = $tokenData['token'];
-        }
+        
         // Preparar a consulta SQL para inserção de dados
-        $sql = "INSERT INTO usuarios (id_adm,codenome,senha,data_engressou) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO administradores (id_adm,codenome,senha,data_engressou,fk_token) VALUES (?, ?, ?, ?, ?)";
         
         // Preparar a instrução
         $stmt = $conn->prepare($sql);
         if (!$stmt) {
             die("Erro ao preparar a consulta: " . $conn->error);
         }
-    
         // Criar uma senha criptografada
         $senhaCriptografada = password_hash($dados['password1'], PASSWORD_DEFAULT);
         
         // Associar os parâmetros
-        $stmt->bind_param("ssss", 
+        $stmt->bind_param("sssss", 
             $dados['id_adm'], 
+            $dados['codenome'], 
             $senhaCriptografada, 
-            $dados['condenome'], 
             $dados['data_engressou'],
-            $tokenDisponivel,
+            $dados['token'],
         );
 
         // Executar a consulta
@@ -66,11 +76,11 @@ class AdministradorModel {
         $conn->close();
     }
 
-    public function loginAdministrador($username, $password) {
+    public function loginAdministrador($username, $password, $tokens) {
         $conn = getConnection();
-        $sql = "SELECT * FROM administradores WHERE id_adm = ? OR codenome = ?";
+        $sql = "SELECT * FROM administradores WHERE codenome = ? OR id_adm = ? OR fk_token = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $username, $username);
+        $stmt->bind_param("sss", $username, $username, $tokens);
         $stmt->execute();
         $result = $stmt->get_result();
     
@@ -82,6 +92,7 @@ class AdministradorModel {
                 session_start();
                 $_SESSION['user_id_adm'] = $user['id_adm'];
                 $_SESSION['user_codenome'] = $user['codenome'];
+                $_SESSION['user_token'] = $user['token'];
                 return true;
             }
         }
@@ -89,3 +100,4 @@ class AdministradorModel {
     }
     
 }
+?>

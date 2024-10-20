@@ -1,11 +1,11 @@
 <?php 
 include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
-include_once(dirname(__FILE__) . '/../../models/ProductModel.php');
+//include_once(dirname(__FILE__) . '/../../models/ProductModel.php');
 // Obtenha a marca selecionada (se houver)
 $marca = isset($_GET['marca']) && $_GET['marca'] !== '' ? $_GET['marca'] : null;
 
 // Obtenha os produtos filtrados pela marca, se especificada
-$produtos_por_marca = getProdutosPorMarca($marca);
+//$produtos_por_marca = getProdutosPorMarca($marca);
 
 ?>
 
@@ -21,7 +21,7 @@ $produtos_por_marca = getProdutosPorMarca($marca);
 </head>
 <body>
 
-    <?php include(dirname(__FILE__) . '/../partials//navbar_v.php'); ?>
+    <?php //include(dirname(__FILE__) . '/../../partials//navbar_v.php'); ?>
 
     
     <!-- Conteúdo do site -->
