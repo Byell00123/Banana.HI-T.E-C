@@ -98,6 +98,7 @@ class AdministradorModel {
         return false; // Login falhou
     }
 
+
     // Função para atualizar o último login do administrador
     public function atualizarUltimoLogin3($username) {
         $conn = getConnection();
@@ -119,6 +120,7 @@ class AdministradorModel {
             return false; // Erro ao atualizar o último login
         }
     }
+
 
     // Função para atualizar dados do usuário
     public function atualizarUsuario($dados) {
@@ -188,9 +190,9 @@ class AdministradorModel {
         $conn = getConnection();
         $sql = "SELECT * FROM usuarios WHERE id_usuario = ?";
         $stmt = $conn->prepare($sql);
-        if (!$stmt) {
-            die("Erro ao preparar a consulta: " . $conn->error);
-        }
+
+        if (!$stmt) {die("Erro ao preparar a consulta: " . $conn->error);}
+
         $stmt->bind_param("s", $id_usuario);
         // Executar a consulta
         $stmt->execute();
@@ -208,5 +210,6 @@ class AdministradorModel {
         $stmt->close();
         $conn->close();
     }
+
 }
 ?>
