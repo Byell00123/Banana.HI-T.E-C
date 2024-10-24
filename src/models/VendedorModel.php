@@ -74,6 +74,26 @@ class VendedorModel {
         }
         return false; // Login falhou
     }
+    public function atualizarUltimoLogin2($cnpj) {
+        $conn = getConnection();
+        
+        // Atualiza a data de último login
+        $sql = "UPDATE vendedores SET ultimo_login = ? WHERE cnpj = ? OR email = ?";
+        $stmt = $conn->prepare($sql);
+        
+        // Obter a data e hora atuais
+        $dataUltimoLogin = date('Y-m-d H:i:s');
+        
+        // Associar os parâmetros
+        $stmt->bind_param("sss", $dataUltimoLogin, $cnpj, $cnpj);
+        
+        // Executar a consulta
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false; // Erro ao atualizar o último login
+        }
+    }
 }
 
 ?>

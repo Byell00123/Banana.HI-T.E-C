@@ -84,5 +84,26 @@ class UserModel {
         }
         return false; // Login falhou
     }
+      // Função para atualizar a data e hora do último login
+      public function atualizarUltimoLogin($username) {
+        $conn = getConnection();
+        
+        // Atualiza a data de último login
+        $sql = "UPDATE usuarios SET ultimo_login = ? WHERE nome_usuario = ? OR email = ?";
+        $stmt = $conn->prepare($sql);
+        
+        // Obter a data e hora atuais
+        $dataUltimoLogin = date('Y-m-d H:i:s');
+        
+        // Associar os parâmetros
+        $stmt->bind_param("sss", $dataUltimoLogin, $username, $username);
+        
+        // Executar a consulta
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false; // Erro ao atualizar o último login
+        }
+    }
     
 }

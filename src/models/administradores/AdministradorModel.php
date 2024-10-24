@@ -30,7 +30,6 @@ class AdministradorModel {
         return false; // Caso algo dê errado na query
     }
 
-
     // Função para cadastrar um adm
     public function cadastraAdministrador($dados) {
         // Conectar ao banco de dados
@@ -99,6 +98,30 @@ class AdministradorModel {
         return false; // Login falhou
     }
 
+
+    // Função para atualizar o último login do administrador
+    public function atualizarUltimoLogin3($username) {
+        $conn = getConnection();
+        
+        // Atualiza a data de último login
+        $sql = "UPDATE administradores SET ultimo_login = ? WHERE codenome = ? OR id_adm = ?";
+        $stmt = $conn->prepare($sql);
+        
+        // Obter a data e hora atuais
+        $dataUltimoLogin = date('Y-m-d H:i:s');
+        
+        // Associar os parâmetros
+        $stmt->bind_param("sss", $dataUltimoLogin, $username, $username);
+        
+        // Executar a consulta
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false; // Erro ao atualizar o último login
+        }
+    }
+
+
     // Função para atualizar dados do usuário
     public function atualizarUsuario($dados) {
         // Conectar ao banco de dados
@@ -161,13 +184,15 @@ class AdministradorModel {
         $stmt->close();
         $conn->close();
     }
-    
+
     // Função para buscar um usuário pelo ID
     public function getUsuarioPorId($id_usuario) {
         $conn = getConnection();
         $sql = "SELECT * FROM usuarios WHERE id_usuario = ?";
         $stmt = $conn->prepare($sql);
+
         if (!$stmt) {die("Erro ao preparar a consulta: " . $conn->error);}
+
         $stmt->bind_param("s", $id_usuario);
         // Executar a consulta
         $stmt->execute();
@@ -185,7 +210,6 @@ class AdministradorModel {
         $stmt->close();
         $conn->close();
     }
-
 
 }
 ?>

@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if ($userModel->loginUsuario($username, $password)) {
         // Defina a variável de sessão após o login bem-sucedido
         $_SESSION['apelido'] = $username; // Armazene o nome de usuário na sessão
+        $userModel->atualizarUltimoLogin($username);
         //TODO: Talvez alterar usarname para apelido
         FlashMessages::addMessage('success', 'Login realizado com sucesso!');
         header("Location: " . TEMPLATE_URL . "home/home_u.php");
