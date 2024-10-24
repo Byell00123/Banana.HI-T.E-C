@@ -22,7 +22,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifique se as chaves existem
     $cnpj = isset($_POST['cnpj']) ? $_POST['cnpj'] : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
-
+    
     // Debug: Exibir os valores recebidos
     // FlashMessages::addMessage('erro', "cnpj: $cnpj");
     // FlashMessages::addMessage('erro', "Password: $password");
@@ -30,9 +30,10 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
     $VendedorModel = new VendedorModel();
     if ($VendedorModel->loginVendedor($cnpj, $password)) {
         FlashMessages::addMessage('success', 'Login realizado com sucesso!');
+        $VendedorModel->atualizarUltimoLogin2($cnpj);
         header("Location: " . TEMPLATE_URL . "home/home_v.php?marca=" . urlencode($_SESSION['user_nome_fantasia']));
         exit();
-
+       
     } 
     else {
         FlashMessages::addMessage('error', 'Nome do vendedor ou senha incorretos.');

@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if ($userModel->loginAdministrador($codenome, $password, $tokens)) {
         // Defina a variável de sessão após o login bem-sucedido
         $_SESSION['codenome'] = $codenome; // Armazene o nome de usuário na sessão
+        $userModel->atualizarUltimoLogin3($username);
         
         FlashMessages::addMessage('success', 'Login realizado com sucesso!');
         header("Location: " . TEMPLATE_URL . "administradores/home_adm.php");

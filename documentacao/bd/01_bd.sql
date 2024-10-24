@@ -49,11 +49,11 @@ COLLATE = utf8mb4_unicode_ci;
 -- Table `banana_hitec`.`administradores`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banana_hitec`.`administradores` (
-  `id_adm` BIGINT NOT NULL,
+  `id_adm` BIGINT NOT NULL AUTO_INCREMENT,
   `codenome` VARCHAR(146) NOT NULL,
   `senha` VARCHAR(60) NOT NULL,
   `data_engressou` DATETIME NOT NULL,
-  `ultimo_login` DATETIME NOT NULL,
+  `ultimo_login` DATETIME DEFAULT NULL,
   `status` TINYINT NOT NULL DEFAULT '0',
   `fk_id_grupo` BIGINT NULL DEFAULT NULL,
   `fk_token` VARCHAR(10) NOT NULL,
