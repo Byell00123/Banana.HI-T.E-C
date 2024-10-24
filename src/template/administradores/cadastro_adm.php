@@ -21,13 +21,7 @@ include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorMod
 
                 <h2>Cadastro</h2>
 
-                <?php if ($flash_messages): ?>
-                    <?php foreach ($flash_messages as $flash_message): ?>
-                        <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
-                            <?php echo $flash_message['message']; ?>
-                        </div>
-                    <?php endforeach;?>
-                <?php endif; ?>
+                <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
                 <div class="form-group">
                     <label for="token" class="label-informacao">Token:</label>
                     <input type="text" class="input token" name="token" placeholder="exemplo: abcdf@1*8-" required>

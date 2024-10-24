@@ -3,6 +3,14 @@
 include_once(dirname(__FILE__) . '/../config.php');
 include_once(dirname(__FILE__) . '/../models/ProdutoModel.php');
 
+// Verifica se o vendedor está logado
+if (!isVendedorLogado()) {
+    // Se o vendedor não estiver logado, redireciona para a página de login
+    FlashMessages::addMessage('error', "Faça login como vendedor para acessar essa área.");
+    header("Location: " . TEMPLATE_URL . "cadastro-login/login_v.php");
+    exit();
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     header("Location: " . TEMPLATE_URL . "produto/produto_v_inserir.php");
     exit();

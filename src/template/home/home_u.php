@@ -21,14 +21,10 @@ $produtos_por_tipo = getProdutosPorTipo();
 
     <!-- Conteúdo do site -->
     <div class="conteudo">
-
-        <?php if ($flash_messages): ?>
-            <?php foreach ($flash_messages as $flash_message): ?>
-                <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
-                    <?php echo $flash_message['message']; ?>
-                </div>
-            <?php endforeach;?>
+        <?php if (true): ?>
+            
         <?php endif; ?>
+        <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 
         <?php if (!empty($produtos_por_tipo)): ?>
             <?php foreach ($produtos_por_tipo as $tipo_produto => $produtos): ?>

@@ -21,19 +21,13 @@ $marca = isset($_GET['marca']) && $_GET['marca'] !== '' ? $_GET['marca'] : null;
 </head>
 <body>
 
-    <?php //include(dirname(__FILE__) . '/../../partials//navbar_v.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials/administradores/navbar_adm.php'); ?>
 
     
     <!-- Conteúdo do site -->
     <div class="conteudo">
         
-        <?php if ($flash_messages): ?>
-            <?php foreach ($flash_messages as $flash_message): ?>
-                <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
-                    <?php echo $flash_message['message']; ?>
-                </div>
-            <?php endforeach;?>
-        <?php endif; ?>
+    <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 
         <?php if (!empty($produtos_por_marca)): ?>
             <?php foreach ($produtos_por_marca as $marca_produto => $produtos): ?>

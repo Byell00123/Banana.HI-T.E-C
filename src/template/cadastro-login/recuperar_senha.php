@@ -16,15 +16,9 @@
         <div class="formulario">
             <form action="#" class="form recuperar_senha">
 
-                <h2>Recuperar Senha</h2>
+                <h2>Recuperar Senha</h2><!-- TODO: kkkkkkkkk nos esqueceu completamente que essa pagina existia -->
                 
-                <?php if ($flash_messages): ?>
-                    <?php foreach ($flash_messages as $flash_message): ?>
-                        <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
-                            <?php echo $flash_message['message']; ?>
-                        </div>
-                    <?php endforeach;?>
-                <?php endif; ?>
+                <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 
                 <div class="form-group">
                     <label for="email"class="label-informacao">E-mail:</label>

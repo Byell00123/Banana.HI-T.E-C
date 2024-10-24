@@ -2,6 +2,14 @@
 include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
 $tipos_disponiveis = getTiposDisponiveis(); 
 // TODO: Falta bloquear para que somente os vendedores posssam acessar
+
+// Verifica se o vendedor está logado
+if (!isVendedorLogado()) {
+    // Se o vendedor não estiver logado, redireciona para a página de login
+    FlashMessages::addMessage('error', "Faça login como vendedor para acessar essa área.");
+    header("Location: " . TEMPLATE_URL . "cadastro-login/login_v.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>

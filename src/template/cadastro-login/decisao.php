@@ -14,6 +14,7 @@
     <?php include(dirname(__FILE__) . '/../partials/navbar_u.php'); ?>
 
     <div class="conteudo">
+        <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
         <div class="formulario">
             <div class="form decisao">
                 <h2>Decisão</h2>
