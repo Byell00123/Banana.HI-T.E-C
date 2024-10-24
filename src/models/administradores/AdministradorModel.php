@@ -133,7 +133,7 @@ class AdministradorModel {
         }
 
         // Preparar a consulta SQL para atualização de dados
-        $sql = "UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE id_usuario = ?";
+        $sql = "UPDATE usuarios SET nome_usuario = ?, senha= ?, primeiro_nome= ?, sobrenome= ?, data_nascimento= ?, email= ?, telefone= ?, sexo= ?, cpf= ? WHERE id_usuario = ?";
 
         // Preparar a instrução
         $stmt = $conn->prepare($sql);
@@ -145,11 +145,19 @@ class AdministradorModel {
         $senhaCriptografada = !empty($dados['senha']) ? password_hash($dados['senha'], PASSWORD_DEFAULT) : null;
 
         // Associar os parâmetros
-        $stmt->bind_param("ssss", 
-            $dados['nome'], 
+        $stmt->bind_param("sssssssssss", 
+            $dados['id_usuario'],
+            $dados['apelido'], 
+            $dados['primeiro_nome'], 
+            $dados['sobrenome'], 
+            $dados['nascimento'], 
             $dados['email'], 
-            $senhaCriptografada, 
-            $dados['id_usuario']
+            $dados['telefone'], 
+            $dados['sexo'], 
+            $dados['cpf'], 
+            $dados['primeiro_nome'], 
+            $senhaCriptografada,
+            
         );
 
         // Executar a consulta
@@ -159,10 +167,6 @@ class AdministradorModel {
             echo "Erro ao atualizar os dados do usuário: " . $stmt->error;
             return false; // Falha na atualização
         }
-
-        // Fechar a instrução e a conexão
-        $stmt->close();
-        $conn->close();
     }
 
     // Função para atualizar dados do vendedor
@@ -180,9 +184,6 @@ class AdministradorModel {
             return false; // Falha na atualização
         }
 
-        // Fechar a instrução e a conexão
-        $stmt->close();
-        $conn->close();
     }
 
     // Função para buscar um usuário pelo ID
@@ -191,25 +192,38 @@ class AdministradorModel {
         $sql = "SELECT * FROM usuarios WHERE id_usuario = ?";
         $stmt = $conn->prepare($sql);
 
-        if (!$stmt) {die("Erro ao preparar a consulta: " . $conn->error);}
-
-        $stmt->bind_param("s", $id_usuario);
-        // Executar a consulta
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        // Verificar se o usuário foi encontrado
-        if ($result->num_rows > 0) {
-            // Retornar os dados do usuário como array associativo
-            return $result->fetch_assoc();
-        } else {
-            return null; // Usuário não encontrado
+        if ($stmt) {
+            $stmt->bind_param("i", $id_usuario);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            // Verificar se o usuário foi encontrado
+            if ($result->num_rows > 0) {
+                // Retornar os dados do usuário como array associativo
+                return $result->fetch_assoc();
+            }
         }
-
-        // Fechar a instrução e a conexão
-        $stmt->close();
-        $conn->close();
+        return null; // Usuário não encontrado
     }
+    
+    /*
+    function getProdutoPorId($id_produto) {
+        $conn = getConnection();  // Obtendo a conexão do banco de dados
+        $sql = "SELECT * FROM produtos WHERE id_produto = ?";
+        $stmt = $conn->prepare($sql);
+        
+        if ($stmt) {
+            $stmt->bind_param("i", $id_produto);  // Parâmetro `id_produto` para evitar SQL injection
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                return $result->fetch_assoc();  // Retorna os dados do produto
+            }
+        }
+        return null;  // Produto não encontrado
+    }
+    */
+
 
 }
 ?>

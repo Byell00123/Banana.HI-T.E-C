@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         'nascimento' => $_POST['nascimento'],
         'email' => $_POST['email'],
         'telefone' => $_POST['telefone'],
-        'sexo' => $_POST['sexo'], // Correção: o valor do gênero agora é capturado corretamente
+        'sexo' => $_POST['sexo'],
         'cpf' => $_POST['cpf'],
         'data_engressou' => date('Y-m-d H:i:s') // Adicionando a data de registro
     ];

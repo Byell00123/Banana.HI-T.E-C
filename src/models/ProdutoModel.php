@@ -92,7 +92,7 @@ function getMarcasDisponiveis() {
     $conn = getConnection();
 
     // Consultando as marcas distintas
-    $sql = "SELECT DISTINCT marca FROM produtos";
+    $sql = "SELECT DISTINCT marca FROM produtos order by marca";
     $result = $conn->query($sql);
 
     $marcas = [];

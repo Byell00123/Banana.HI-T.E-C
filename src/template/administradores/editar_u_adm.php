@@ -1,9 +1,14 @@
 <?php 
 // src/controllers/administradores/AdministradorCadastro_u_Controller
-include_once(dirname(__FILE__) . '/../config.php');
-include(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
+include_once(dirname(__FILE__) . '/../../config.php');
+include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
+include_once(dirname(__FILE__) . '/../../models/UsuarioModel.php');
+// $usuario = new UserModel();
+// $modelU = new AdministradorModel();
+$modelU =  new AdministradorModel();
 // Instancia o model de usuários
-$model = new AdministradorModel(); //TODO: Por usar table>tr>tb tem que fazer um processo de recuperar os caminhos que tão alterados e criar as funções que faltam
+//$admistrador = new AdministradorModel(); //TODO: Por usar table>tr>tb tem que fazer um processo de recuperar os caminhos que tão alterados e criar as funções que faltam
+
 
 /*
 // Verifica se o administrador está logado
@@ -15,25 +20,25 @@ if (!isUsuarioLogado()) {
 }
 */
 
-// if ($_SERVER["REQUEST_METHOD"] == "GET") {
-//     // Verifica se o ID do usuário foi passado pela URL
-//     if (isset($_GET['id'])) {
-//         $id_usuario = intval($_GET['id']);
-//         $usuario = $model->getUsuarioPorId($id_usuario); // Obtém o usuário a partir do banco de dados
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    // Verifica se o ID do usuário foi passado pela URL
+    if (isset($_GET['id'])) {
+        $id_usuario = intval($_GET['id']);
+        $usuario = $modelU->getUsuarioPorId($id_usuario); // Obtém o usuário a partir do banco de dados
 
-//         if (!$usuario) {
-//             // Se o usuário não for encontrado, redireciona
-//             FlashMessages::addMessage('error', "Usuário não encontrado.");
-//             header("Location: " . TEMPLATE_URL . "home/home_adm.php");
-//             exit();
-//         }
-//     } else {
-//         // Redireciona se o ID do usuário não for fornecido
-//         FlashMessages::addMessage('error', "ID do usuário não especificado.");
-//         header("Location: " . TEMPLATE_URL . "home/home_adm.php");
-//         exit();
-//     }
-// }
+        if (!$usuario) {
+            // Se o usuário não for encontrado, redireciona
+            FlashMessages::addMessage('error', "Usuário não encontrado.");
+            header("Location: " . TEMPLATE_URL . "home/home_adm.php");
+            exit();
+        }
+    } else {
+        // Redireciona se o ID do usuário não for fornecido
+        FlashMessages::addMessage('error', "ID do usuário não especificado.");
+        header("Location: " . TEMPLATE_URL . "home/home_adm.php");
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>

@@ -8,14 +8,15 @@ $model = new AdministradorModel();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dados_usuario = [
         'id_usuario' => $_POST['id_usuario'],
-        'username' => $_POST['username'],
+        'apelido' => $_POST['username'],
+        'password1' => $_POST['password1'],
         'primeiro_nome' => $_POST['primeiro_nome'],
         'sobrenome' => $_POST['sobrenome'],
         'nascimento' => $_POST['nascimento'],
-        'email' => $_POST['email'],
         'telefone' => $_POST['telefone'],
+        'email' => $_POST['email'],
         'sexo' => $_POST['sexo'],
-        'cpf' => $_POST['cpf']
+        'cpf' => $_POST['cpf'],
     ];
 
     // Atualiza o usuário no banco de dados

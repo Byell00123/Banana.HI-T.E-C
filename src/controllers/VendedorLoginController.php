@@ -33,7 +33,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
         $VendedorModel->atualizarUltimoLogin2($cnpj);
         header("Location: " . TEMPLATE_URL . "home/home_v.php?marca=" . urlencode($_SESSION['user_nome_fantasia']));
         exit();
-       
+
     } 
     else {
         FlashMessages::addMessage('error', 'Nome do vendedor ou senha incorretos.');
