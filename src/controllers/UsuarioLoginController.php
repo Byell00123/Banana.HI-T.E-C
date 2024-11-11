@@ -2,6 +2,8 @@
 // controller/LoginController.php
 include_once(dirname(__FILE__) . '/../config.php');
 include_once(dirname(__FILE__) . '/../models/UsuarioModel.php');
+include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
+$flash_messages = FlashMessages::getMessages();
 
 // Inicie a sessão se ainda não estiver ativa
 if (session_status() === PHP_SESSION_NONE) {

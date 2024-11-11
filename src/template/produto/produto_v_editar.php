@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
     <title>Banana.HI-T.E-C</title>
     <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>icon/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/produto/produto_v.css">
-    <script src="https://cdn.jsdelivr.net/npm/cleave.js"></script>y
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js"></script>
     <script src="<?php echo STATIC_URL; ?>js/produto/produto.js" defer></script>  <!-- Adiciona o script externo -->
 </head>
 <body>

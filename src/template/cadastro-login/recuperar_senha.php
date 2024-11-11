@@ -1,4 +1,5 @@
-<?php include(dirname(__FILE__) . '/../../modelsUserModel.php');?>
+<?php include(dirname(__FILE__) . '/../../models/UsuarioModel.php'); ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,7 +11,7 @@
 </head>
 <body>
 
-    <?php include(TEMPLATE_PATH . 'partials/navbar_u.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials/navbar_u.php'); ?>
 
     <div class="conteudo">
         <div class="formulario">
@@ -39,7 +40,6 @@
         </div>
     </div>
 
-    <?php include(TEMPLATE_PATH . 'partials/rodape.php'); ?>
-
+    <?php include(dirname(__FILE__) . '/../partials/rodape.php'); ?>
 </body>
 </html>

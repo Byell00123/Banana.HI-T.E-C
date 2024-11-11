@@ -1,8 +1,7 @@
 <?php
 // controller/CadastroController.php
 include_once(dirname(__FILE__) . '/../config.php');
-include_once(dirname(__FILE__) . '/../models/VendedorModel.php'); 
-
+include_once(dirname(__FILE__) . '/../models/VendedorModel.php');
 function processarCadastroVendedor($dadosVendedor) {
     $userModel = new VendedorModel(); // Instancia a classe UserModel
     $userModel->cadastraVendedor($dadosVendedor); // Chama a função de cadastro

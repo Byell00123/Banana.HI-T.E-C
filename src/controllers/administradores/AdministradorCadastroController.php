@@ -4,6 +4,7 @@
 include_once(dirname(__FILE__) . '/../../config.php');
 include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
 include_once(dirname(__FILE__) . '/../../utils/FlashMessages.php');
+$flash_messages = FlashMessages::getMessages();
 
 function processarCadastroAdministrador($dadosAdministrador) {
     $useradministrador = new AdministradorModel();

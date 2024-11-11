@@ -1,5 +1,7 @@
 <?php
 include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
+include_once(dirname(__FILE__) . '/../../utils/FlashMessages.php');
+$flash_messages = FlashMessages::getMessages();
 
 // Instancia o model de usuários
 $model = new AdministradorModel();
@@ -8,8 +10,7 @@ $model = new AdministradorModel();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dados_usuario = [
         'id_usuario' => $_POST['id_usuario'],
-        'apelido' => $_POST['username'],
-        'password1' => $_POST['password1'],
+        'apelido' => $_POST['apelido'],
         'primeiro_nome' => $_POST['primeiro_nome'],
         'sobrenome' => $_POST['sobrenome'],
         'nascimento' => $_POST['nascimento'],
@@ -22,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Atualiza o usuário no banco de dados
     if ($model->atualizarUsuario($dados_usuario)) {
         FlashMessages::addMessage('success', "Usuário atualizado com sucesso!");
-        header("Location: " . TEMPLATE_URL . "home/home_adm.php");
+        header("Location: " . TEMPLATE_URL . "administradores/editar_u_adm.php?id=" . $_POST['id_usuario']);
         exit();
     } else {
         FlashMessages::addMessage('error', "Erro ao atualizar o usuário.");

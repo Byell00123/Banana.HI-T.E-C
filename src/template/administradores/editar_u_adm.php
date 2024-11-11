@@ -2,12 +2,7 @@
 // src/controllers/administradores/AdministradorCadastro_u_Controller
 include_once(dirname(__FILE__) . '/../../config.php');
 include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
-include_once(dirname(__FILE__) . '/../../models/UsuarioModel.php');
-// $usuario = new UserModel();
-// $modelU = new AdministradorModel();
 $modelU =  new AdministradorModel();
-// Instancia o model de usuários
-//$admistrador = new AdministradorModel(); //TODO: Por usar table>tr>tb tem que fazer um processo de recuperar os caminhos que tão alterados e criar as funções que faltam
 
 
 /*
@@ -46,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banana.HI-T.E-C - Editar Usuário</title>
+    <title>Banana.HI-T.E-C</title>
     <link rel="shortcut icon" href="<?php echo STATIC_URL; ?>icon/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/cadastro-login/cadastro-login.css">
 </head>
@@ -56,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     <div class="conteudo">
         <div class="formulario">
-            <form action="../../controllers/administradores/AdministradorCadastro_u_Controller.php" method="POST" class="form cadastro">
+            <form action="../../controllers/administradores/AdministradorEditar_u_Controller.php" method="POST" class="form cadastro">
                 <h2>Editar Usuário</h2>
 
                 <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
@@ -64,8 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 <table border="1" cellpadding="10">
                     <tr>
                         <input type="hidden" name="id_usuario" value="<?php echo $usuario['id_usuario']; ?>">
-                        <td><label for="username">Nome de Usuário:</label></td>
-                        <td><input type="text" name="username" value="<?php echo htmlspecialchars($usuario['nome_usuario']); ?>" required></td>
+                        <td><label for="apelido">Nome de Usuário:</label></td>
+                        <td><input type="text" name="apelido" value="<?php echo htmlspecialchars($usuario['nome_usuario']); ?>" required></td>
                     </tr>
                     <tr>
                         <td><label for="primeiro_nome">Primeiro Nome:</label></td>

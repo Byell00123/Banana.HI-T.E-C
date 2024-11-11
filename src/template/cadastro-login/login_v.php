@@ -25,7 +25,7 @@ include_once (dirname(__FILE__) . '/../../models/VendedorModel.php');
                 <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 
                 <div class="form-group">
-                    <label for="cnpj">Cnpj:</label>
+                    <label for="cnpj">CNPJ:</label>
                     <input type="text" class="input username" name="cnpj" placeholder="Nome Fantasia ou Cnpj">
                 </div>
                 <div class="form-group">

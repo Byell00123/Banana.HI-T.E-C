@@ -22,7 +22,7 @@
                 <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
                 
                 <div class="form-group">
-                    <label for="username" class="label-informacao">Nome de Usuário:</label>
+                    <label for="username" class="label-informacao">Apelido:</label>
                     <input type="text" class="input username" name="username" placeholder="exemplo: Joãozinho123" required>
                 </div>
                 <div class="form-group">

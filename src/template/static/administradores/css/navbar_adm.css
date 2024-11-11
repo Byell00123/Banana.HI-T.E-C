@@ -1,0 +1,150 @@
+@import url(../cadastro-login/cadastro-login.css);
+
+.formulario {
+    width: 50vw !important;
+}
+
+/* Estilo comum para formulários de login, cadastro e decisão */
+.form {
+    padding: 0 20px; /* Adiciona preenchimento interno apenas nas laterais */
+    background-color: #0a0a23; /* Define a cor de fundo como um tom escuro */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+}
+.td-pre {
+    margin: 0;
+    padding: 0;
+    font-size: small;
+    text-align: left; /* Garante o alinhamento do texto à esquerda */
+    white-space: pre-wrap; /* Mantém a quebra de linha, mas permite que o texto se ajuste à largura do container */
+    border: none; /* Remove qualquer borda padrão do <pre> */
+}
+.botao-form{
+    width: 45%;
+}
+
+.div-toggle {
+    display: flex;
+    align-items: center; /* Alinha o toggle no centro vertical */
+    width: 100%; /* Certifica-se de que a div ocupa toda a largura disponível */
+    height: 60px; /* Mantém a altura definida */
+    padding: 10px 0px;
+}
+.label-select {
+    padding-right: 5px;
+}
+.label-input {
+    padding-left: 5px;
+}
+
+.toggle {
+    display: inline-block;
+    height: 2rem;
+    width: 4rem;
+    position: relative;
+}
+
+.toggle input {
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.toggle input::before {
+    background-color: #ff007f;
+    border-radius: 1rem;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: background-color 0.25s ease-in-out;
+    width: 100%;
+}
+
+.toggle input:checked::before {
+    background-color: #00bfff;
+}
+
+.toggle input::after {
+    background-color: #ffffff;
+    border-radius: 50%;
+    content: '';
+    height: 1.6rem;
+    left: 0.2rem;
+    position: absolute;
+    top: 0.2rem;
+    transition: transform 0.25s ease-in-out;
+    width: 1.6rem;
+}
+
+.toggle input:checked::after {
+    transform: translateX(2rem);
+}
+
+/* Estilos para os labels de input e select */
+.label-input, .label-select {
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.25s ease-in-out;
+}
+
+
+.formulario {
+    width: 40vw; /* Define a largura do formulário */
+    margin: 30px auto; /* Adiciona uma margem de 30px em cima e embaixo e centraliza horizontalmente */
+    background-color: #0a0a23; /* Define a cor de fundo como um tom escuro */
+    border: solid; /* Adiciona uma borda sólida */
+    padding: 20px; /* Adiciona um preenchimento interno de 20px */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+}
+
+.form {
+    padding: 0 20px; /* Adiciona preenchimento interno apenas nas laterais */
+    background-color: #0a0a23; /* Define a cor de fundo como um tom escuro */
+    border-color: #fff; /* Define a cor da borda como branco */
+    border: solid; /* Adiciona uma borda sólida */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+}
+
+.links-auxiliares{
+    display: flex;
+}
+.link-auxiliar {
+    padding: 4px; /* Adiciona um preenchimento interno de 4px */
+    text-decoration: none; /* Remove a decoração de sublinhado */
+    background-color: #e22bcdec; /* Define a cor de fundo como roxo */
+    border: 2px solid #ff00ff; /* Adiciona uma borda rosa neon */
+    box-shadow: 0 0 10px #ff007f; /* Adiciona uma sombra magenta neon */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+    color: #ffffff; /* Define a cor do texto como branco */
+}
+
+.link-auxiliar:hover {
+    background-color: #ff00ff; /* Altera a cor de fundo para rosa neon quando o mouse passa por cima */
+    box-shadow: 0 0 15px #ff007f; /* Adiciona uma sombra magenta neon mais intensa */
+}
+
+.link-botao{
+    margin-bottom: 0px !important;
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+}
+
+.c1, .c2,.c3,.c4{
+    width: 45%;
+}
+
+.c3, .c4{
+    background-color: #0016b3; /* Define a cor de fundo como azul escuro */
+    border: 1px solid #007bff; /* Define a cor da borda como meio azul */
+    box-shadow: 0 0 10px #00bfff; /* Adiciona uma sombra azul neon */
+}
+
+.c3:hover,.c4:hover{
+    background-color: #007bff; /* Define a cor de fundo como meio azul */
+    border: 1px solid #007bff; /* Define a cor da borda como meio azul */
+    box-shadow: 0 0 10px #00bfff; /* Adiciona uma sombra azul neon */
+}
+
+

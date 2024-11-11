@@ -1,10 +1,9 @@
 <?php
 // controller/CadastroController.php
 include_once(dirname(__FILE__) . '/../config.php');
-
 include_once(dirname(__FILE__) . '/../models/UsuarioModel.php');
-
 include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
+$flash_messages = FlashMessages::getMessages();
 
 function processarCadastroUsuario($dadosUsuario) {
     $userModel = new UserModel(); // Instancia a classe UserModel

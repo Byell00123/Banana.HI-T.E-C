@@ -2,6 +2,8 @@
 // src/controllers/EditarProdutoController.php
 include_once(dirname(__FILE__) . '/../config.php');
 include_once(dirname(__FILE__) . '/../models/ProdutoModel.php');
+include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
+$flash_messages = FlashMessages::getMessages();
 
 // Verifica se o vendedor está logado
 if (!isVendedorLogado()) {

@@ -1,8 +1,11 @@
 <?php
 // models/AdministradorModel.php
 require_once(dirname(__FILE__) . '/../database.php');
-include_once(dirname(__FILE__) . '/../../utils/FlashMessages.php');
-$flash_messages = FlashMessages::getMessages();
+include_once(dirname(__FILE__) . '/../../utils/administradores/AdministradorLogado.php');
+
+function isAdmLogado() {
+    return AdministradorLogado();
+}
 
 class AdministradorModel {
     public function verificaTokenDisponivel($token) {
@@ -100,7 +103,7 @@ class AdministradorModel {
 
 
     // Função para atualizar o último login do administrador
-    public function atualizarUltimoLogin3($username) {
+    public function atualizarUltimoLogin3($codenome) {
         $conn = getConnection();
         
         // Atualiza a data de último login
@@ -111,7 +114,7 @@ class AdministradorModel {
         $dataUltimoLogin = date('Y-m-d H:i:s');
         
         // Associar os parâmetros
-        $stmt->bind_param("sss", $dataUltimoLogin, $username, $username);
+        $stmt->bind_param("sss", $dataUltimoLogin, $codenome, $id_adm);
         
         // Executar a consulta
         if ($stmt->execute()) {
@@ -133,7 +136,7 @@ class AdministradorModel {
         }
 
         // Preparar a consulta SQL para atualização de dados
-        $sql = "UPDATE usuarios SET nome_usuario = ?, senha= ?, primeiro_nome= ?, sobrenome= ?, data_nascimento= ?, email= ?, telefone= ?, sexo= ?, cpf= ? WHERE id_usuario = ?";
+        $sql = "UPDATE usuarios SET nome_usuario = ?, primeiro_nome= ?, sobrenome= ?, data_nascimento= ?, email= ?, telefone= ?, sexo= ?, cpf= ? WHERE id_usuario = ?";
 
         // Preparar a instrução
         $stmt = $conn->prepare($sql);
@@ -141,23 +144,17 @@ class AdministradorModel {
             die("Erro ao preparar a consulta: " . $conn->error);
         }
 
-        // Criptografar a senha, caso esteja presente nos dados
-        $senhaCriptografada = !empty($dados['senha']) ? password_hash($dados['senha'], PASSWORD_DEFAULT) : null;
-
         // Associar os parâmetros
-        $stmt->bind_param("sssssssssss", 
-            $dados['id_usuario'],
-            $dados['apelido'], 
-            $dados['primeiro_nome'], 
-            $dados['sobrenome'], 
-            $dados['nascimento'], 
-            $dados['email'], 
-            $dados['telefone'], 
-            $dados['sexo'], 
-            $dados['cpf'], 
-            $dados['primeiro_nome'], 
-            $senhaCriptografada,
-            
+        $stmt->bind_param("sssssssss", 
+        $dados['apelido'], 
+        $dados['primeiro_nome'], 
+        $dados['sobrenome'], 
+        $dados['nascimento'], 
+        $dados['email'], 
+        $dados['telefone'], 
+        $dados['sexo'], 
+        $dados['cpf'], 
+        $dados['id_usuario'],
         );
 
         // Executar a consulta
@@ -204,26 +201,8 @@ class AdministradorModel {
         }
         return null; // Usuário não encontrado
     }
+
     
-    /*
-    function getProdutoPorId($id_produto) {
-        $conn = getConnection();  // Obtendo a conexão do banco de dados
-        $sql = "SELECT * FROM produtos WHERE id_produto = ?";
-        $stmt = $conn->prepare($sql);
-        
-        if ($stmt) {
-            $stmt->bind_param("i", $id_produto);  // Parâmetro `id_produto` para evitar SQL injection
-            $stmt->execute();
-            $result = $stmt->get_result();
-
-            if ($result->num_rows > 0) {
-                return $result->fetch_assoc();  // Retorna os dados do produto
-            }
-        }
-        return null;  // Produto não encontrado
-    }
-    */
-
 
 }
 ?>

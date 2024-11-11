@@ -13,7 +13,7 @@ include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorMod
 </head>
 <body>
 
-    <?php include(dirname(__FILE__) . '/../partials/navbar_u.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials/administradores/navbar_adm.php'); ?>
 
     <div class="conteudo">
         <div class="formulario">

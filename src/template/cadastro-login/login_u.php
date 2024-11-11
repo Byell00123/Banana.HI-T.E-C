@@ -23,7 +23,7 @@
                         
                 <div class="form-group">
                     <label for="username">Usuário:</label>
-                    <input type="text" class="input username" name="username" placeholder="Nome de Usuario ou email" required>
+                    <input type="text" class="input username" name="username" placeholder="Apelido ou email" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Senha:</label>

@@ -12,21 +12,15 @@ include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorMod
 </head>
 <body>
 
-    <?php include(dirname(__FILE__) . '/../partials/navbar_u.php'); ?>
+    <?php include(dirname(__FILE__) . '/../partials/administradores/navbar_adm.php'); ?>
 
     <div class="conteudo">
         <div class="formulario">
             <form action="../../controllers/administradores/AdministradorLoginController.php" method="POST" class="form login">
 
-                <h2>Login</h2>
+                <h2>Login de Administrador</h2>
 
-                <?php if ($flash_messages): ?>
-                    <?php foreach ($flash_messages as $flash_message): ?>
-                        <div class="<?php echo $flash_message['type']; ?>" style="color: <?php echo $flash_message['type'] == 'error' ? 'red' : 'green'; ?>;">
-                            <?php echo $flash_message['message']; ?>
-                        </div>
-                    <?php endforeach;?>
-                <?php endif; ?>
+                <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
                         
                 <div class="form-group">
                     <label for="token" class="label-informacao">Token:</label>
