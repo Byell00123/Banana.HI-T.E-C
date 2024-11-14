@@ -1,10 +1,6 @@
 <?php 
 include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
-include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
-// Verifica o estado do checkbox, se foi marcado ou não
-$checkboxState = isset($_POST['toggleInput']) && $_POST['toggleInput'] === 'simplificada';
-
-
+$usuarios = getUsuarios();
 ?>
 
 <!DOCTYPE html>
@@ -25,25 +21,27 @@ $checkboxState = isset($_POST['toggleInput']) && $_POST['toggleInput'] === 'simp
     <div class="conteudo">
         <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 
-        <!-- Verificação do estado do checkbox -->
-        <?php if ($checkboxState): ?>
-            <!-- Incluir visualização simplificada -->
-            <?php include (dirname(__FILE__) . '/home_adm_simples.php'); ?>
-        <?php else: ?>
-            <!-- Incluir visualização estilizada (padrão) -->
-            <?php include (dirname(__FILE__) . '/home_adm_estilizada.php'); ?>
-        <?php endif; ?>
-
-
-
-        <div class="div-toggle">
-            <label for="toggleInput">Adicionar Novo Tipo</label>
-            <div class="toggle">
-                <input type="checkbox" id="toggleInput" onclick="toggleInputType()">
-            </div>
-        </div>
-
-
+        <!-- Tabela de usuários -->
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome de Usuário</th>
+                    <th>Email</th>
+                    <th>Data de Criação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($usuarios as $usuario): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($usuario['id_usuario']); ?></td>
+                        <td><?php echo htmlspecialchars($usuario['username']); ?></td>
+                        <td><?php echo htmlspecialchars($usuario['email']); ?></td>
+                        <td><?php echo htmlspecialchars($usuario['data_criacao']); ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </div>
 
     <?php include(dirname(__FILE__) . '/../partials/rodape.php'); ?>

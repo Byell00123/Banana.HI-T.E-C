@@ -183,6 +183,30 @@ class AdministradorModel {
 
     }
 
+    public function getUsuarios() {
+        $conn = getConnection();
+        $sql = "SELECT * FROM usuarios";
+        $stmt = $conn->prepare($sql);
+    
+        if ($stmt) {
+            $stmt->execute();
+            $result = $stmt->get_result();
+            
+            $usuarios = [];
+            // Verificar se há usuários no resultado
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $usuarios[] = $row; // Adiciona cada linha ao array
+                }
+            }
+            
+            return $usuarios; // Retorna todos os usuários como um array de arrays
+        }
+        return []; // Retorna um array vazio caso não haja usuários
+    }
+    
+
+
     // Função para buscar um usuário pelo ID
     public function getUsuarioPorId($id_usuario) {
         $conn = getConnection();

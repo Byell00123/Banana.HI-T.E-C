@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         FlashMessages::addMessage('error', 'As senhas não coincidem.');
         header("Location: " . TEMPLATE_URL . "cadastro-login/cadastro_u.php");
         exit(); // Para o processamento se as senhas não coincidirem
-    }
+    }// TODO: fazer o restantes da verificações
 
     // Coletar dados do usuário
     $dadosUsuario = [

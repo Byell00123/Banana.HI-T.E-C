@@ -23,8 +23,9 @@ include_once (dirname(__FILE__) . '/../../models/VendedorModel.php');
                 <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 
                 <div class="form-group">
-                    <label for="nome_fantasia"class="label-informacao">Nome Fantasia:</label>
-                    <input type="txt" class="input username" name="nome_fantasia" placeholder="exemplo: Acer" autocomplete="username" required>
+                    <label for="nome_fantasia" class="label-informacao" >Nome Fantasia:</label>
+                    <input type="txt" class="input username" name="nome_fantasia" placeholder="exemplo: Acer" autocomplete="username" required 
+                    value="<?php echo isset($_POST['nome_fantasia']) ? htmlspecialchars($_POST['nome_fantasia']) : ''; ?>">
                 </div>
                 <div class="form-group">
                     <label for="cnpj"class="label-informacao">Cnpj:</label>

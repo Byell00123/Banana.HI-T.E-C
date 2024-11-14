@@ -65,7 +65,7 @@ if (!isVendedorLogado()) {
                     <input type="text" class="input preco" name="preco" maxlength="10" placeholder="000.000,00" required>
                 </div>
                 <div class="form-group">
-                    <label for="peso">Peso:</label>
+                    <label for="peso">Peso(Kg):</label>
                     <input type="text" class="input peso" name="peso" placeholder="000,00" required>
                 </div>
                 <div class="form-group">
