@@ -2,7 +2,7 @@
 // models/VendedorModel.php
 require_once(dirname(__FILE__) . '/database.php');
 include_once(dirname(__FILE__) . '/ProdutoModel.php');
-
+$ProdutoModel = new ProdutoModel;
 class VendedorModel {
 
     // Função para cadastrar um vendedor
@@ -53,7 +53,7 @@ class VendedorModel {
     }
     public function loginVendedor($cnpj, $password) {
         $conn = getConnection();
-        $sql = "SELECT * FROM vendedores WHERE cnpj = ? OR email = ?";
+        $sql = "SELECT * FROM vendedores WHERE cnpj = ? OR nome_fantasia = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $cnpj, $cnpj);
         $stmt->execute();
@@ -78,7 +78,7 @@ class VendedorModel {
         $conn = getConnection();
         
         // Atualiza a data de último login
-        $sql = "UPDATE vendedores SET ultimo_login = ? WHERE cnpj = ? OR email = ?";
+        $sql = "UPDATE vendedores SET ultimo_login = ? WHERE cnpj = ? OR nome_fantasia = ?";
         $stmt = $conn->prepare($sql);
         
         // Obter a data e hora atuais

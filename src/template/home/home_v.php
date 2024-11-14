@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__) . '/../../models/VendedorModel.php');
 
 // Verifica se o vendedor está logado
-if (!isVendedorLogado()) {
+if (!$ProdutoModel->isVendedorLogado()) {
     // Se o vendedor não estiver logado, redireciona para a página de login
     FlashMessages::addMessage('error', "Faça login como vendedor para acessar essa área.");
     header("Location: " . TEMPLATE_URL . "cadastro-login/login_v.php");
@@ -29,7 +29,7 @@ if (isset($_GET['marca'])) {
 }
 
 // Obtenha os produtos filtrados pela marca
-$produtos_por_marca = getProdutosPorMarca($marca);
+$produtos_por_marca = $ProdutoModel->getProdutosPorMarca($marca);
 
 ?>
 

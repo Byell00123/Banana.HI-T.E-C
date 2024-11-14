@@ -4,9 +4,9 @@ include_once(dirname(__FILE__) . '/../config.php');
 include_once(dirname(__FILE__) . '/../models/ProdutoModel.php');
 include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
 $flash_messages = FlashMessages::getMessages();
-
+$ProdutoModel = new ProdutoModel;
 // Verifica se o vendedor está logado
-if (!isVendedorLogado()) {
+if (!$ProdutoModel->isVendedorLogado()) {
     // Se o vendedor não estiver logado, redireciona para a página de login
     FlashMessages::addMessage('error', "Faça login como vendedor para acessar essa área.");
     header("Location: " . TEMPLATE_URL . "cadastro-login/login_v.php");
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $url_foto = '../../uploads/produtos/' . $nome_imagem_unico; // Todas as imagens vão ser renderizadas a partir do template logo é nescessario voltar, somente, duas pasta para conseguir chegar na uploads/produtos,
 
                 // Tente salvar o produto no banco de dados
-                $resultado = salvarProduto($nome, $tipo_produto, $marca, $preco, $peso, $qtd, $descricao, $url_foto, $fk_vendedor);
+                $resultado = $ProdutoModel-> salvarProduto($nome, $tipo_produto, $marca, $preco, $peso, $qtd, $descricao, $url_foto, $fk_vendedor);
 
                 // Verificar se a inserção foi bem-sucedida
                 if ($resultado) {

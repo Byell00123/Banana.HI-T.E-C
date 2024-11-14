@@ -4,9 +4,10 @@ include_once(dirname(__FILE__) . '/../config.php');
 include_once(dirname(__FILE__) . '/../models/VendedorModel.php');
 include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
 $flash_messages = FlashMessages::getMessages();
+$ProdutoModel = new ProdutoModel;
 
 // Verifica se o vendedor está logado
-if (isVendedorLogado()) {
+if ($ProdutoModel->isVendedorLogado()) {
     // Se o vendedor estiver logado, redireciona para a página de login
     FlashMessages::addMessage('error', "Você já está logado como vendedor.");
     header("Location: " . TEMPLATE_URL . "home/home_v.php?marca=" . $_SESSION["user_nome_fantasia"]);
