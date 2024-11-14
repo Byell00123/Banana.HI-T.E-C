@@ -1,8 +1,8 @@
 <?php 
 include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
-
+$ProdutoModel = new ProdutoModel;
 // Obtenha os produtos usando a função do modelo
-$produtos_por_tipo = getProdutosPorTipo();
+$produtos_por_tipo = $ProdutoModel->getProdutosPorTipo();
 
 ?>
 

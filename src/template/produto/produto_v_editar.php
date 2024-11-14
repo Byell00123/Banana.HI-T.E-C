@@ -1,8 +1,9 @@
 <?php 
 include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
-$tipos_disponiveis = getTiposDisponiveis();
+$ProdutoModel = new ProdutoModel;
+$tipos_disponiveis = $ProdutoModel-> getTiposDisponiveis();
 // Verifica se o vendedor está logado
-if (!isVendedorLogado()) {
+if (!$ProdutoModel-> isVendedorLogado()) {
     // Se o vendedor não estiver logado, redireciona para a página de login
     FlashMessages::addMessage('error', "Faça login como vendedor caso queira acessar a área de vendedores.");
     header("Location: " . TEMPLATE_URL . "cadastro-login/login_v.php");
@@ -13,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
 // Verifica se o ID do produto foi passado pela URL
     if (isset($_GET['id'])) {
         $id_produto = intval($_GET['id']);  // Captura o ID do produto a partir da URL
-        $produto = getProdutoPorId($id_produto); // Obter o produto a partir do banco de dados
+        $produto = $ProdutoModel-> getProdutoPorId($id_produto); // Obter o produto a partir do banco de dados
 
         // Obter o CNPJ do vendedor logado
         $cnpj_vendedor_logado = $_SESSION['user_cnpj'];

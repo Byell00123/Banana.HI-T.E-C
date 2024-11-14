@@ -9,7 +9,7 @@ define('DB_NAME', getenv('DB_NAME') ?: 'banana_hitec');
 define('ENV', 'development'); // ou 'production'
 
 // Configurações de URL
-define('BASE_URL', 'http://10.103.253.236/3_ano/Banana.HI-T.E-C/');
+define('BASE_URL', 'http://localhost/3_ano/Banana.HI-T.E-C/');
 
 define('TEMPLATE_URL', BASE_URL . 'src/template/');
 define('STATIC_URL', BASE_URL . 'src/template/static/');

@@ -1,6 +1,6 @@
 <?php
 // src/template/partials/navbar_v.php
-include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
+//include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
 include_once(dirname(__FILE__) . '/../../utils/VendedorLogado.php');
 ?>
 <!-- Menu que fica na parte superior do site-->
@@ -15,7 +15,7 @@ include_once(dirname(__FILE__) . '/../../utils/VendedorLogado.php');
             </form>
         </li>
         <li class="li gambiarra"></li>
-        <?php if (isVendedorLogado()): ?>
+        <?php if (VendedorLogado()): ?>
             <form id="logoutForm" action="../../controllers/LogoutController.php" method="POST" style="display: none;">
                 <input type="hidden" name="action" value="logout">
             </form>

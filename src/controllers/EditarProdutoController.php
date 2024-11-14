@@ -4,10 +4,10 @@ include_once(dirname(__FILE__) . '/../config.php');
 include_once(dirname(__FILE__) . '/../models/ProdutoModel.php');
 include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
 $flash_messages = FlashMessages::getMessages();
-$model = porduto-->
+$ProdutoModel = new ProdutoModel;
 
 // Verifica se o vendedor está logado
-if (!isVendedorLogado()) {
+if (!$ProdutoModel->isVendedorLogado()) {
     // Se o vendedor não estiver logado, redireciona para a página de login
     FlashMessages::addMessage('error', "Faça login como vendedor caso queira acessar a área de vendedores.");
     header("Location: " . TEMPLATE_URL . "cadastro-login/login_v.php");
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
     // Verificar se o ID do produto foi passado
     if (isset($_GET['id'])) {
         $id_produto = intval($_GET['id']);  // Captura o ID do produto a partir da URL
-        $produto = getProdutoPorId($id_produto); // Obter o produto a partir do banco de dados
+        $produto = $ProdutoModel->getProdutoPorId($id_produto); // Obter o produto a partir do banco de dados
 
         // Verificar se o produto pertence ao vendedor logado
         if ($produto && $produto['fk_vendedor'] === $cnpj_vendedor_logado) {
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Código para excluir o produto
         if (isset($_POST['id_produto'])) {
             $id_produto = intval($_POST['id_produto']);
-            $resultado = excluirProduto($id_produto);
+            $resultado = $ProdutoModel->excluirProduto($id_produto);
 
             if ($resultado) {
                 FlashMessages::addMessage('success', "Produto excluído com sucesso.");
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $descricao = $conn->real_escape_string($_POST['descricao']);
 
             // Recupera a foto atual do produto para manter se não houver nova foto
-            $produto = getProdutoPorId($id_produto);
+            $produto = $ProdutoModel->getProdutoPorId($id_produto);
             $url_foto_atual = $produto['url_foto'];
 
             // Tratamento da nova foto
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
 
             // Chama a função do modelo para atualizar o produto
-            $resultado = atualizarProduto($id_produto, $nome, $tipo_produto, $preco, $peso, $qtd, $descricao, $url_foto);
+            $resultado = $ProdutoModel->atualizarProduto($id_produto, $nome, $tipo_produto, $preco, $peso, $qtd, $descricao, $url_foto);
 
             if ($resultado) {
                 FlashMessages::addMessage('success', "Produto atualizado com sucesso.");
