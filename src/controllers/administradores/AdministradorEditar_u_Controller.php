@@ -8,6 +8,23 @@ $model = new AdministradorModel();
 
 // Verifica se a requisição é do tipo POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if (isset($_POST['deleta'])) {
+        // Código para excluir o produto
+        if (isset($_POST['id_usuario'])) {
+            $id_usuario = intval($_POST['id_usuario']);
+            $resultado = excluirProduto($id_usuario);
+
+            if ($resultado) {
+                FlashMessages::addMessage('success', "Produto excluído com sucesso.");
+                header("Location: " . TEMPLATE_URL . "home/home_v.php"); // Redireciona após a exclusão
+                exit();
+            } else {
+                FlashMessages::addMessage('error', "Erro ao excluir o produto.");
+            }
+        }
+    } 
+
     $dados_usuario = [
         'id_usuario' => $_POST['id_usuario'],
         'apelido' => $_POST['apelido'],

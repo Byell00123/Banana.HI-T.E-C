@@ -124,6 +124,23 @@ class AdministradorModel {
         }
     }
 
+    function getUsuarios() {
+        $conn = getConnection(); // Conexão com o banco de dados
+        $sql = "SELECT * FROM usuarios";
+        $stmt = $conn->prepare($sql);
+
+        if ($stmt) {
+            $stmt->execute();
+            $result = $stmt->get_result();
+            
+            // Verificar se há usuários no banco
+            if ($result->num_rows > 0) {
+                // Retornar todos os dados dos usuários como um array
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }
+        }
+        return []; // Retorna um array vazio se não houver resultados
+    }
 
     // Função para atualizar dados do usuário
     public function atualizarUsuario($dados) {
@@ -165,6 +182,30 @@ class AdministradorModel {
             return false; // Falha na atualização
         }
     }
+    function excluirUsuario($id_usuario) {
+        $conn = getConnection();
+        $sql = "DELETE FROM usuarios WHERE id_usuario = ?";
+        $stmt = $conn->prepare($sql);
+        
+        if ($stmt === false) {
+            return false; // Se o preparo da consulta falhar
+        }
+    
+        $stmt->bind_param("i", $id_usuario); // Liga o parâmetro de ID à consulta
+        $resultado = $stmt->execute(); // Executa a consulta DELETE
+    
+        $stmt->close(); // Fecha o prepared statement
+        $conn->close(); // Fecha a conexão com o banco
+    
+        // Verifica se a execução foi bem-sucedida
+        if ($resultado) {
+            return true; // Exclusão bem-sucedida
+        } else {
+            echo "Erro ao excluir o usuário: " . $stmt->error; // Se houver erro
+            return false; // Falha na exclusão
+        }
+    }
+    
 
     // Função para atualizar dados do vendedor
     public function atualizarVendedor($dados) {
@@ -183,27 +224,9 @@ class AdministradorModel {
 
     }
 
-    public function getUsuarios() {
-        $conn = getConnection();
-        $sql = "SELECT * FROM usuarios";
-        $stmt = $conn->prepare($sql);
-    
-        if ($stmt) {
-            $stmt->execute();
-            $result = $stmt->get_result();
-            
-            $usuarios = [];
-            // Verificar se há usuários no resultado
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    $usuarios[] = $row; // Adiciona cada linha ao array
-                }
-            }
-            
-            return $usuarios; // Retorna todos os usuários como um array de arrays
-        }
-        return []; // Retorna um array vazio caso não haja usuários
-    }
+    // Dentro do arquivo AdministradorModel.php
+
+
     
 
 
