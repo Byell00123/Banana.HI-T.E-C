@@ -1,4 +1,5 @@
 <?php 
+// src/template/adiministradores/cadastro_v_adm.php
 include_once (dirname(__FILE__) . '/../../models/ProdutoModel.php');
 include_once (dirname(__FILE__) . '/../../models/VendedorModel.php'); 
 ?>
@@ -19,7 +20,7 @@ include_once (dirname(__FILE__) . '/../../models/VendedorModel.php');
         <div class="formulario">
             <form action="../../controllers/VendedorCadastroController.php" method="POST" class="form cadastro">
 
-                <h2>Cadastro de Vendedor</h2>
+                <h2>Cadastro de um Vendedor feito por um Adiministrador</h2>
                 <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 
                 <div class="form-group">

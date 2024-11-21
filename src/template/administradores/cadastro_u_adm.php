@@ -1,4 +1,7 @@
-<?php include(dirname(__FILE__) . '/../../models/UsuarioModel.php'); ?>
+<?php
+// src/template/adiministradores/cadastro_u_adm.php
+include(dirname(__FILE__) . '/../../models/UsuarioModel.php'); 
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,7 +20,7 @@
         <div class="formulario">
             <form action="../../controllers/UsuarioCadastroController.php" method="POST" class="form cadastro">
 
-                <h2>Cadastro</h2>
+                <h2>Cadastro de um Usuário feito por um Adiministrador</h2>
 
                 <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
                 

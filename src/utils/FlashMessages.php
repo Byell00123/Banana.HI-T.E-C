@@ -10,12 +10,15 @@ class FlashMessages {
     }
 
     public static function getMessages() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         if (isset($_SESSION['flash_messages'])) {
             $messages = $_SESSION['flash_messages'];
-            unset($_SESSION['flash_messages']); // Limpa as mensagens após serem lidas
+            unset($_SESSION['flash_messages']);
             return $messages;
         }
         return [];
-    }
+    }    
 }
 ?>

@@ -1,12 +1,10 @@
 <?php
 // src/models/ProductModel.php
 require_once(dirname(__FILE__) . '/database.php');
-include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
-$flash_messages = FlashMessages::getMessages();
 include_once(dirname(__FILE__) . '/../utils/VendedorLogado.php');
 
-
 class ProdutoModel{
+
 // Função para verificar se o vendedor está logado e retornar o status
     function isVendedorLogado() {
         return VendedorLogado();

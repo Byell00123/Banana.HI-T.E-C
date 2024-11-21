@@ -1,4 +1,5 @@
 <?php 
+// src/template/adiministradores/cadastro_adm.php
 include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
 ?>
 
@@ -19,7 +20,7 @@ include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorMod
         <div class="formulario">
             <form action="../../controllers/administradores/AdministradorCadastroController.php" method="POST" class="form cadastro">
 
-                <h2>Cadastro</h2>
+                <h2>Cadastro de Adiministrador</h2>
 
                 <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
                 <div class="form-group">
@@ -42,7 +43,7 @@ include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorMod
                     <label for="password" class="label-informacao">Senha (novamente):</label>
                     <input type="password" class="input password2" name="password2" placeholder="Digite a senha (novamente)" required>
                 </div>
-               
+
                 <div class="form-group link-botao">
                     <div class="links-auxiliares">
                         <a class="link-auxiliar c1" href="<?php echo TEMPLATE_URL; ?>administradores/login_adm.php" target="_blank">Já tenho uma conta</a>

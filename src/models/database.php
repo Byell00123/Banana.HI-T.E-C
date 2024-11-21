@@ -1,5 +1,5 @@
 <?php
-// models/database.php
+// src/models/database.php
 require_once(dirname(__FILE__) . '/../config.php');
 
 function getConnection() {

@@ -1,13 +1,12 @@
 <?php
-// models/AdministradorModel.php
+// src/models/administradores/AdministradorModel.php
 require_once(dirname(__FILE__) . '/../database.php');
 include_once(dirname(__FILE__) . '/../../utils/administradores/AdministradorLogado.php');
 
-function isAdmLogado() {
-    return AdministradorLogado();
-}
-
 class AdministradorModel {
+    function isAdmLogado() {
+        return AdministradorLogado();
+    }
     public function verificaTokenDisponivel($token) {
         $conn = getConnection();
     
@@ -60,7 +59,7 @@ class AdministradorModel {
             $dados['codenome'], 
             $senhaCriptografada, 
             $dados['data_engressou'],
-            $dados['token'],
+            $dados['token']
         );
 
         // Executar a consulta
@@ -103,18 +102,18 @@ class AdministradorModel {
 
 
     // Função para atualizar o último login do administrador
-    public function atualizarUltimoLogin3($codenome) {
+    public function atualizarUltimoLogin($codenome) {
         $conn = getConnection();
         
         // Atualiza a data de último login
-        $sql = "UPDATE administradores SET ultimo_login = ? WHERE codenome = ? OR id_adm = ?";
+        $sql = "UPDATE administradores SET ultimo_login = ? WHERE codenome = ?";// OR id_adm = ?
         $stmt = $conn->prepare($sql);
         
         // Obter a data e hora atuais
         $dataUltimoLogin = date('Y-m-d H:i:s');
         
         // Associar os parâmetros
-        $stmt->bind_param("sss", $dataUltimoLogin, $codenome, $id_adm);
+        $stmt->bind_param("ss", $dataUltimoLogin, $codenome);//s          , $id_adm
         
         // Executar a consulta
         if ($stmt->execute()) {
@@ -182,27 +181,23 @@ class AdministradorModel {
             return false; // Falha na atualização
         }
     }
-    function excluirUsuario($id_usuario) {
-        $conn = getConnection();
-        $sql = "DELETE FROM usuarios WHERE id_usuario = ?";
-        $stmt = $conn->prepare($sql);
+    public function excluirUsuario($id_usuario) {
+        $conn = getConnection(); // Conexão com o banco de dados
+        $sql = "DELETE FROM usuarios WHERE id_usuario = ?"; // Query para exclusão
+        $stmt = $conn->prepare($sql); // Prepara a consulta
         
-        if ($stmt === false) {
-            return false; // Se o preparo da consulta falhar
+        if (!$stmt) {
+            return false; // Falha ao preparar a consulta
         }
     
-        $stmt->bind_param("i", $id_usuario); // Liga o parâmetro de ID à consulta
-        $resultado = $stmt->execute(); // Executa a consulta DELETE
+        $stmt->bind_param("i", $id_usuario); // Liga o ID do usuário ao parâmetro
+        $resultado = $stmt->execute(); // Executa a consulta
     
-        $stmt->close(); // Fecha o prepared statement
-        $conn->close(); // Fecha a conexão com o banco
-    
-        // Verifica se a execução foi bem-sucedida
         if ($resultado) {
-            return true; // Exclusão bem-sucedida
+            return $stmt->affected_rows > 0; // Verifica se alguma linha foi afetada
         } else {
-            echo "Erro ao excluir o usuário: " . $stmt->error; // Se houver erro
-            return false; // Falha na exclusão
+            echo "Erro ao excluir o usuário: " . $stmt->error; // Exibe erros (apenas para depuração)
+            return false;
         }
     }
     
@@ -225,10 +220,6 @@ class AdministradorModel {
     }
 
     // Dentro do arquivo AdministradorModel.php
-
-
-    
-
 
     // Função para buscar um usuário pelo ID
     public function getUsuarioPorId($id_usuario) {

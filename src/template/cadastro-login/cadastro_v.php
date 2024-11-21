@@ -1,7 +1,5 @@
-<?php 
-include_once (dirname(__FILE__) . '/../../models/ProdutoModel.php');
-include_once (dirname(__FILE__) . '/../../models/VendedorModel.php'); 
-?>
+<?php include_once (dirname(__FILE__) . '/../../controllers/VendedorCadastroController.php');?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

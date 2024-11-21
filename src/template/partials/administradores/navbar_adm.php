@@ -1,14 +1,16 @@
 <?php
-// src/template/partials/navbar_v.php
+// src/template/partials/administradores/navbar_v.php
+include_once(dirname(__FILE__) . '/../../../models/administradores/AdministradorModel.php');// AdministradorModel.php
 include_once(dirname(__FILE__) . '/../../../models/ProdutoModel.php');// ProdutoModel.php
-include_once(dirname(__FILE__) . '/../../../utils/administradores/AdministradorLogado.php');
+$modelA = new AdministradorModel;
+$modelP = new ProdutoModel;
 
 ?>
 <!-- Menu que fica na parte superior do site-->
 <nav class="navbar">
     <ul class="navbar-list">
         <li class="li"><a class="a" href="<?php echo TEMPLATE_URL; ?>home/home_u.php" target="_blank">Página Inicial - Cliente</a></li> <!-- TODO: Fazer o adm acessar tudo, usando as permissoes -->
-        <li class="li"><a class="a" href="<?php echo TEMPLATE_URL; ?>home/home_v.php" target="_blank">Página Inicial - Vendedor</a></li>
+        <li class="li"><a class="a" href="<?php echo TEMPLATE_URL; ?>home/home_v.php" target="_blank">Página Inicial - Vendedor</a></li><!-- TODO: Fazer o adm acessar tudo, usando as permissoes -->
         <li class="li pesquisa">
             <form id="form-pesquisa">
                 <button class="button" type="submit">Pesquisar</button>
@@ -22,7 +24,7 @@ include_once(dirname(__FILE__) . '/../../../utils/administradores/AdministradorL
                     <option value="">Todas</option>
                     <?php
                         // Usando a função do modelo para obter marcas
-                        $marcas = getMarcasDisponiveis(); // Função que obtem as marcas disponíveis
+                        $marcas = $modelP->getMarcasDisponiveis(); // Função que obtem as marcas disponíveis
 
                         foreach ($marcas as $marcaOption) {
                             $selected = isset($_GET['marca']) && $_GET['marca'] == $marcaOption ? 'selected' : '';
@@ -46,7 +48,7 @@ include_once(dirname(__FILE__) . '/../../../utils/administradores/AdministradorL
         </li>
 
 
-        <?php if (isAdmLogado()): ?>
+        <?php if ($modelA->isAdmLogado()): ?>
             <form id="logoutForm" action="../../controllers/LogoutController.php" method="POST" style="display: none;">
                 <input type="hidden" name="action" value="logout">
             </form>

@@ -1,4 +1,5 @@
 <?php 
+// src/template/adiministradores/login_adm.php
 include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
 ?>
 <!DOCTYPE html>

@@ -1,36 +1,7 @@
-<?php   
-include_once(dirname(__FILE__) . '/../../models/VendedorModel.php');
+<?php include(dirname(__FILE__) . '/../../controllers/VendedorHomeController.php'); 
 
-// Verifica se o vendedor está logado
-if (!$ProdutoModel->isVendedorLogado()) {
-    // Se o vendedor não estiver logado, redireciona para a página de login
-    FlashMessages::addMessage('error', "Faça login como vendedor para acessar essa área.");
-    header("Location: " . TEMPLATE_URL . "cadastro-login/login_v.php");
-    exit();
-}
-
-// Obtenha o nome fantasia do vendedor logado
-$nome_fantasia_sessao = $_SESSION['user_nome_fantasia'];
-
-// Verifica se a marca foi passada na URL
-if (isset($_GET['marca'])) {
-    $marca = $_GET['marca'];
-
-    // Se a marca da URL for diferente do nome fantasia do vendedor logado, redireciona para a própria home
-    if ($marca !== $nome_fantasia_sessao) {
-        FlashMessages::addMessage('error', "Você não pode acessar a página de outro vendedor.");
-        header("Location: " . TEMPLATE_URL . "home/home_v.php?marca=" . urlencode($nome_fantasia_sessao));
-        exit();
-    }
-} else {
-    // Se a marca não for informada, assume a marca do vendedor logado
-    header("Location: " . TEMPLATE_URL . "home/home_v.php?marca=" . urlencode($nome_fantasia_sessao));
-    exit();
-}
-
-// Obtenha os produtos filtrados pela marca
-$produtos_por_marca = $ProdutoModel->getProdutosPorMarca($marca);
-
+$controller = new VendedorHomeController(); 
+$produtos_por_marca = $controller->handleRequest(); 
 ?>
 
 <!DOCTYPE html>

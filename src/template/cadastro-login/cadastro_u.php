@@ -1,4 +1,4 @@
-<?php include(dirname(__FILE__) . '/../../models/UsuarioModel.php'); ?>
+<?php include_once(dirname(__FILE__) . '/../../controllers/UsuarioCadastroController.php'); ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,7 +16,7 @@
     <div class="conteudo">
         <div class="formulario">
             <form action="../../controllers/UsuarioCadastroController.php" method="POST" class="form cadastro">
-
+                
                 <h2>Cadastro</h2>
 
                 <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>

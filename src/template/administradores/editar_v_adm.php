@@ -1,7 +1,8 @@
 <?php 
+// src/template/adiministradores/editar_v_adm.php.php
 include_once (dirname(__FILE__) . '/../../models/ProdutoModel.php');
 include_once (dirname(__FILE__) . '/../../models/VendedorModel.php'); 
-//TODO: Por usar table>tr>tb tem que fazer um processo de recuperar os caminhos que tão alterados e criar as funções que faltam
+//TODO: Precisa depois recuperar os dados caso o usuario erre o cadastro para ele não ter que preencher tudo de novo
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,7 +21,7 @@ include_once (dirname(__FILE__) . '/../../models/VendedorModel.php');
         <div class="formulario">
             <form action="../../controllers/VendedorCadastroController.php" method="POST" class="form cadastro">
 
-                <h2>Cadastro de Vendedor</h2>
+                <h2>Cadastro de Vendedor feito or um Adiministrador</h2>
                 <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 
                 <div class="form-group">

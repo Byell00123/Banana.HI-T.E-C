@@ -1,4 +1,5 @@
 <?php
+// src/config.php
 // Configurações do banco de dados MySQL
 define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
 define('DB_USER', getenv('DB_USER') ?: 'root');

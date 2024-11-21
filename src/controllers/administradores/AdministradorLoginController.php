@@ -1,5 +1,5 @@
 <?php
-// controller/LoginController.php
+// src/controller/administradores/AdministradorLoginController.php
 include_once(dirname(__FILE__) . '/../../config.php');
 include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
 include_once(dirname(__FILE__) . '/../../utils/FlashMessages.php');
@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // FlashMessages::addMessage('erro', "codenome: $codenome");
     //FlashMessages::addMessage('erro', "Password: $password");
 
-    $userModel = new AdministradorModel();
-    if ($userModel->loginAdministrador($codenome, $password, $tokens)) {
+    $modelA = new AdministradorModel();
+    if ($modelA->loginAdministrador($codenome, $password, $tokens)) {
         // Defina a variável de sessão após o login bem-sucedido
         $_SESSION['codenome'] = $codenome; // Armazene o nome de usuário na sessão
-        $userModel->atualizarUltimoLogin3($codenome);
+        $modelA->atualizarUltimoLogin($codenome);
         
         FlashMessages::addMessage('success', 'Login realizado com sucesso!');
         header("Location: " . TEMPLATE_URL . "administradores/home_adm.php");

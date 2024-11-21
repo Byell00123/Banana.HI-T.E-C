@@ -1,6 +1,5 @@
 <?php
 // src/template/partials/navbar_v.php
-//include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
 include_once(dirname(__FILE__) . '/../../utils/VendedorLogado.php');
 ?>
 <!-- Menu que fica na parte superior do site-->

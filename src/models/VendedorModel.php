@@ -1,10 +1,13 @@
 <?php
 // models/VendedorModel.php
 require_once(dirname(__FILE__) . '/database.php');
+include_once(dirname(__FILE__) . '/../utils/VendedorLogado.php');
 include_once(dirname(__FILE__) . '/ProdutoModel.php');
 $ProdutoModel = new ProdutoModel;
 class VendedorModel {
-
+    function isVendedorLogado() {
+        return VendedorLogado();
+    }
     // Função para cadastrar um vendedor
     public function cadastraVendedor($dados) {
         // Conectar ao banco de dados

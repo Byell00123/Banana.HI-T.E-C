@@ -1,6 +1,5 @@
 <?php
-// src/template/partials/navbar_v.php
-include_once(dirname(__FILE__) . '/../../models/UsuarioModel.php');
+// src/template/partials/navbar_u.php
 include_once(dirname(__FILE__) . '/../../utils/UsuarioLogado.php');
 ?>
 <!-- Menu que fica na parte superior do site -->
@@ -17,7 +16,7 @@ include_once(dirname(__FILE__) . '/../../utils/UsuarioLogado.php');
         <li class="li"><a class="a" href="#">Acessibilidade</a></li>
         <li class="li"><a class="a" href="#">Suporte</a></li>
         <li class="li gambiarra"></li>
-        <?php if (isUsuarioLogado()): ?>
+        <?php if (UsuarioLogado()): ?>
             <form id="logoutForm" action="../../controllers/LogoutController.php" method="POST" style="display: none;">
                 <input type="hidden" name="action" value="logout">
             </form>

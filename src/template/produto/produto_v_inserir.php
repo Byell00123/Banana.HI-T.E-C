@@ -1,18 +1,9 @@
 <?php 
-include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
-$ProdutoModel = new ProdutoModel;
-$tipos_disponiveis = $ProdutoModel-> getTiposDisponiveis(); 
-// TODO: Falta bloquear para que somente os vendedores posssam acessar
+include_once(dirname(__FILE__) . '/../../controllers/InserirProdutoController.php');
 
-// Verifica se o vendedor está logado
-if (!$ProdutoModel-> isVendedorLogado()) {
-    // Se o vendedor não estiver logado, redireciona para a página de login
-    FlashMessages::addMessage('error', "Faça login como vendedor para acessar essa área.");
-    header("Location: " . TEMPLATE_URL . "cadastro-login/login_v.php");
-    exit();
-}
+$controller = new InserirProdutoController(); 
+$tipos_disponiveis = $controller->handleRequest();
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -1,6 +1,6 @@
 <?php 
+// src/template/adiministradores/home_adm.php
 include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
-include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
 // Verifica o estado do checkbox, se foi marcado ou não
 $checkboxState = isset($_POST['toggleInput']) && $_POST['toggleInput'] === 'simplificada';
 
@@ -26,14 +26,13 @@ $checkboxState = isset($_POST['toggleInput']) && $_POST['toggleInput'] === 'simp
         <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 
         <!-- Verificação do estado do checkbox -->
-        <?php if ($checkboxState): ?>
+        <!-- <?php if ($checkboxState): ?> -->
             <!-- Incluir visualização simplificada -->
-            <?php include (dirname(__FILE__) . '/home_adm_simples.php'); ?>
-        <?php else: ?>
+            <!-- <?php include (dirname(__FILE__) . '/home_adm_simples.php'); ?> -->
+        <!-- <?php else: ?> -->
             <!-- Incluir visualização estilizada (padrão) -->
             <?php include (dirname(__FILE__) . '/home_adm_estilizada.php'); ?>
-        <?php endif; ?>
-
+        <!-- <?php endif; ?> -->
 
 
         <div class="div-toggle">

@@ -1,27 +1,26 @@
 <?php
-// controller/CadastroController.php
-
+// src/controller/administradores/AdministradorCadastroController.php
 include_once(dirname(__FILE__) . '/../../config.php');
 include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
 include_once(dirname(__FILE__) . '/../../utils/FlashMessages.php');
 $flash_messages = FlashMessages::getMessages();
 
 function processarCadastroAdministrador($dadosAdministrador) {
-    $useradministrador = new AdministradorModel();
-    $useradministrador->cadastraAdministrador($dadosAdministrador);
+    $modelA = new AdministradorModel();
+    $modelA->cadastraAdministrador($dadosAdministrador);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     header("Location: " . TEMPLATE_URL . "administradores/cadastro_adm.php");
     exit();
 } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $useradministrador = new AdministradorModel();
+    $modelA = new AdministradorModel();
 
     // Capturar o token enviado via POST
     $token = $_POST['token'];
 
     // Verificar se o token está disponível
-    $TokenDisponivel = $useradministrador->verificaTokenDisponivel($token);
+    $TokenDisponivel = $modelA->verificaTokenDisponivel($token);
 
     // Exibir mensagem de sucesso ou erro com base na disponibilidade do token
     if ($TokenDisponivel) {

@@ -1,12 +1,12 @@
 <?php 
-// src/controllers/administradores/AdministradorCadastro_u_Controller
+// src/template/adiministradores/editar_u_adm.php
 include_once(dirname(__FILE__) . '/../../config.php');
 include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
-$modelU =  new AdministradorModel();
+$modelU =  new AdministradorModel;
 
 
 /*
-// Verifica se o administrador está logado
+// Verifica se o administrador está logado. Por enquanto não vamos deixar isso ativo, para facilita os teste da pagina
 if (!isUsuarioLogado()) {
     // Se não estiver logado, redireciona para a página de login
     FlashMessages::addMessage('error', "Faça login como administrador para acessar esta área.");
@@ -17,8 +17,8 @@ if (!isUsuarioLogado()) {
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Verifica se o ID do usuário foi passado pela URL
-    if (isset($_GET['id'])) {
-        $id_usuario = intval($_GET['id']);
+    if (isset($_GET['id_usuario'])) {
+        $id_usuario = intval($_GET['id_usuario']);
         $usuario = $modelU->getUsuarioPorId($id_usuario); // Obtém o usuário a partir do banco de dados
 
         if (!$usuario) {

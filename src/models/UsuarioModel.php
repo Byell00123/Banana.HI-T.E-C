@@ -1,17 +1,14 @@
 <?php
 // models/UserModel.php
 require_once(dirname(__FILE__) . '/database.php');
-include_once(dirname(__FILE__) . '/../utils/FlashMessages.php');
-$flash_messages = FlashMessages::getMessages();
 include_once(dirname(__FILE__) . '/../utils/UsuarioLogado.php');
 
-// Função para verificar se o usuario está logado e retornar o status
-function isUsuarioLogado() {
-    return UsuarioLogado();
-}
 
-class UserModel {
 
+class UsuarioModel {
+    function isUsuarioLogado() {
+        return UsuarioLogado();
+    }
     // Função para cadastrar um usuário
     public function cadastraUsuario($dados) {
         // Conectar ao banco de dados

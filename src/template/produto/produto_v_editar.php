@@ -1,41 +1,13 @@
 <?php 
-include_once(dirname(__FILE__) . '/../../models/ProdutoModel.php');
-$ProdutoModel = new ProdutoModel;
-$tipos_disponiveis = $ProdutoModel-> getTiposDisponiveis();
-// Verifica se o vendedor está logado
-if (!$ProdutoModel-> isVendedorLogado()) {
-    // Se o vendedor não estiver logado, redireciona para a página de login
-    FlashMessages::addMessage('error', "Faça login como vendedor caso queira acessar a área de vendedores.");
-    header("Location: " . TEMPLATE_URL . "cadastro-login/login_v.php");
-    exit();
-}
+include_once(dirname(__FILE__) . '/../../controllers/EditarProdutoController.php');
 
-if ($_SERVER["REQUEST_METHOD"] == "GET"){
-// Verifica se o ID do produto foi passado pela URL
-    if (isset($_GET['id'])) {
-        $id_produto = intval($_GET['id']);  // Captura o ID do produto a partir da URL
-        $produto = $ProdutoModel-> getProdutoPorId($id_produto); // Obter o produto a partir do banco de dados
+$controller = new InserirProdutoController(); 
+$result = $controller->handleRequest();
 
-        // Obter o CNPJ do vendedor logado
-        $cnpj_vendedor_logado = $_SESSION['user_cnpj'];
-
-        // Verifica se o produto pertence ao vendedor logado
-        if ($produto && $produto['fk_vendedor'] === $cnpj_vendedor_logado) {
-            // O vendedor é dono do produto, permitir o acesso à página de edição
-        } else {
-            // Se não for o dono, redireciona para a home
-            FlashMessages::addMessage('error', "Você não tem permissão para editar este produto.");
-            header("Location: " . TEMPLATE_URL . "home/home_v.php");
-            exit();
-        }
-    } else {
-        // Se o ID do produto não for informado, redireciona para a página de erro ou home
-        FlashMessages::addMessage('error', "ID do produto não especificado.");
-        header("Location: " . TEMPLATE_URL . "home/home_v.php");
-        exit();
-    }
-}
+$tipos_disponiveis = $result['tipos_disponiveis'];
+$produto = $result['produto'];
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -55,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
     <div class="conteudo">
 
         <div class="formulario">
-            <form class="form" method="POST" action="../../controllers/EditarProdutoController.php" enctype="multipart/form-data">
+            <form class="form" method="POST" action="<?php echo $_SERVER['REQUEST_URI']; ?>" enctype="multipart/form-data">
 
                 <h1>Editar Produto</h1>
 
@@ -117,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="nova_foto">Nova Foto:</label></td><!-- TODO: FAzer o nome proprio para quando trocar de imagem -->
+                        <td><label for="nova_foto">Nova Foto:</label></td>
                         <td>
                             <input type="file" class="input nova_foto" name="nova_foto" accept=".jpg">
                             <pre class="td-pre">
