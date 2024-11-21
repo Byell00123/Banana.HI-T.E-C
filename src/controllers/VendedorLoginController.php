@@ -35,7 +35,7 @@ class VendedorLoginController {
 
         if ($this->model->loginVendedor($cnpj, $password)) {
             FlashMessages::addMessage('success', 'Login realizado com sucesso!');
-            $this->model->atualizarUltimoLogin2($cnpj);
+            $this->model->atualizarUltimoLogin($_SESSION['user_cnpj'],$_SESSION['user_nome_fantasia']);
             header("Location: " . TEMPLATE_URL . "home/home_v.php?marca=" . urlencode($_SESSION['user_nome_fantasia']));
             exit();
         } else {

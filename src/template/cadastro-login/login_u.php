@@ -22,12 +22,12 @@
                 <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
                         
                 <div class="form-group">
-                    <label for="username">Usuário:</label>
-                    <input type="text" class="input username" name="username" placeholder="Apelido ou email" required>
+                    <label for="apelido">Usuário:</label>
+                    <input type="text" class="input apelido" name="apelido" placeholder="Apelido ou email" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Senha:</label>
-                    <input type="password" class="input password" name="password" placeholder="Digite a senha" required>
+                    <label for="senha">Senha:</label>
+                    <input type="password" class="input senha" name="senha" placeholder="Digite a senha" required>
                 </div>
                 <div class="form-group link-botao">
                     <div class="links-auxiliares">

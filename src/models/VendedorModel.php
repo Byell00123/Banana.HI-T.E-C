@@ -77,7 +77,7 @@ class VendedorModel {
         }
         return false; // Login falhou
     }
-    public function atualizarUltimoLogin2($cnpj) {
+    public function atualizarUltimoLogin($cnpj, $nome_fantasia) {
         $conn = getConnection();
         
         // Atualiza a data de último login
@@ -88,7 +88,7 @@ class VendedorModel {
         $dataUltimoLogin = date('Y-m-d H:i:s');
         
         // Associar os parâmetros
-        $stmt->bind_param("sss", $dataUltimoLogin, $cnpj, $cnpj);
+        $stmt->bind_param("sss", $dataUltimoLogin, $cnpj, $nome_fantasia);
         
         // Executar a consulta
         if ($stmt->execute()) {

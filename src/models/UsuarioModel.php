@@ -20,7 +20,7 @@ class UsuarioModel {
         }
     
         // Preparar a consulta SQL para inserção de dados
-        $sql = "INSERT INTO usuarios (nome_usuario, senha, primeiro_nome, sobrenome, data_nascimento, email, telefone, sexo, cpf, data_engressou) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO usuarios (apelido, senha, primeiro_nome, sobrenome, data_nascimento, email, telefone, sexo, cpf, data_engressou) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         // Preparar a instrução
         $stmt = $conn->prepare($sql);
@@ -60,40 +60,41 @@ class UsuarioModel {
         $conn->close();
     }
 
-    public function loginUsuario($username, $password) {
+    public function loginUsuario($apelido, $senha) {
         $conn = getConnection();
-        $sql = "SELECT * FROM usuarios WHERE nome_usuario = ? OR email = ?";
+        $sql = "SELECT * FROM usuarios WHERE apelido = ? OR email = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $username, $username);
+        $stmt->bind_param("ss", $apelido, $apelido);
         $stmt->execute();
         $result = $stmt->get_result();
     
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
             // Verificar a senha
-            if (password_verify($password, $user['senha'])) {
+            if (password_verify($senha, $user['senha'])) {
                 // Iniciar a sessão e armazenar informações do usuário
                 session_start();
                 $_SESSION['user_id'] = $user['id_usuario'];
-                $_SESSION['user_name'] = $user['nome_usuario'];
+                $_SESSION['user_apelido'] = $user['apelido'];
+                $_SESSION['user_email'] = $user['email'];
                 return true;
             }
         }
         return false; // Login falhou
     }
       // Função para atualizar a data e hora do último login
-    public function atualizarUltimoLogin($username) {
+    public function atualizarUltimoLogin($apelido, $email) {
         $conn = getConnection();
         
         // Atualiza a data de último login
-        $sql = "UPDATE usuarios SET ultimo_login = ? WHERE nome_usuario = ? OR email = ?";
+        $sql = "UPDATE usuarios SET ultimo_login = ? WHERE apelido = ? OR email = ?";
         $stmt = $conn->prepare($sql);
         
         // Obter a data e hora atuais
         $dataUltimoLogin = date('Y-m-d H:i:s');
         
         // Associar os parâmetros
-        $stmt->bind_param("sss", $dataUltimoLogin, $username, $username);
+        $stmt->bind_param("sss", $dataUltimoLogin, $apelido, $email);
         
         // Executar a consulta
         if ($stmt->execute()) {

@@ -155,7 +155,7 @@ COLLATE = utf8mb4_unicode_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banana_hitec`.`usuarios` (
   `id_usuario` BIGINT NOT NULL AUTO_INCREMENT,
-  `nome_usuario` TEXT NOT NULL,
+  `apelido` TEXT NOT NULL,
   `senha` VARCHAR(60) NOT NULL,
   `primeiro_nome` TINYTEXT NOT NULL,
   `sobrenome` TEXT NOT NULL,
