@@ -82,7 +82,7 @@ class UsuarioModel {
         return false; // Login falhou
     }
       // Função para atualizar a data e hora do último login
-      public function atualizarUltimoLogin($username) {
+    public function atualizarUltimoLogin($username) {
         $conn = getConnection();
         
         // Atualiza a data de último login
@@ -101,6 +101,24 @@ class UsuarioModel {
         } else {
             return false; // Erro ao atualizar o último login
         }
+    }
+    public function atualizarSenha($usuarioId, $novaSenha) {
+        $conn = getConnection();
+        $senhaCriptografada = password_hash($novaSenha, PASSWORD_DEFAULT);
+        $stmt = $conn->prepare("UPDATE usuarios SET senha = ? WHERE id_usuario = ?");
+        $stmt->bind_param("si", $senhaCriptografada, $usuarioId);
+        $stmt->execute();
+        $stmt->close();
+
+    }   
+    public function buscarPorEmailETelefone($email, $telefone) {
+        $conn = getConnection();
+        $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = ? AND telefone = ?");
+        $stmt->bind_param("ss", $email, $telefone);
+        $stmt->execute();
+        $resultado = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+        return $resultado;
     }
     
 }

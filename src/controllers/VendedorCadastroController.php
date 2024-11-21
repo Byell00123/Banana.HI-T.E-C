@@ -34,6 +34,13 @@ class VendedorCadastroController {
             FlashMessages::addMessage('error', 'As senhas não coincidem.');
             $this->redirectBack();
         }
+        if( $senha = $_POST['password1']){;
+            // Função de validação usando regex
+        if (!preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@*_-]).{8,}$/', $senha)) {
+            FlashMessages::addMessage('error', 'A senha deve ter no mínimo 8 caracteres, incluir pelo menos uma letra maiúscula, um número e um caractere especial.');
+            $this->redirectBack();
+            }
+        }
 
         // Coletar dados do vendedor
         $dadosVendedor = [

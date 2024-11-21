@@ -15,7 +15,7 @@
 
     <div class="conteudo">
         <div class="formulario">
-            <form action="#" class="form recuperar_senha">
+            <form action="../../controllers/RecuperarSenhaController_u.php" method="POST" class="form recuperar_senha">
 
                 <h2>Recuperar Senha</h2><!-- TODO: kkkkkkkkk nos esqueceu completamente que essa pagina existia -->
                 
