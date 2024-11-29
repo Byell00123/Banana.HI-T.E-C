@@ -1,4 +1,4 @@
-<?php include_once(dirname(__FILE__) . '/../../controllers/VendedorLoginController.php');?>
+<?php include(dirname(__FILE__) . '/../../models/UsuarioModel.php'); ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,25 +15,24 @@
 
     <div class="conteudo">
         <div class="formulario">
-            <form action="../../controllers/VendedorLoginController.php" method="POST" class="form login">
+            <form action="../../controllers/RecuperarSenhaController_v.php" method="POST" class="form recuperar_senha">
 
-                <h2>Login do Vendedor</h2>
-
+                <h2>Recuperar Senha do Vendedor</h2><!-- TODO: kkkkkkkkk nos esqueceu completamente que essa pagina existia -->
+                
                 <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 
                 <div class="form-group">
-                    <label for="cnpj">CNPJ:</label>
-                    <input type="text" class="input username" name="cnpj" placeholder="Nome Fantasia ou Cnpj">
+                    <label for="email"class="label-informacao">E-mail:</label>
+                    <input type="email" class="input email" name="email" placeholder="exemplo: joãozinho123@gmail.com">
                 </div>
                 <div class="form-group">
-                    <label for="senha">Senha:</label>
-                    <input type="password" class="input senha" name="senha" placeholder="Digite a senha">
+                    <label for="telefone"class="label-informacao">Telefone:</label>
+                    <input type="tel" class="input telefone" name="telefone" placeholder="exemplo: (00) 90000-0000">
                 </div>
                 <div class="form-group link-botao">
                     <div class="links-auxiliares">
-                        <a class="link-auxiliar c1" href="<?php echo TEMPLATE_URL; ?>cadastro-login/recuperar_senha_v.php">Esqueceu sua senha?</a>
+                        <a class="link-auxiliar c1" href="#">Tentar outro metodo</a>
                         <div class="gambiarra"></div>
-                        <a class="link-auxiliar c2" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_v.php" target="_blank">Ainda não tem uma conta?</a>
                     </div>
                     <button type="submit" class="botao-form">Entrar</button>
                 </div>
@@ -42,6 +41,5 @@
     </div>
 
     <?php include(dirname(__FILE__) . '/../partials/rodape.php'); ?>
-
 </body>
 </html>

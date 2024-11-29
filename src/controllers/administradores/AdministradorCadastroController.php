@@ -32,7 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             header("Location: " . TEMPLATE_URL . "administradores/cadastro_adm.php");
             exit();
         }
-
+        if( $senha = $_POST['password1']){;
+            // Função de validação usando regex
+        if (!preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@*_-]).{8,}$/', $senha)) {
+            FlashMessages::addMessage('error', 'A senha deve ter no mínimo 8 caracteres, incluir pelo menos uma letra maiúscula, um número e um caractere especial.');
+            header("Location: " . TEMPLATE_URL . "cadastro-login/cadastro_u.php");
+            exit();
+            }
+        }
         // Coletar dados do administrador
         $dadosAdministrador = [
             'id_adm' => $_POST['id_adm'],

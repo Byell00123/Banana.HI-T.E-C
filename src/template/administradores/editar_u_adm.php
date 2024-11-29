@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <tr>
                         <input type="hidden" name="id_usuario" value="<?php echo $usuario['id_usuario']; ?>">
                         <td><label for="apelido">Nome de Usuário:</label></td>
-                        <td><input type="text" name="apelido" value="<?php echo htmlspecialchars($usuario['nome_usuario']); ?>" required></td>
+                        <td><input type="text" name="apelido" value="<?php echo htmlspecialchars($usuario['apelido']); ?>" required></td>
                     </tr>
                     <tr>
                         <td><label for="primeiro_nome">Primeiro Nome:</label></td>
