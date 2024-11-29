@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group link-botao">
                     <div class="links-auxiliares">
-                        <a class="link-auxiliar c1" href="<?php echo TEMPLATE_URL; ?>cadastro-login/recuperar_senha.php">Esqueceu sua senha?</a>
+                        <a class="link-auxiliar c1" href="<?php echo TEMPLATE_URL; ?>cadastro-login/recuperar_senha_v.php">Esqueceu sua senha?</a>
                         <div class="gambiarra"></div>
                         <a class="link-auxiliar c2" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_v.php" target="_blank">Ainda não tem uma conta?</a>
                     </div>

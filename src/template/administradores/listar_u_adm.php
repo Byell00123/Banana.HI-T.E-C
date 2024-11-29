@@ -62,7 +62,7 @@ $usuarios = $modelA->getUsuarios();
                             <tr>
                                 <td class="td" scope="row"><input type="checkbox" name="id_usuario[]" value="<?php echo htmlspecialchars($usuario['id_usuario']); ?>" class="userCheckbox"></td>
                                 <td class="td" scope="row"><a href="<?php echo TEMPLATE_URL; ?>administradores/editar_u_adm.php?id_usuario=<?php echo htmlspecialchars($usuario['id_usuario']); ?>"><?php echo htmlspecialchars($usuario['id_usuario']); ?></a></td>
-                                <td class="td" scope="row"><a href="<?php echo TEMPLATE_URL; ?>administradores/editar_u_adm.php?id_usuario=<?php echo htmlspecialchars($usuario['id_usuario']); ?>"><?php echo htmlspecialchars($usuario['nome_usuario']); ?></a></td>
+                                <td class="td" scope="row"><a href="<?php echo TEMPLATE_URL; ?>administradores/editar_u_adm.php?id_usuario=<?php echo htmlspecialchars($usuario['id_usuario']); ?>"><?php echo htmlspecialchars($usuario['apelido']); ?></a></td>
                                 <td class="td" scope="row"><?php echo str_repeat('*', 1); ?></td>
                                 <td class="td" scope="row"><?php echo htmlspecialchars($usuario['primeiro_nome']); ?></td>
                                 <td class="td" scope="row"><?php echo htmlspecialchars($usuario['sobrenome']); ?></td>
