@@ -1,9 +1,8 @@
 <!-- Caso o checkbox seja a vizualização simples -->
-<?php 
-// src/template/adiministradores/home_adm_simples.php
-include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
-?>
-    
+
+<!-- src/template/adiministradores/home_adm_simples.php -->
+
+
 <!-- Dentro do Conteúdo do site -->
 <h1>simples</h1>
 <div class="formulario">

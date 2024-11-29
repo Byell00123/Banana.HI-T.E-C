@@ -36,14 +36,13 @@ $modelP = new ProdutoModel;
         </li>
         <li class="li gambiarra"></li>
         <li class="li">
+            <!-- Botão estilizado para alternar entre as visualizações -->
             <div class="div-toggle">
-                <form method="post">
-                    <label class="label-vizualizacao" for="toggle-visializa">Visualização Personalizada</label>
-                    <div class="toggle">
-                        <input type="checkbox" id="toggle-visializa" name="toggle-visializa" value="simplificada" 
-                        onchange="this.form.submit();">
-                    </div>
-                </form>
+                <label class="label-select" for="toggleView">Simples</label>
+                <div class="toggle">
+                    <input type="checkbox" id="toggleView" onclick="toggleViewType()" <?= $view === 'estilizada' ? 'checked' : '' ?>>
+                </div>
+                <label class="label-input" for="toggleView">Estilizado</label>
             </div>
         </li>
 

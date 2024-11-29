@@ -31,9 +31,9 @@ class VendedorLoginController {
     private function MetodoPost() {
         // Verifique se as chaves existem
         $cnpj = isset($_POST['cnpj']) ? $_POST['cnpj'] : '';
-        $password = isset($_POST['password']) ? $_POST['password'] : '';
+        $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
 
-        if ($this->model->loginVendedor($cnpj, $password)) {
+        if ($this->model->loginVendedor($cnpj, $senha)) {
             FlashMessages::addMessage('success', 'Login realizado com sucesso!');
             $this->model->atualizarUltimoLogin($_SESSION['user_cnpj'],$_SESSION['user_nome_fantasia']);
             header("Location: " . TEMPLATE_URL . "home/home_v.php?marca=" . urlencode($_SESSION['user_nome_fantasia']));

@@ -1,9 +1,7 @@
 <!-- Caso o seja a vizualização estilizada -->
-<?php 
-// src/template/adiministradores/home_adm_estilizada.php
-include_once(dirname(__FILE__) . '/../../models/administradores/AdministradorModel.php');
-?>
-    
+
+<!-- src/template/adiministradores/home_adm_estilizada.php -->
+
 <!-- Dentro do Conteúdo do site -->
 <h1>estilizada</h1>
 <div class="formulario">

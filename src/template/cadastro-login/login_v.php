@@ -26,8 +26,8 @@
                     <input type="text" class="input username" name="cnpj" placeholder="Nome Fantasia ou Cnpj">
                 </div>
                 <div class="form-group">
-                    <label for="password">Senha:</label>
-                    <input type="password" class="input password" name="password" placeholder="Digite a senha">
+                    <label for="senha">Senha:</label>
+                    <input type="password" class="input senha" name="senha" placeholder="Digite a senha">
                 </div>
                 <div class="form-group link-botao">
                     <div class="links-auxiliares">

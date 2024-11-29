@@ -54,6 +54,7 @@ class InserirProdutoController {
                 $nome_imagem_unico = uniqid('produto_', true) . '.jpg'; // Gerar nome de arquivo único com extensão .jpg
                 // Caminho até a pasta de uploads, onde as imagens ficarão salvas
                 $caminho_imagem = '../uploads/produtos/' . $nome_imagem_unico;
+                
 
                 // Movendo o arquivo para o diretório de uploads
                 if (move_uploaded_file($_FILES['foto']['tmp_name'], $caminho_imagem)) {
