@@ -152,7 +152,7 @@ class AdministradorModel {
         }
 
         // Preparar a consulta SQL para atualização de dados
-        $sql = "UPDATE usuarios SET nome_usuario = ?, primeiro_nome= ?, sobrenome= ?, data_nascimento= ?, email= ?, telefone= ?, sexo= ?, cpf= ? WHERE id_usuario = ?";
+        $sql = "UPDATE usuarios SET apelido = ?, primeiro_nome= ?, sobrenome= ?, data_nascimento= ?, email= ?, telefone= ?, sexo= ?, cpf= ? WHERE id_usuario = ?";
 
         // Preparar a instrução
         $stmt = $conn->prepare($sql);

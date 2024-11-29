@@ -1,4 +1,4 @@
-<?php include(dirname(__FILE__) . '/../../models/UsuarioModel.php'); ?>
+<?php include(dirname(__FILE__) . '/../../models/VendedorModel.php'); ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,9 +14,9 @@
 
     <div class="conteudo">
         <div class="formulario">
-            <form action="../../controllers/RedefinirSenhaController_u.php" method="POST" class="form redefinir_senha">
+            <form action="../../controllers/RedefinirSenhaController_v.php" method="POST" class="form redefinir_senha">
 
-                <h2>Redefinir Senha do Usuario</h2>
+                <h2>Redefinir Senha do Vendedor</h2>
 
                 <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 

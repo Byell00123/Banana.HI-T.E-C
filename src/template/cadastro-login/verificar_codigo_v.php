@@ -1,4 +1,4 @@
-<?php include(dirname(__FILE__) . '/../../models/UsuarioModel.php'); ?>
+<?php include(dirname(__FILE__) . '/../../models/VendedorModel.php'); ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,10 +14,10 @@
 
     <div class="conteudo">
         <div class="formulario">
-            <form action="../../controllers/VerificarCodigoController_u.php" method="POST" class="form verificar_codigos">
+            <form action="../../controllers/VerificarCodigoController_v.php" method="POST" class="form verificar_codigos">
 
 
-                <h2>Verificação de Códigos de Usuario</h2>
+                <h2>Verificação de Códigos do Vendedor</h2>
                 <?php if (isset($_SESSION['codigo_email']) && isset($_SESSION['codigo_telefone'])): ?>
                     <p>Código enviado para o e-mail: <?php echo $_SESSION['codigo_email']; ?></p>
                     <p>Código enviado para o telefone: <?php echo $_SESSION['codigo_telefone']; ?></p>

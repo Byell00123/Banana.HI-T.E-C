@@ -97,6 +97,23 @@ class VendedorModel {
             return false; // Erro ao atualizar o último login
         }
     }
+    public function buscarPorEmailETelefone($email, $telefone) {
+        $conn = getConnection();
+        $stmt = $conn->prepare("SELECT * FROM vendedores WHERE email = ? AND telefone = ?");
+        $stmt->bind_param("ss", $email, $telefone);
+        $stmt->execute();
+        $resultado = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+        return $resultado;
+    }
+    public function atualizarSenha($cnpjuser, $novaSenha) {
+        $conn = getConnection();
+        $senhaCriptografada = password_hash($novaSenha, PASSWORD_DEFAULT);
+        $stmt = $conn->prepare("UPDATE vendedores SET senha = ? WHERE cnpj = ?");
+        $stmt->bind_param("si", $senhaCriptografada, $cnpjuser);
+        $stmt->execute();
+        $stmt->close();
+    }  
 }
 
 ?>
