@@ -14,7 +14,7 @@ $produtos_por_marca = $controller->handleRequest();
     <link rel="stylesheet" href="<?php echo STATIC_URL; ?>css/home/home_v.css">
 </head>
 <body>
-    <!-- TODO: Deu pau na navbar, ficou gorda, suspeito do flexgrou = 1 no css de .navbar -->
+    
     <?php include(dirname(__FILE__) . '/../partials/navbar_v.php'); ?>
 
     <div class="conteudo">
@@ -40,7 +40,7 @@ $produtos_por_marca = $controller->handleRequest();
                         <?php foreach ($produtos as $produto): ?>
                             <a class="list-itens" href="<?php echo TEMPLATE_URL . 'produto/produto_v_editar.php?id=' . htmlspecialchars($produto['id_produto']); ?>">
                                 <div class="itens">
-                                    <img class="iten-img" src="<?php echo htmlspecialchars($produto['url_foto']); ?>" alt="">
+                                    <img class="iten-img" src="<?php echo htmlspecialchars($produto['url_foto']); ?>" alt="Imagem do produto">
                                     <p class="iten-txt"><?php echo htmlspecialchars($produto['nome']); ?></p>
                                 </div>
                             </a>

@@ -76,7 +76,7 @@ body, .conteudo {
 }
 
 body {
-    width: 100%; /* TODO: dando erro, não fica na largura total da tela no celular */
+    width: 100%;
     flex-grow: 1;
     display: flex; /* Usa um modelo de layout flexível para o corpo */
     flex-direction: column; /* Define a direção dos itens flexíveis como coluna */

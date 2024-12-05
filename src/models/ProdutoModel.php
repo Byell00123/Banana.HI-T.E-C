@@ -185,7 +185,6 @@ class ProdutoModel{
         // Se o produto existir, pegamos a URL da imagem
         if ($result->num_rows > 0) {
             $produto = $result->fetch_assoc();
-            //$url_foto = '../' . $produto['url_foto'];  // Caminho completo da imagem // TODO: isso era como estava, apagar depois das alterações
             
             // O campo url_foto pode ter dois formatos
             $url_foto = $produto['url_foto']; // Transformar o nome da imagem

@@ -17,7 +17,7 @@
         <div class="formulario">
             <form action="../../controllers/RecuperarSenhaController_v.php" method="POST" class="form recuperar_senha">
 
-                <h2>Recuperar Senha do Vendedor</h2><!-- TODO: kkkkkkkkk nos esqueceu completamente que essa pagina existia -->
+                <h2>Recuperar Senha do Vendedor</h2>
                 
                 <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
 

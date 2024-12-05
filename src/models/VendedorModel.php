@@ -20,7 +20,6 @@ class VendedorModel {
     
         // Preparar a consulta SQL para inserção de dados
         $sql = "INSERT INTO vendedores (cnpj,nome_fantasia,senha,email,telefone,data_engressou) VALUES (?, ?, ?, ?, ?, ?)";
-        //TODO: Depois criar coluna telefone na tabela de vendedor e direcionar o result para BD
         // Preparar a instrução
         $stmt = $conn->prepare($sql);
         if (!$stmt) {
