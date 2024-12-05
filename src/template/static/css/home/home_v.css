@@ -5,6 +5,52 @@
     padding-right: 5vw;
 }
 
+.perfil {
+    display: flex; /* Define o layout flexível */
+    flex-direction: row; /* Organiza os itens em linha */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    width: 32em;
+    height: 9em; /* Define a altura */
+    margin: 2px; /* Adiciona margem */
+    background-color: #2e2931; /* Cor de fundo */
+    border: solid white 2px;
+    border-radius: 16px; /* Adiciona bordas arredondadas */
+}
+
+.perfil-foto {
+    display: flex; /* Define o layout flexível */
+    width: 30%;
+    padding: 0;
+    margin: 0;
+    
+    border-radius: 8px;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+}
+
+.perfil-foto-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 24px;
+}
+
+.perfil-nome-cnpj {
+    display: flex; /* Define o layout flexível */
+    flex-direction: column; /* Organiza os itens em coluna */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    flex-grow: 1;
+    margin-left: 8px;
+}
+
+.perfil-nome, .perfil-cnpj {
+    margin-bottom: 8px; /* Espaçamento entre as linhas */
+}
+
+.informacoes{
+    display: inline;
+    color: #001eff;
+}
+
 /* Estilo para os títulos */
 .titulos {
     color: rgb(60, 255, 0); /* Define a cor do texto dos títulos como verde neon */
@@ -77,7 +123,7 @@
     -webkit-box-orient: vertical; /* Define a orientação do contêiner flexível para ser vertical */
     -webkit-line-clamp: 4; /* Limita a exibição a 4 linhas de texto */
     /* Comentário explicativo:
-       O uso de `-webkit-line-clamp` é específico para navegadores baseados em WebKit, como Chrome e Safari.
+        O uso de `-webkit-line-clamp` é específico para navegadores baseados em WebKit, como Chrome e Safari.
        Não há uma propriedade `line-clamp` padrão no CSS, portanto, usamos o prefixo `-webkit` para compatibilidade. */
     white-space: normal; /* Permite que o texto quebre em várias linhas */
 }

@@ -18,9 +18,19 @@ $produtos_por_marca = $controller->handleRequest();
     <?php include(dirname(__FILE__) . '/../partials/navbar_v.php'); ?>
 
     <div class="conteudo">
-        <div>Olá vendedor <p style="color: red;display: inline;"><?php echo htmlspecialchars($_SESSION['user_nome_fantasia']); ?></p> de CNPJ: <p style="color: red;display: inline;"><?php echo htmlspecialchars($_SESSION['user_cnpj']); ?></p></div>
-
         <?php include(dirname(__FILE__) . '/../partials/mensagens.php'); ?>
+        <div class="perfil">
+            <div class="perfil-foto">
+                <img class="perfil-foto-img" src="<?php echo STATIC_URL; ?>img/perfil/FOTOs/FOTO1.png" alt="imagem de perfil">
+            </div>
+            <div class="perfil-nome-cnpj">
+                <div class="perfil-nome">Nome Fantasia: <p class="informacoes"><?php echo htmlspecialchars($_SESSION['user_nome_fantasia']);?></p></div>
+                <div class="perfil-cnpj">CNPJ: <p class="informacoes"><?php echo htmlspecialchars($_SESSION['user_cnpj']); ?></p></div>
+                <div class="perfil-nome">Email: <p class="informacoes"><?php echo htmlspecialchars($_SESSION['user_email']);?></p></div>
+                <div class="perfil-cnpj">Telefone: <p class="informacoes"><?php echo htmlspecialchars($_SESSION['user_telefone']); ?></p></div>
+            </div>
+        </div>
+        
 
         <?php if (!empty($produtos_por_marca)): ?>
             <?php foreach ($produtos_por_marca as $marca_produto => $produtos): ?>

@@ -195,32 +195,6 @@ body {
     box-shadow: inset 0 0 10px #00bfff; /* Adiciona uma sombra interna Azul Neon */
 }
 
-.mensagens{
-    display: inline-block;
-    box-sizing: border-box; /* Inclui padding e borda na largura total */
-    width: 100%;
-    height: 48px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.mensagens.error{
-    background-color: #ffa6a6;
-}
-
-.mensagens.success{
-    background-color: #8cda8f;
-}
-
-.mensagem.error{
-    color: rgb(100, 0, 0);
-}
-.mensagem.success{
-    color: rgb(0, 100, 0);
-}
-
 iframe {
     width: 100%; /* Define a largura do iframe como 100% do contêiner pai */
     height: 80px; /* Define a altura do iframe como 80 pixels */
@@ -269,3 +243,151 @@ footer {
     margin-top: 0; /* Define a margem superior do texto do rodapé */
     font-size: 12px; /* Define o tamanho da fonte do texto do rodapé */
 }
+
+
+/* ----------------------------------------------------------------------- */
+
+/* Estilo para o contêiner do formulário */
+.conteudo .formulario {
+    width: 40vw; /* Define a largura do formulário */
+    height: auto; /* Define a altura automaticamente com base no conteúdo */
+    margin: 80px auto; /* Adiciona uma margem de 80px em cima e embaixo e centraliza horizontalmente */
+    /* background-color: #0a0a23; Define a cor de fundo como um tom escuro */
+    border: solid 1px #fff; /* Adiciona uma borda sólida branca */
+    padding: 8px; /* Adiciona um preenchimento interno de 8px */
+    border-radius: 16px; /* Adiciona bordas arredondadas */
+    position: relative; /* Define o posicionamento relativo ao contêiner pai */
+    display: flex; /* Define o layout do contêiner como flexbox */
+    justify-content: center; /* Centraliza os itens no eixo horizontal */
+    align-items: center; /* Centraliza os itens no eixo vertical */
+    z-index: 0; /* Define a camada de empilhamento como base */
+}
+
+.formulario::before, .formulario::after {
+    content: ''; /* Insere um conteúdo vazio nos pseudo-elementos */
+    position: absolute; /* Posiciona os elementos absolutamente em relação ao contêiner pai */
+    z-index: -1; /* Coloca os pseudo-elementos atrás do conteúdo principal */
+    width: 100%; /* Define a largura como 100% do contêiner */
+    height: 100%; /* Define a altura como 100% do contêiner */
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove preenchimento */
+    background: linear-gradient(45deg, #ffff00, #00ff00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000, #0ff,
+    #ffff00, #00ff00, #0099ff, #001aff, #a200ff); /* Define um gradiente colorido */
+    background-size: 300%; /* Aumenta o tamanho do plano de fundo para criar o efeito de animação */
+    border-radius: 16px; /* Adiciona bordas arredondadas */
+    animation: AnimarBorda 8s linear alternate infinite; /* Aplica a animação definida por AnimarBorda */
+}
+
+/* Animação para o fundo do formulário */
+@keyframes AnimarBorda {
+    0% {
+        background-position: 0; /* Início da posição do plano de fundo */
+    }
+    100% {
+        background-position: 100%; /* Fim da posição do plano de fundo */
+    }
+}
+
+.formulario::after {
+    filter: blur(50px); /* Aplica um desfoque para criar o efeito neon */
+}
+
+/* Estilo comum para formulários de login, cadastro e decisão */
+.conteudo .formulario .form {
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    height: 100%; /* Ocupa toda a altura do contêiner */
+    padding: 0 20px; /* Adiciona preenchimento interno apenas nas laterais */
+    background-color: #0a0a23CC; /* Define a cor de fundo como um tom escuro e 80% (CC) de opacidade */
+    border: solid 1px #fff; /* Adiciona uma borda sólida branca */
+    border-radius: 16px; /* Adiciona bordas arredondadas */
+    margin: 0; /* Remove margens */
+}
+
+/* Estilo comum para os grupos de formulários de login, cadastro e decisão */
+.conteudo .formulario .form .form-group {
+    margin: 16px 0px; /* Adiciona uma margem inferior de 16px */
+}
+
+/* Estilo para campos de entrada */
+/* Estilo comum para os campos de entrada */
+.input {
+    padding: 10px; /* Adiciona um preenchimento interno de 10px */
+    border: 1px solid #ccc; /* Define uma borda cinza clara */
+    border-radius: 3px; /* Adiciona bordas arredondadas */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    width: 100%; /* Ocupa toda a largura disponível do .form-group */
+    background: transparent; /* Define o fundo como transparente */
+    color: #fff; /* Define a cor do texto como branco */
+}
+
+
+/* Estilo para os textos de informação */
+.label-informacao {
+    display: block; /* Exibe como bloco */
+    margin-bottom: 5px; /* Adiciona uma margem inferior de 5px */
+}
+
+.texto-informacao{
+    font-size: small;
+}
+
+.links-auxiliares{
+    display: flex;
+}
+
+/* Estilo comum para links auxiliares */
+.conteudo .formulario .form .form-group .links-auxiliares .link-auxiliar {
+    padding: 4px; /* Adiciona um preenchimento interno de 4px */
+    text-decoration: none; /* Remove a decoração de sublinhado */
+    background-color: #e22bcdec; /* Define a cor de fundo como roxo */
+    border: 2px solid #ff00ff; /* Adiciona uma borda rosa neon */
+    box-shadow: 0 0 10px #ff007f; /* Adiciona uma sombra magenta neon */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+    color: #ffffff; /* Define a cor do texto como branco */
+}
+
+/* Estilo comum para links auxiliares quando o mouse passa por cima */
+.conteudo .formulario .form .form-group .links-auxiliares .link-auxiliar:hover {
+    background-color: #ff00ff; /* Altera a cor de fundo para rosa neon quando o mouse passa por cima */
+    box-shadow: 0 0 15px #ff007f; /* Adiciona uma sombra magenta neon mais intensa */
+}
+
+.link-botao{
+    margin-bottom: 0px !important;
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+}
+
+.c1, .c2{
+    width: 45%;
+}
+
+/* Estilo para o botão do formulário */
+.botao-form {
+    width: 15vw;
+    min-height: 3em;
+    margin: 16px auto; /* Centraliza o botão horizontalmente e adiciona uma margem superior de 16px */
+    padding: 10px 20px; /* Adiciona um preenchimento interno de 10px em cima e embaixo e 20px nas laterais */
+    background-color: #0016b3; /* Define a cor de fundo como azul escuro */
+    color: #fff; /* Define a cor do texto como branco */
+    border: 1px solid #007bff; /* Define a cor da borda como meio azul */
+    border-radius: 6px; /* Adiciona bordas arredondadas */
+    cursor: pointer; /* Altera o cursor para uma mão quando passa por cima do botão */
+    box-shadow: 0 0 10px #00bfff; /* Adiciona uma sombra azul neon */
+    font-size: large;
+}
+
+/* Estilo para o botão do formulário quando o mouse passa por cima */
+.botao-form:hover {
+    background-color: #007bff; /* Altera a cor de fundo para azul quando o mouse passa por cima */
+}
+
+.tipo_produto{
+    cursor: pointer;
+}
+
+.descricao{
+    resize: vertical; /* Permite redimensionamento apenas na vertical */
+}
+

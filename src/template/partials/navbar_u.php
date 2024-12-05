@@ -21,7 +21,7 @@ include_once(dirname(__FILE__) . '/../../utils/UsuarioLogado.php');
                 <input type="hidden" name="action" value="logout">
             </form>
             <li class="li"><a class="a" onclick="document.getElementById('logoutForm').submit(); return false;" style="cursor: pointer;">Sair</a></li>
-                <li class="li usuario"><a class="a" href="#">Usuario</a></li>
+            <li class="li usuario"><a class="a" href="#">Usuario</a></li>
         <?php else: ?>
             <li class="li"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/cadastro_v.php">Vendedor</a></li>
             <li class="li usuario"><a class="a" href="<?php echo TEMPLATE_URL; ?>cadastro-login/decisao.php" target="_blank">Login/Cadastro</a></li>

@@ -1,37 +1,79 @@
 @import url(../base/base.css); /* Importa estilos base */
 
 /* Estilo para o contêiner do formulário */
+/* Estilo para o contêiner do formulário */
 .conteudo .formulario {
     width: 40vw; /* Define a largura do formulário */
-    margin: 30px auto; /* Adiciona uma margem de 30px em cima e embaixo e centraliza horizontalmente */
-    background-color: #0a0a23; /* Define a cor de fundo como um tom escuro */
-    border: solid; /* Adiciona uma borda sólida */
-    padding: 20px; /* Adiciona um preenchimento interno de 20px */
-    border-radius: 10px; /* Adiciona bordas arredondadas */
+    height: auto; /* Define a altura automaticamente com base no conteúdo */
+    margin: 80px auto; /* Adiciona uma margem de 80px em cima e embaixo e centraliza horizontalmente */
+    /* background-color: #0a0a23; Define a cor de fundo como um tom escuro */
+    border: solid 1px #fff; /* Adiciona uma borda sólida branca */
+    padding: 8px; /* Adiciona um preenchimento interno de 8px */
+    border-radius: 16px; /* Adiciona bordas arredondadas */
+    position: relative; /* Define o posicionamento relativo ao contêiner pai */
+    display: flex; /* Define o layout do contêiner como flexbox */
+    justify-content: center; /* Centraliza os itens no eixo horizontal */
+    align-items: center; /* Centraliza os itens no eixo vertical */
+    z-index: 0; /* Define a camada de empilhamento como base */
+}
+
+.formulario::before, .formulario::after {
+    content: ''; /* Insere um conteúdo vazio nos pseudo-elementos */
+    position: absolute; /* Posiciona os elementos absolutamente em relação ao contêiner pai */
+    z-index: -1; /* Coloca os pseudo-elementos atrás do conteúdo principal */
+    width: 100%; /* Define a largura como 100% do contêiner */
+    height: 100%; /* Define a altura como 100% do contêiner */
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove preenchimento */
+    background: linear-gradient(45deg, #ffff00, #00ff00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000, #0ff,
+    #ffff00, #00ff00, #0099ff, #001aff, #a200ff); /* Define um gradiente colorido */
+    background-size: 300%; /* Aumenta o tamanho do plano de fundo para criar o efeito de animação */
+    border-radius: 16px; /* Adiciona bordas arredondadas */
+    animation: AnimarBorda 8s linear alternate infinite; /* Aplica a animação definida por AnimarBorda */
+}
+
+/* Animação para o fundo do formulário */
+@keyframes AnimarBorda {
+    0% {
+        background-position: 0; /* Início da posição do plano de fundo */
+    }
+    100% {
+        background-position: 100%; /* Fim da posição do plano de fundo */
+    }
+}
+
+.formulario::after {
+    filter: blur(50px); /* Aplica um desfoque para criar o efeito neon */
 }
 
 /* Estilo comum para formulários de login, cadastro e decisão */
 .conteudo .formulario .form {
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    height: 100%; /* Ocupa toda a altura do contêiner */
     padding: 0 20px; /* Adiciona preenchimento interno apenas nas laterais */
-    background-color: #0a0a23; /* Define a cor de fundo como um tom escuro */
-    border-color: #fff; /* Define a cor da borda como branco */
-    border: solid; /* Adiciona uma borda sólida */
-    border-radius: 10px; /* Adiciona bordas arredondadas */
+    background-color: #0a0a23CC; /* Define a cor de fundo como um tom escuro e 80% (CC) de opacidade */
+    border: solid 1px #fff; /* Adiciona uma borda sólida branca */
+    border-radius: 16px; /* Adiciona bordas arredondadas */
+    margin: 0; /* Remove margens */
 }
 
 /* Estilo comum para os grupos de formulários de login, cadastro e decisão */
 .conteudo .formulario .form .form-group {
-    margin: 15px 0px; /* Adiciona uma margem inferior de 15px */
+    margin: 16px 0px; /* Adiciona uma margem inferior de 16px */
 }
 
 /* Estilo para campos de entrada */
+/* Estilo comum para os campos de entrada */
 .input {
     padding: 10px; /* Adiciona um preenchimento interno de 10px */
     border: 1px solid #ccc; /* Define uma borda cinza clara */
     border-radius: 3px; /* Adiciona bordas arredondadas */
     box-sizing: border-box; /* Inclui padding e borda na largura total */
     width: 100%; /* Ocupa toda a largura disponível do .form-group */
+    background: transparent; /* Define o fundo como transparente */
+    color: #fff; /* Define a cor do texto como branco */
 }
+
 
 /* Estilo para os textos de informação */
 .label-informacao {
@@ -84,7 +126,7 @@
     background-color: #0016b3; /* Define a cor de fundo como azul escuro */
     color: #fff; /* Define a cor do texto como branco */
     border: 1px solid #007bff; /* Define a cor da borda como meio azul */
-    border-radius: 3px; /* Adiciona bordas arredondadas */
+    border-radius: 6px; /* Adiciona bordas arredondadas */
     cursor: pointer; /* Altera o cursor para uma mão quando passa por cima do botão */
     box-shadow: 0 0 10px #00bfff; /* Adiciona uma sombra azul neon */
     font-size: large;
@@ -102,5 +144,6 @@
 .descricao{
     resize: vertical; /* Permite redimensionamento apenas na vertical */
 }
+
 
 /*  TODO: Ta dando pau em todas as navbar de todas as paginas ligadas a cadastro-login  */
