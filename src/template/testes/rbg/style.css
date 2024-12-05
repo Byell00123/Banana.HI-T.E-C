@@ -1,0 +1,140 @@
+@import url(../../static/css/base/base.css); /* Importa estilos base */
+
+/* Estilo para o contêiner do formulário */
+.conteudo .formulario {
+    width: 40vw; /* Define a largura do formulário */
+    margin: 30px auto; /* Adiciona uma margem de 30px em cima e embaixo e centraliza horizontalmente */
+    background-color: #0a0a2e; /* Define a cor de fundo como um tom escuro */
+    border: solid; /* Adiciona uma borda sólida */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    padding: 0;
+}
+.caixa {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    border-radius: 1px;
+    border: solid 0.1px;
+}
+.caixa::before, .caixa::after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: calc(100% );
+    height: calc(100% );
+    background: linear-gradient(45deg,#ffff00,#00ff00,#0099ff,#001aff,#a200ff,#ff0055,#ff0000,#0ff,
+    #ffff00,#00ff00,#0099ff,#001aff,#a200ff);
+    background-size:300%;
+    border-radius: 5px;
+    animation: AnimarBorda 8s linear alternate infinite;
+}
+
+@keyframes AnimarBorda {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 100%;
+
+    }
+}
+.caixa::after{
+    filter: blur(50px);
+
+}
+/* Estilo comum para formulários de login, cadastro e decisão */
+.conteudo .formulario .caixa .form {
+    padding: 0 20px; /* Adiciona preenchimento interno apenas nas laterais */
+    background-color: #0a0a23; /* Define a cor de fundo como um tom escuro */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    z-index: 2;
+    margin: 10px;
+}
+
+/* Estilo comum para os grupos de formulários de login, cadastro e decisão */
+.conteudo .formulario .caixa .form .form-group {
+    margin: 15px 0px; /* Adiciona uma margem inferior de 15px */
+}
+
+/* Estilo para campos de entrada */
+.input {
+    padding: 10px; /* Adiciona um preenchimento interno de 10px */
+    border: 1px solid #ccc; /* Define uma borda cinza clara */
+    border-radius: 3px; /* Adiciona bordas arredondadas */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    width: 100%; /* Ocupa toda a largura disponível do .form-group */
+}
+
+/* Estilo para os textos de informação */
+.label-informacao {
+    display: block; /* Exibe como bloco */
+    margin-bottom: 5px; /* Adiciona uma margem inferior de 5px */
+}
+
+.texto-informacao{
+    font-size: small;
+}
+
+.links-auxiliares{
+    display: flex;
+}
+
+/* Estilo comum para links auxiliares */
+.conteudo .formulario .caixa .form .form-group .links-auxiliares .link-auxiliar {
+    padding: 4px; /* Adiciona um preenchimento interno de 4px */
+    text-decoration: none; /* Remove a decoração de sublinhado */
+    background-color: #e22bcdec; /* Define a cor de fundo como roxo */
+    border: 2px solid #ff00ff; /* Adiciona uma borda rosa neon */
+    box-shadow: 0 0 10px #ff007f; /* Adiciona uma sombra magenta neon */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+    color: #ffffff; /* Define a cor do texto como branco */
+}
+
+/* Estilo comum para links auxiliares quando o mouse passa por cima */
+.conteudo .formulario .caixa .form .form-group .links-auxiliares .link-auxiliar:hover {
+    background-color: #ff00ff; /* Altera a cor de fundo para rosa neon quando o mouse passa por cima */
+    box-shadow: 0 0 15px #ff007f; /* Adiciona uma sombra magenta neon mais intensa */
+}
+
+.link-botao{
+    margin-bottom: 0px !important;
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+}
+
+.c1, .c2{
+    width: 45%;
+}
+
+/* Estilo para o botão do formulário */
+.botao-form {
+    width: 15vw;
+    min-height: 3em;
+    margin: 16px auto; /* Centraliza o botão horizontalmente e adiciona uma margem superior de 16px */
+    padding: 10px 20px; /* Adiciona um preenchimento interno de 10px em cima e embaixo e 20px nas laterais */
+    background-color: #0016b3; /* Define a cor de fundo como azul escuro */
+    color: #fff; /* Define a cor do texto como branco */
+    border: 1px solid #007bff; /* Define a cor da borda como meio azul */
+    border-radius: 3px; /* Adiciona bordas arredondadas */
+    cursor: pointer; /* Altera o cursor para uma mão quando passa por cima do botão */
+    box-shadow: 0 0 10px #00bfff; /* Adiciona uma sombra azul neon */
+    font-size: large;
+}
+
+/* Estilo para o botão do formulário quando o mouse passa por cima */
+.botao-form:hover {
+    background-color: #007bff; /* Altera a cor de fundo para azul quando o mouse passa por cima */
+}
+
+.tipo_produto{
+    cursor: pointer;
+}
+
+.descricao{
+    resize: vertical; /* Permite redimensionamento apenas na vertical */
+}
+
+/*  TODO: Ta dando pau em todas as navbar de todas as paginas ligadas a cadastro-login  */

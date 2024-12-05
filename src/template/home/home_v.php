@@ -1,7 +1,7 @@
 <?php include(dirname(__FILE__) . '/../../controllers/VendedorHomeController.php'); 
 
 $controller = new VendedorHomeController(); 
-$produtos_por_marca = $controller->handleRequest(); 
+$produtos_por_marc = $controller->handleRequest(); 
 ?>
 
 <!DOCTYPE html>
