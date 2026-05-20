@@ -1,271 +1,271 @@
-/* base.css */
+    /* base.css */
 
-/* Estilos para dispositivos com largura máxima de 480 pixels (como smartphones) */
-@media (max-width: 480px){
-    body {
-        font-size: 10px; /* Reduz o tamanho da fonte para telas menores que 480px */
+    /* Estilos para dispositivos com largura máxima de 480 pixels (como smartphones) */
+    @media (max-width: 480px){
+        body {
+            font-size: 10px; /* Reduz o tamanho da fonte para telas menores que 480px */
+        }
     }
-}
 
-/* Estilos para telas entre 481px e 600px */
-@media (min-width: 481px) and (max-width: 600px) {
-    body {
-        font-size: 12px; /* Reduz o tamanho da fonte para telas entre 481px e 600px */
+    /* Estilos para telas entre 481px e 600px */
+    @media (min-width: 481px) and (max-width: 600px) {
+        body {
+            font-size: 12px; /* Reduz o tamanho da fonte para telas entre 481px e 600px */
+        }
     }
-}
 
-/* Estilos para telas entre 601px e 800px */
-@media (min-width: 601px) and (max-width: 800px) {
-    body {
-        font-size: 14px; /* Reduz o tamanho da fonte para telas entre 600px e 800px */
+    /* Estilos para telas entre 601px e 800px */
+    @media (min-width: 601px) and (max-width: 800px) {
+        body {
+            font-size: 14px; /* Reduz o tamanho da fonte para telas entre 600px e 800px */
+        }
     }
-}
 
-/* Estilos para telas entre 801px e 1000px */
-@media (min-width: 801px) and (max-width: 1000px) {
-    body {
-        font-size: 16px; /* Reduz o tamanho da fonte para telas entre 801px e 1000px */
+    /* Estilos para telas entre 801px e 1000px */
+    @media (min-width: 801px) and (max-width: 1000px) {
+        body {
+            font-size: 16px; /* Reduz o tamanho da fonte para telas entre 801px e 1000px */
+        }
     }
-}
 
-/* Estilos para telas entre 1001px e 1200px */
-@media (min-width: 1001px) and (max-width: 1200px) {
-    body {
-        font-size: 18px; /* Reduz o tamanho da fonte para telas entre 1001px e 1200px */
+    /* Estilos para telas entre 1001px e 1200px */
+    @media (min-width: 1001px) and (max-width: 1200px) {
+        body {
+            font-size: 18px; /* Reduz o tamanho da fonte para telas entre 1001px e 1200px */
+        }
     }
-}
 
-/* Estilos para telas entre 1201px e 1440px */
-@media (min-width: 1201px) and (max-width: 1400px){
-    body {
-        font-size: 20px; /* Reduz o tamanho da fonte para telas entre 1201px e 1440px */
+    /* Estilos para telas entre 1201px e 1440px */
+    @media (min-width: 1201px) and (max-width: 1400px){
+        body {
+            font-size: 20px; /* Reduz o tamanho da fonte para telas entre 1201px e 1440px */
+        }
     }
-}
 
-/* Estilos para telas entre 1401px e 1600px */
-@media (min-width: 1401px) and (max-width: 1600px){
-    body {
-        font-size: 22px; /* Aumenta o tamanho da fonte para telas maiores */
+    /* Estilos para telas entre 1401px e 1600px */
+    @media (min-width: 1401px) and (max-width: 1600px){
+        body {
+            font-size: 22px; /* Aumenta o tamanho da fonte para telas maiores */
+        }
     }
-}
 
-/* Estilos para telas maiores que 1441px */
-@media (min-width: 1601px) {
-    body {
-        font-size: 24px; /* Aumenta o tamanho da fonte para telas maiores */
+    /* Estilos para telas maiores que 1441px */
+    @media (min-width: 1601px) {
+        body {
+            font-size: 24px; /* Aumenta o tamanho da fonte para telas maiores */
+        }
     }
-}
 
-/* Estilo para imagens */
-img {
-    max-width: 100%; /* Garante que as imagens não ultrapassem o tamanho do contêiner pai */
-    height: auto; /* Garante que a altura das imagens seja ajustada automaticamente */
-}
+    /* Estilo para imagens */
+    img {
+        max-width: 100%; /* Garante que as imagens não ultrapassem o tamanho do contêiner pai */
+        height: auto; /* Garante que a altura das imagens seja ajustada automaticamente */
+    }
 
 
-/* Define as configurações padrão para o documento HTML */
-* {
-    box-sizing: border-box; /* Faz com que padding e border sejam incluídos na largura e altura totais dos elementos */
-}
+    /* Define as configurações padrão para o documento HTML */
+    * {
+        box-sizing: border-box; /* Faz com que padding e border sejam incluídos na largura e altura totais dos elementos */
+    }
 
-body, .conteudo {
-    width: 100%;
-    max-width: 100%;
-    margin: 0; /* Remove as margens padrão do corpo */
-    padding: 0; /* Remove os preenchimentos padrão do corpo */
-}
+    body, .conteudo {
+        width: 100%;
+        max-width: 100%;
+        margin: 0; /* Remove as margens padrão do corpo */
+        padding: 0; /* Remove os preenchimentos padrão do corpo */
+    }
 
-body {
-    width: 100%;
-    flex-grow: 1;
-    display: flex; /* Usa um modelo de layout flexível para o corpo */
-    flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
-    min-height: 100vh; /* Garante que o corpo ocupe pelo menos toda a altura da janela de visualização */
-    font-family: Arial, sans-serif; /* Define a fonte padrão */
-    background-color: #1a1919; /* Define a cor de fundo do corpo como um tom escuro */
-    color: #ffffff; /* Define a cor do texto como branco */
-    
-}
+    body {
+        width: 100%;
+        flex-grow: 1;
+        display: flex; /* Usa um modelo de layout flexível para o corpo */
+        flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
+        min-height: 100vh; /* Garante que o corpo ocupe pelo menos toda a altura da janela de visualização */
+        font-family: Arial, sans-serif; /* Define a fonte padrão */
+        background-color: #1a1919; /* Define a cor de fundo do corpo como um tom escuro */
+        color: #ffffff; /* Define a cor do texto como branco */
+        
+    }
 
-/* Estilo para a barra de menu */
-.navbar {
-    width: 100%;
-    margin: 0; /* Remove as margens padrão da navbar */
-    background-color: #000000; /* Define a cor de fundo da barra de menu como preto */
-    padding: 0.3rem 0; /* Adiciona um preenchimento interno vertical de 0.3rem e nenhum horizontal */
-    border-bottom: 2px solid #00ffff; /* Adiciona uma borda inferior de 2px com cor ciano */
-}
+    /* Estilo para a barra de menu */
+    .navbar {
+        width: 100%;
+        margin: 0; /* Remove as margens padrão da navbar */
+        background-color: #000000; /* Define a cor de fundo da barra de menu como preto */
+        padding: 0.3rem 0; /* Adiciona um preenchimento interno vertical de 0.3rem e nenhum horizontal */
+        border-bottom: 2px solid #00ffff; /* Adiciona uma borda inferior de 2px com cor ciano */
+    }
 
-/* Estilo para a lista não ordenada dentro da barra de menu */
-.navbar-list {
-    list-style-type: none; /* Remove os marcadores padrão da lista */
-    margin: 0; /* Remove as margens padrão da lista */
-    padding: 0; /* Remove os preenchimentos padrão da lista */
-    display: flex; /* Define o elemento como um flex container */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza os itens verticalmente */
-}
+    /* Estilo para a lista não ordenada dentro da barra de menu */
+    .navbar-list {
+        list-style-type: none; /* Remove os marcadores padrão da lista */
+        margin: 0; /* Remove as margens padrão da lista */
+        padding: 0; /* Remove os preenchimentos padrão da lista */
+        display: flex; /* Define o elemento como um flex container */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        align-items: center; /* Centraliza os itens verticalmente */
+    }
 
-.menu {
-    padding-left: 1rem; /* Adiciona um preenchimento à esquerda de 0.6rem */
-}
+    .menu {
+        padding-left: 1rem; /* Adiciona um preenchimento à esquerda de 0.6rem */
+    }
 
-/* Estilo para cada item da lista dentro da barra de menu */
-.li {
-    margin: 0px 5px; /* Remove as margens padrão dos itens da lista */
-    display: inline-block; /* Exibe os itens da lista em linha */
-}
+    /* Estilo para cada item da lista dentro da barra de menu */
+    .li {
+        margin: 0px 5px; /* Remove as margens padrão dos itens da lista */
+        display: inline-block; /* Exibe os itens da lista em linha */
+    }
 
-/* Estilo para elementos que crescem automaticamente */
-.gambiarra {
-    flex-grow: 1; /* Permite que o elemento cresça para ocupar o espaço disponível */
-}
+    /* Estilo para elementos que crescem automaticamente */
+    .gambiarra {
+        flex-grow: 1; /* Permite que o elemento cresça para ocupar o espaço disponível */
+    }
 
-/* Estilo para os links de carrinho e usuário dentro dos itens da lista */
-.carrinho, .usuario {
-    margin-right: 0; /* Remove a margem direita */
-    margin-left: auto; /* Define a margem esquerda como automática para empurrar os itens para a direita */
-}
+    /* Estilo para os links de carrinho e usuário dentro dos itens da lista */
+    .carrinho, .usuario {
+        margin-right: 0; /* Remove a margem direita */
+        margin-left: auto; /* Define a margem esquerda como automática para empurrar os itens para a direita */
+    }
 
-/* Estilo para os links dentro dos itens de usuário na lista */
-.usuario .a {
-    margin: 0 4rem 0 0; /* Define a margem direita como 4rem, remove as outras margens */
-    display: inline-block; /* Exibe os itens da lista em linha */
-}
+    /* Estilo para os links dentro dos itens de usuário na lista */
+    .usuario .a {
+        margin: 0 4rem 0 0; /* Define a margem direita como 4rem, remove as outras margens */
+        display: inline-block; /* Exibe os itens da lista em linha */
+    }
 
-/* Estilo para os links dentro dos itens da lista */
-.a {
-    display: inline-block; /* Exibe os links em linha */
-    padding: 20px; /* Adiciona um preenchimento interno de 20px aos links */
-    text-decoration: none; /* Remove a decoração de sublinhado dos links */
-    color: white; /* Define a cor do texto dos links como branco */
-}
+    /* Estilo para os links dentro dos itens da lista */
+    .a {
+        display: inline-block; /* Exibe os links em linha */
+        padding: 20px; /* Adiciona um preenchimento interno de 20px aos links */
+        text-decoration: none; /* Remove a decoração de sublinhado dos links */
+        color: white; /* Define a cor do texto dos links como branco */
+    }
 
-/* Estilo para os links quando o mouse passa por cima */
-.a:hover {
-    background-color: #120052; /* Altera a cor de fundo dos links quando o mouse passa por cima */
-    border-radius: 10px; /* Adiciona uma borda arredondada ao campo de seleção */
-}
+    /* Estilo para os links quando o mouse passa por cima */
+    .a:hover {
+        background-color: #120052; /* Altera a cor de fundo dos links quando o mouse passa por cima */
+        border-radius: 10px; /* Adiciona uma borda arredondada ao campo de seleção */
+    }
 
-/* Estilo para o botão de pesquisa */
-.button[type="submit"] {
-    margin-left: 10px;
-    padding: 10px 20px; /* Adiciona preenchimento interno ao botão */
-    border: none; /* Remove a borda do botão */
-    border-radius: 5px; /* Adiciona uma borda arredondada ao botão */
-    background-color: #4CAF50; /* Define a cor de fundo do botão */
-    color: white; /* Define a cor do texto do botão como branco */
-    cursor: pointer; /* Altera o cursor para uma mão quando passa por cima do botão */
-}
+    /* Estilo para o botão de pesquisa */
+    .button[type="submit"] {
+        margin-left: 10px;
+        padding: 10px 20px; /* Adiciona preenchimento interno ao botão */
+        border: none; /* Remove a borda do botão */
+        border-radius: 5px; /* Adiciona uma borda arredondada ao botão */
+        background-color: #4CAF50; /* Define a cor de fundo do botão */
+        color: white; /* Define a cor do texto do botão como branco */
+        cursor: pointer; /* Altera o cursor para uma mão quando passa por cima do botão */
+    }
 
-/* Estilo para o item de menu de pesquisa */
-.pesquisa {
-    display: flex; /* Define o item de pesquisa como flex container */
-    align-items: center; /* Alinha verticalmente o item de pesquisa */
-}
+    /* Estilo para o item de menu de pesquisa */
+    .pesquisa {
+        display: flex; /* Define o item de pesquisa como flex container */
+        align-items: center; /* Alinha verticalmente o item de pesquisa */
+    }
 
-/* Estilo para o formulário de pesquisa dentro do item de menu de pesquisa */
-.form-pesquisa {
-    display: inline-block; /* Exibe o formulário em linha */
-    margin: 0; /* Remove as margens padrão do formulário */
-    padding: 0; /* Remove os preenchimentos padrão do formulário */
-}
+    /* Estilo para o formulário de pesquisa dentro do item de menu de pesquisa */
+    .form-pesquisa {
+        display: inline-block; /* Exibe o formulário em linha */
+        margin: 0; /* Remove as margens padrão do formulário */
+        padding: 0; /* Remove os preenchimentos padrão do formulário */
+    }
 
-/* Estilo para o botão de pesquisa quando o mouse passa por cima */
-.button[type="submit"]:hover {
-    background-color: rgb(218, 165, 32); /* Altera a cor de fundo do botão quando o mouse passa por cima */
-}
+    /* Estilo para o botão de pesquisa quando o mouse passa por cima */
+    .button[type="submit"]:hover {
+        background-color: rgb(218, 165, 32); /* Altera a cor de fundo do botão quando o mouse passa por cima */
+    }
 
-/* Estilo para o campo de entrada de pesquisa */
-.input-pesquisa[type="text"], .select-pesquisa {
-    padding: 10px; /* Adiciona um preenchimento interno de 10px ao campo de entrada */
-    margin: 10px 0 10px 0; /* Define margens de 10px em cima e embaixo e remove as margens laterais */
-    border: none; /* Remove a borda do campo de entrada */
-    border-radius: 5px; /* Adiciona uma borda arredondada ao campo de entrada */
-}
+    /* Estilo para o campo de entrada de pesquisa */
+    .input-pesquisa[type="text"], .select-pesquisa {
+        padding: 10px; /* Adiciona um preenchimento interno de 10px ao campo de entrada */
+        margin: 10px 0 10px 0; /* Define margens de 10px em cima e embaixo e remove as margens laterais */
+        border: none; /* Remove a borda do campo de entrada */
+        border-radius: 5px; /* Adiciona uma borda arredondada ao campo de entrada */
+    }
 
-/* Estilo para o conteúdo da página */
-.conteudo {
-    height: 100%;
-    width: 100%;
-    display: flex; /* Define o elemento como um flex container */
-    flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
-    flex-grow: 1; /* Permite que o elemento cresça para ocupar o espaço disponível */
-    padding: 5px 20px 50px 20px; /* Adiciona um preenchimento à esquerda e direita de 20px e um preenchimento superior e inferior de 5px ao conteúdo */
-    box-shadow: inset 0 0 10px #00bfff; /* Adiciona uma sombra interna Azul Neon */
-}
+    /* Estilo para o conteúdo da página */
+    .conteudo {
+        height: 100%;
+        width: 100%;
+        display: flex; /* Define o elemento como um flex container */
+        flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
+        flex-grow: 1; /* Permite que o elemento cresça para ocupar o espaço disponível */
+        padding: 5px 20px 50px 20px; /* Adiciona um preenchimento à esquerda e direita de 20px e um preenchimento superior e inferior de 5px ao conteúdo */
+        box-shadow: inset 0 0 10px #00bfff; /* Adiciona uma sombra interna Azul Neon */
+    }
 
-.mensagens{
-    display: inline-block;
-    box-sizing: border-box; /* Inclui padding e borda na largura total */
-    width: 100%;
-    height: 48px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    padding: 10px;
-    border-radius: 8px;
-}
+    .mensagens{
+        display: inline-block;
+        box-sizing: border-box; /* Inclui padding e borda na largura total */
+        width: 100%;
+        height: 48px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        padding: 10px;
+        border-radius: 8px;
+    }
 
-.mensagens.error{
-    background-color: #ffa6a6;
-}
+    .mensagens.error{
+        background-color: #ffa6a6;
+    }
 
-.mensagens.success{
-    background-color: #8cda8f;
-}
+    .mensagens.success{
+        background-color: #8cda8f;
+    }
 
-.mensagem.error{
-    color: rgb(100, 0, 0);
-}
-.mensagem.success{
-    color: rgb(0, 100, 0);
-}
+    .mensagem.error{
+        color: rgb(100, 0, 0);
+    }
+    .mensagem.success{
+        color: rgb(0, 100, 0);
+    }
 
-iframe {
-    width: 100%; /* Define a largura do iframe como 100% do contêiner pai */
-    height: 80px; /* Define a altura do iframe como 80 pixels */
-}
+    iframe {
+        width: 100%; /* Define a largura do iframe como 100% do contêiner pai */
+        height: 80px; /* Define a altura do iframe como 80 pixels */
+    }
 
-/* Estilo do Rodapé */
-footer {
-    background-color: #000; /* Define a cor de fundo do rodapé como preto */
-    color: #fff; /* Define a cor do texto do rodapé como branco */
-    text-align: center; /* Alinha o texto do rodapé ao centro */
-    padding: 20px 0; /* Adiciona preenchimento interno ao rodapé */
-    width: 100%; /* Define a largura do rodapé como 100% */
-    flex-grow: 1;
-    border-top: 2px solid #00ffff; /* Adiciona uma borda superior de 2px com cor ciano */
-}
+    /* Estilo do Rodapé */
+    footer {
+        background-color: #000; /* Define a cor de fundo do rodapé como preto */
+        color: #fff; /* Define a cor do texto do rodapé como branco */
+        text-align: center; /* Alinha o texto do rodapé ao centro */
+        padding: 20px 0; /* Adiciona preenchimento interno ao rodapé */
+        width: 100%; /* Define a largura do rodapé como 100% */
+        flex-grow: 1;
+        border-top: 2px solid #00ffff; /* Adiciona uma borda superior de 2px com cor ciano */
+    }
 
-.rodape-container {
-    display: flex; /* Usa um modelo de layout flexível para o contêiner do rodapé */
-    flex-wrap: wrap; /* Permite que os itens do rodapé sejam quebrados em várias linhas */
-    justify-content: space-around; /* Distribui uniformemente os itens do rodapé com espaçamento em torno deles */
-    max-width: 100%; /* Define a largura máxima do contêiner do rodapé */
-}
+    .rodape-container {
+        display: flex; /* Usa um modelo de layout flexível para o contêiner do rodapé */
+        flex-wrap: wrap; /* Permite que os itens do rodapé sejam quebrados em várias linhas */
+        justify-content: space-around; /* Distribui uniformemente os itens do rodapé com espaçamento em torno deles */
+        max-width: 100%; /* Define a largura máxima do contêiner do rodapé */
+    }
 
-.rodape-item {
-    flex: 1 1 250px; /* Faz os itens do rodapé flexíveis */
-    margin: 0 10px; /* Define a margem dos itens do rodapé */
-    max-width: 100%; /* Define a largura máxima dos itens do rodapé */
-}
+    .rodape-item {
+        flex: 1 1 250px; /* Faz os itens do rodapé flexíveis */
+        margin: 0 10px; /* Define a margem dos itens do rodapé */
+        max-width: 100%; /* Define a largura máxima dos itens do rodapé */
+    }
 
-.rodape-item .titulo4 {
-    font-size: 16px; /* Define o tamanho da fonte do título */
-    margin-bottom: 10px; /* Define a margem inferior do título */
-}
+    .rodape-item .titulo4 {
+        font-size: 16px; /* Define o tamanho da fonte do título */
+        margin-bottom: 10px; /* Define a margem inferior do título */
+    }
 
-.rodape-item .rodape-list {
-    list-style: none; /* Remove os marcadores padrão da lista */
-    padding: 0; /* Remove o preenchimento da lista */
-}
+    .rodape-item .rodape-list {
+        list-style: none; /* Remove os marcadores padrão da lista */
+        padding: 0; /* Remove o preenchimento da lista */
+    }
 
-.rodape-item .rodape-list li {
-    font-size: 12px; /* Define o tamanho da fonte dos itens da lista */
-    margin-bottom: 5px; /* Define a margem inferior dos itens da lista */
-}
+    .rodape-item .rodape-list li {
+        font-size: 12px; /* Define o tamanho da fonte dos itens da lista */
+        margin-bottom: 5px; /* Define a margem inferior dos itens da lista */
+    }
 
-.rodape-item .rodape-text {
-    margin-top: 0; /* Define a margem superior do texto do rodapé */
-    font-size: 12px; /* Define o tamanho da fonte do texto do rodapé */
-}
+    .rodape-item .rodape-text {
+        margin-top: 0; /* Define a margem superior do texto do rodapé */
+        font-size: 12px; /* Define o tamanho da fonte do texto do rodapé */
+    }
